@@ -1,6 +1,7 @@
 import React from 'react';
 import PageTitle from './header.jsx';
 import ProductListItem from './product-list-item';
+import ProductList from './product-list.jsx';
 
 export default class App extends React.Component {
   render() {
@@ -10,6 +11,7 @@ export default class App extends React.Component {
 
         <PageTitle text="Wicked Sales"/>
         <ProductListItem/>
+        <ProductList />
 
       </React.Fragment>
 

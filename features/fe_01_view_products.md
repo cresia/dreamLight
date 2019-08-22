@@ -11,7 +11,7 @@ The figma for this feature can be found [here](https://www.figma.com/file/BKByCT
 - [x] Define an `App` class component in `client/components/app.jsx`. `App` will have no initial state for now.
 - [x] Define a stateless `Header` component in `client/components/header.jsx` that displays the store's name and logo. Add `Header` to `App`'s render method.
 - [x] Define a stateless `ProductListItem` component in `client/components/product-list-item.jsx` that renders a single product card.
-- [ ] Define a stateful `ProductList` component in `client/components/product-list.jsx` that will render a grid of `ProductListItems`. Give it an initial state of `products` set to an empty `Array`.
+- [x] Define a stateful `ProductList` component in `client/components/product-list.jsx` that will render a grid of `ProductListItems`. Give it an initial state of `products` set to an empty `Array`.
 - [ ] Define a method in `ProductList` named `getProducts` that retrieves all products by sending a `GET` request to `/api/products.php`.
 - [ ] Add a `componentDidMount` method to `ProductList` that calls `getProducts`.
 - [ ] Add `ProductList` to `App`'s render method.
