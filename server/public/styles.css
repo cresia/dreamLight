@@ -1,7 +1,7 @@
 .logoImage{
-  width:50%;
+  width:40%;
   height:30%;
-  margin-left:30%;
+  margin-left:14rem;
 }
 
 .headerTitle{
@@ -12,8 +12,8 @@
 
 .card{
   width:20%;
-  margin-left:5%;
-  margin-top:2%; 
+  margin-left:5rem;
+  margin-top:2rem; 
 
 }
 
