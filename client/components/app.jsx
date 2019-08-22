@@ -1,23 +1,15 @@
 import React from 'react';
-import PageTitle from './header.jsx';
-import ProductListItem from './product-list-item';
-import ProductList from './product-list.jsx';
+import Header from './header.jsx';
+import ProductList from './productList.jsx';
 
 export default class App extends React.Component {
   render() {
-
     return (
-      <React.Fragment>
-
-        <PageTitle text="Wicked Sales"/>
-        <ProductListItem/>
+      <div>
+        <Header text="Wicked Sales" />
         <ProductList />
 
-      </React.Fragment>
-
-    // <div className="container">
-    // </div>
-
+      </div>
     );
   }
 }

@@ -12,7 +12,13 @@
 
 .card{
   width:20%;
-  margin-left:-6%;
-  margin-top:2%;
+  margin-left:5%;
+  margin-top:2%; 
 
+}
+
+
+.card-img-top{
+  width:80%;
+  height:50%;
 }
