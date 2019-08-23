@@ -13,4 +13,24 @@ function ProductListItem(props) {
     </div>
   );
 }
+
+// function ProductItemDetails(props){
+//   return (
+//     <div class="card mb-3" style="max-width: 540px;">
+//   <div class="row no-gutters">
+//     <div class="col-md-4">
+//       <img src={props.image} class="card-img" alt="OneItem" />
+//     </div>
+//     <div class="col-md-8">
+//       <div class="card-body">
+//         <h5 class="card-title">{props.name}</h5>
+//         <p class="card-text">{(props.price/100).toFixed(2)}</p>
+//         <p class="card-text">{props.shortDescription}</p>
+//       </div>
+//     </div>
+//   </div>
+// </div>
+
+//   );
+// }
 export default ProductListItem;
