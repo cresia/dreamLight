@@ -22,6 +22,7 @@ export default class ProductList extends React.Component {
     const products = this.state.products.map(singleProductData => {
       return (
         <ProductListItem key={singleProductData.id}
+          onClickOneItem = {this.props.setViewItem}
           id = {singleProductData.id}
           name = {singleProductData.name}
           price = {singleProductData.price}

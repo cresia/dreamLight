@@ -13,39 +13,38 @@ export default class ProductDetails extends React.Component {
     this.getProductDetails();
   }
 
-  getProductDetails() {
-    fetch(`/api/products.php?id=1`)
+  getProductDetails(props) {
+    const setParamId = this.props.params;
+    fetch(`/api/products.php?id=` + setParamId)
       .then(res => res.json())
-      // .then(res => console.log(res))
       .then(response => this.setState({ product: response }));
   }
 
   render() {
-    return (
 
-      <div className="card mb-3" style="max-width: 540px;">
-        <div className="row no-gutters">
-          <div className="col-md-4">
-            <img src={this.state.image} className="card-img" alt="OneItem" />
-          </div>
-          <div className="col-md-8">
-            <div className="card-body">
-              <h5 className="card-title">{this.state.name}</h5>
-              <p className="card-text">{(this.state.price / 100).toFixed(2)}</p>
-              <p className="card-text">{this.state.shortDescription}</p>
+    if (this.state.product != null) {
+      return (
+        <div key= {this.state.product.id} className="card mb-3">
+          <a href="">back to Catalog </a>
+          <div className="row no-gutters">
+            <div className="col-md-4">
+              <img src={this.state.product.image} className="card-img" alt="OneItem" />
+            </div>
+            <div className="col-md-8">
+              <div className="card-body">
+                <h5 className="card-title">{this.state.product.name}</h5>
+                <p className="card-text">{this.state.product.shortDescription}</p>
+                <p className="card-text badge badge-primary">{(this.state.product.price / 100).toFixed(2)}</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-    );
+      );
 
-    // return (<ProductItemDetails key={this.state.product.id}
-    // id = {this.state.id}
-    // name = {this.state.name}
-    // price = {this.state.price}
-    // image = {this.state.image}
-    // shortDescription = {this.state.shortDescription}/>)
+    }
+
+    return null;
 
   }
 
