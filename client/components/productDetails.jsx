@@ -1,5 +1,4 @@
 import React from 'react';
-// import ProductItemDetails from './productListItem.jsx';
 
 export default class ProductDetails extends React.Component {
   constructor(props) {
@@ -13,8 +12,8 @@ export default class ProductDetails extends React.Component {
     this.getProductDetails();
   }
 
-  getProductDetails(props) {
-    const setParamId = this.props.params;
+  getProductDetails() {
+    const setParamId = this.props.viewParams.id;
     fetch(`/api/products.php?id=` + setParamId)
       .then(res => res.json())
       .then(response => this.setState({ product: response }));
@@ -24,20 +23,28 @@ export default class ProductDetails extends React.Component {
 
     if (this.state.product != null) {
       return (
-        <div key= {this.state.product.id} className="card mb-3">
-          <a href="">back to Catalog </a>
-          <div className="row no-gutters">
-            <div className="col-md-4">
+
+        <div key= {this.state.product.id} className="container itemDetails">
+          <a href="">
+            {'<'}  Back to Catalog
+          </a>
+
+          <div className="row productDes">
+            <div className="col-12 col-md-8">
               <img src={this.state.product.image} className="card-img" alt="OneItem" />
             </div>
-            <div className="col-md-8">
-              <div className="card-body">
-                <h5 className="card-title">{this.state.product.name}</h5>
-                <p className="card-text">{this.state.product.shortDescription}</p>
-                <p className="card-text badge badge-primary">{(this.state.product.price / 100).toFixed(2)}</p>
-              </div>
+
+            <div className="col-6 col-md-4 short">
+              <h5 className="card-title">{this.state.product.name}</h5>
+              <p className="card-text badge badge-primary">{(this.state.product.price / 100).toFixed(2)}</p>
+              <p className="card-text">{this.state.product.shortDescription}</p>
             </div>
           </div>
+
+          <div >
+            <p className = "card-text shortDes">{this.state.product.longDescription}</p>
+          </div>
+
         </div>
 
       );

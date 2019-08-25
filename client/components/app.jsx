@@ -23,7 +23,7 @@ export default class App extends React.Component {
         params: params
       }
     });
-    //  console.log("setView", name, params)
+
   }
 
   render() {
@@ -39,7 +39,7 @@ export default class App extends React.Component {
       return (
         <div>
           <Header text="Wicked Sales" />
-          <ProductDetails setViewItem= {this.setView} viewParams= {this.state.view.prarams}/>
+          <ProductDetails setViewItem= {this.setView} viewParams= {this.state.view.params}/>
         </div>
 
       );

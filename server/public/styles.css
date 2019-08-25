@@ -17,8 +17,27 @@
 
 }
 
-
 .card-img-top{
   width:80%;
   height:50%;
+}
+
+.backToCatalog{
+  margin-top:10rem;
+}
+
+.container{
+  margin-bottom:5rem;
+}
+
+.itemDetails{
+  margin-top:1.5rem;
+}
+
+.productDes{
+  margin-top:2rem;
+}
+
+.shortDes{
+  margin-top:3rem;
 }
