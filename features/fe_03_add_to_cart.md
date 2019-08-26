@@ -7,9 +7,9 @@ The Figma for this feature can be found [here](https://www.figma.com/file/BKByCT
 ### Task List
 
 - [x] Create a figma that includes an "Add to Cart" button in the `ProductDetails` component and a shopping cart icon in the `Header` component.
-- [ ] Check out a branch from `dev` named `add-to-cart-front-end`.
-- [ ] Add an initial state property to `App` named `cart` set to an empty `Array`.
-- [ ] Define a method in `App` named `getCartItems` that retrieves the user's cart items with a `GET` request to `"/api/cart.php"`
+- [x] Check out a branch from `dev` named `add-to-cart-front-end`.
+- [x] Add an initial state property to `App` named `cart` set to an empty `Array`.
+- [x] Define a method in `App` named `getCartItems` that retrieves the user's cart items with a `GET` request to `"/api/cart.php"`
 - [ ] Load all of the user's cart items from the server by calling `getCartItems` in `App`'s `componentDidMount` method.
 - [ ] Modify `Header` to receive a `cartItemCount` prop that is the number of items in `App`'s `cart` state. `Header` should display a shopping cart icon with the number of items in the user's cart.
 - [ ] Define a method in `App` named `addToCart` with one parameter, `product`, which is a product `Object`. `addToCart` should `POST` the product to `"/api/cart.php"` before adding it to the `App`'s `cart` state.
