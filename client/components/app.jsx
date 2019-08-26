@@ -25,6 +25,11 @@ export default class App extends React.Component {
     });
   }
 
+  componentDidMount() {
+    this.getCartItems();
+
+  }
+
   getCartItems() {
     fetch(`/api/cart.php`)
       .then(res => res.json())
@@ -32,9 +37,22 @@ export default class App extends React.Component {
       .then(response => this.setState({ cart: response }));
   }
 
-  render() {
-    this.getCartItems();
+  addToCart(product) {
+    const req = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(product)
+    };
 
+    fetch('/api/cart.php', req)
+      .then(res => res.json())
+      .then(countItem => {
+        const allItems = this.state.view.cart.concat(countItem);
+        this.setState({ cart: allItems });
+      });
+  }
+
+  render() {
     if (this.state.view.name === 'catalog') {
       return (
         <div>
@@ -45,7 +63,7 @@ export default class App extends React.Component {
     } else if (this.state.view.name === 'details') {
       return (
         <div>
-          <Header text="Wicked Sales" />
+          <Header text="Wicked Sales" cartItemCount= {this.state.view.cart} />
           <ProductDetails setViewItem= {this.setView} viewParams= {this.state.view.params}/>
         </div>
 
