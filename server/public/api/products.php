@@ -1,46 +1,34 @@
 <?php
-
-header('Content-Type: application/json');
-require_once('functions.php');
+require_once('./functions.php');
 set_exception_handler('error_handler');
-set_error_handler('error_handler');
-require_once('db_connection.php');
+startUp();
+require_once('./db_connection.php');
 
-// http_response_code(500);
-// dostuff();
-
-
-startup();
-
-// if(empty($_GET['id']){
-//   $WhereClause = readFile('dummy-products-list.json');
-// }
-// else{
-//   $WhereClause = "WHERE `id` = 3";
-// }
-
-
-// $query = "SELECT * FROM `products` {$WhereClause}";
-
-
-$result = mysqli_query($conn, $query); //send the query to conn
-if (!$result) {
-  throw new Exception("Connect failed: " . mysqli_error());
+if (empty($_GET['id'])) {
+  $whereClause = "";
+} else if (!is_numeric($_GET['id'])) {
+  throw new Exception("id needs to be a number");
+} else {
+  $whereClause = "WHERE `id`=" . $_GET['id'];
 }
 
+$query = "SELECT * FROM `products`" . $whereClause;
 
-$output = array();
-while ($row = mysqli_fetch_assoc($result)) {
-  $output[] = $row;
-}
-print(json_encode($output));
+$result = mysqli_query($conn, $query);
 
-
-if(!$conn){
-  throw new Exception("Error:" . mysqli_connect_error());
+ if (!$result) {
+   throw new Exception(mysqli_connect_error());
+ }
+ else if(!mysqli_num_rows($result)){
+    throw new Exception('Invalid ID: ' . $_GET['id']);
+ }
+ 
+$output =[];
+while($row = mysqli_fetch_assoc($result)) {
+  $output[]= $row;
 };
-// $output = file_get_contents('dummy-products-list.json');
-// print($output);
 
-
+print(json_encode($output));
 ?>
+
+
