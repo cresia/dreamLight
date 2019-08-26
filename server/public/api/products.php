@@ -19,7 +19,7 @@ $result = mysqli_query($conn, $query);
  if (!$result) {
    throw new Exception(mysqli_connect_error());
  }
- else if(!mysqli_num_rows($result)){
+ else if(!mysqli_num_rows($result) && !empty($_GET['id']) ){
     throw new Exception('Invalid ID: ' . $_GET['id']);
  }
  
