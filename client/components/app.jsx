@@ -1,15 +1,49 @@
 import React from 'react';
 import Header from './header.jsx';
 import ProductList from './productList.jsx';
+import ProductDetails from './ProductDetails.jsx';
 
 export default class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <Header text="Wicked Sales" />
-        <ProductList />
+  constructor(props) {
+    super(props);
+    this.state = {
+      view: {
+        name: 'catalog',
+        params: {}
+      }
+    };
+    this.setView = this.setView.bind(this);
+  }
 
-      </div>
-    );
+  setView(name, params) {
+
+    this.setState({
+      view: {
+        name: name,
+        params: params
+      }
+    });
+
+  }
+
+  render() {
+
+    if (this.state.view.name === 'catalog') {
+      return (
+        <div>
+          <Header text="Wicked Sales" />
+          <ProductList setViewItem= {this.setView} />
+        </div>
+      );
+    } else if (this.state.view.name === 'details') {
+      return (
+        <div>
+          <Header text="Wicked Sales" />
+          <ProductDetails setViewItem= {this.setView} viewParams= {this.state.view.params}/>
+        </div>
+
+      );
+    }
+
   }
 }
