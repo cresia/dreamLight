@@ -13,7 +13,7 @@ function Header(props) {
           <h2 className= "headerTitle">{props.text}</h2>
         </ul>
 
-        <div className= "itemText text-warning"> items
+        <div className= "itemText text-warning"> items {props.cartItem}
           <i className= "fas fa-cart-plus text-warning cartIcon">
             {props.cartItemCount}
           </i>

@@ -46,10 +46,12 @@ export default class App extends React.Component {
 
     fetch('/api/cart.php', req)
       .then(res => res.json())
+      // .then(response => console.log(response));
       .then(countItem => {
         const allItems = this.state.view.cart.concat(countItem);
         this.setState({ cart: allItems });
       });
+
   }
 
   render() {
@@ -63,8 +65,8 @@ export default class App extends React.Component {
     } else if (this.state.view.name === 'details') {
       return (
         <div>
-          <Header text="Wicked Sales" cartItemCount= {this.state.view.cart} />
-          <ProductDetails setViewItem= {this.setView} viewParams= {this.state.view.params}/>
+          <Header text="Wicked Sales" cartItemCount= {this.state.cart.length} />
+          <ProductDetails setViewItem= {this.setView} viewParams= {this.state.view.params} cartItem = {this.addToCart}/>
         </div>
 
       );
