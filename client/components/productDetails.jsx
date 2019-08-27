@@ -25,9 +25,9 @@ export default class ProductDetails extends React.Component {
       return (
 
         <div key= {this.state.product.id} className="container itemDetails">
-          <a href="">
+          <button onClick= {() => this.props.setViewItem('catalog', {})}>
             {'<'}  Back to Catalog
-          </a>
+          </button>
 
           <div className="row productDes">
             <div className="col-12 col-md-8">
@@ -38,10 +38,10 @@ export default class ProductDetails extends React.Component {
               <h5 className="card-title">{this.state.product.name}</h5>
               <p className="card-text badge badge-primary">{(this.state.product.price / 100).toFixed(2)}</p>
               <p className="card-text">{this.state.product.shortDescription}</p>
+              <button onClick={() => { this.props.cartItem(this.state.product); } } type="button" className="btn btn-outline-secondary mt-4" > Add to Cart</button>
             </div>
           </div>
-
-          <div >
+          <div>
             <p className = "card-text shortDes">{this.state.product.longDescription}</p>
           </div>
 
