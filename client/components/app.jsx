@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './header.jsx';
 import ProductList from './productList.jsx';
 import ProductDetails from './ProductDetails.jsx';
+// import CartSummaryItem from './CartSummaryItem.jsx';
 
 export default class App extends React.Component {
   constructor(props) {
