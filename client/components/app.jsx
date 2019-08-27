@@ -34,7 +34,6 @@ export default class App extends React.Component {
   getCartItems() {
     fetch(`/api/cart.php`)
       .then(res => res.json())
-      // .then(response => console.log(response));
       .then(response => this.setState({ cart: response }));
   }
 
@@ -47,7 +46,6 @@ export default class App extends React.Component {
 
     fetch('/api/cart.php', req)
       .then(res => res.json())
-      // .then(response => console.log(response));
       .then(countItem => {
         const allItems = this.state.cart.concat(countItem);
         this.setState({ cart: allItems });
