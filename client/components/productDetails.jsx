@@ -25,9 +25,9 @@ export default class ProductDetails extends React.Component {
       return (
 
         <div key= {this.state.product.id} className="container itemDetails">
-          <a href="">
+          <button onClick= {() => this.props.setViewItem('catalog', {})}>
             {'<'}  Back to Catalog
-          </a>
+          </button>
 
           <div className="row productDes">
             <div className="col-12 col-md-8">
@@ -41,8 +41,7 @@ export default class ProductDetails extends React.Component {
               <button onClick={() => { this.props.cartItem(this.state.product); } } type="button" className="btn btn-outline-secondary mt-4" > Add to Cart</button>
             </div>
           </div>
-
-          <div >
+          <div>
             <p className = "card-text shortDes">{this.state.product.longDescription}</p>
           </div>
 

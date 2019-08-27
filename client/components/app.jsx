@@ -7,13 +7,14 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      cart: [],
       view: {
         name: 'catalog',
-        params: {},
-        cart: []
+        params: {}
       }
     };
     this.setView = this.setView.bind(this);
+    this.addToCart = this.addToCart.bind(this);
   }
 
   setView(name, params) {
@@ -48,7 +49,7 @@ export default class App extends React.Component {
       .then(res => res.json())
       // .then(response => console.log(response));
       .then(countItem => {
-        const allItems = this.state.view.cart.concat(countItem);
+        const allItems = this.state.cart.concat(countItem);
         this.setState({ cart: allItems });
       });
 
@@ -58,14 +59,15 @@ export default class App extends React.Component {
     if (this.state.view.name === 'catalog') {
       return (
         <div>
-          <Header text="Wicked Sales" />
+          <Header text="Wicked Sales" cartItemCount = {this.state.cart.length}/>
           <ProductList setViewItem= {this.setView} />
         </div>
       );
     } else if (this.state.view.name === 'details') {
       return (
         <div>
-          <Header text="Wicked Sales" cartItemCount= {this.state.cart.length} />
+          <Header text="Wicked Sales" cartItemCount = {this.state.cart.length} />
+
           <ProductDetails setViewItem= {this.setView} viewParams= {this.state.view.params} cartItem = {this.addToCart}/>
         </div>
 

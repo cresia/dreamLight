@@ -11,9 +11,9 @@ The Figma for this feature can be found [here](https://www.figma.com/file/BKByCT
 - [x] Add an initial state property to `App` named `cart` set to an empty `Array`.
 - [x] Define a method in `App` named `getCartItems` that retrieves the user's cart items with a `GET` request to `"/api/cart.php"`
 - [x] Load all of the user's cart items from the server by calling `getCartItems` in `App`'s `componentDidMount` method.
-- [ ] Modify `Header` to receive a `cartItemCount` prop that is the number of items in `App`'s `cart` state. `Header` should display a shopping cart icon with the number of items in the user's cart.
-- [ ] Define a method in `App` named `addToCart` with one parameter, `product`, which is a product `Object`. `addToCart` should `POST` the product to `"/api/cart.php"` before adding it to the `App`'s `cart` state.
-- [ ] Modify `ProductDetails` to include an "Add to Cart" button.
-- [ ] In `App`'s render method, pass `App`'s `addToCart` method to `ProductDetails` via props so that when a user clicks the "Add to Cart" button, the product is added to the cart.
-- [ ] Push all commits to `origin add-to-cart-front-end`.
-- [ ] Open a Pull Request from `add-to-cart-front-end` to `dev`.
+- [x] Modify `Header` to receive a `cartItemCount` prop that is the number of items in `App`'s `cart` state. `Header` should display a shopping cart icon with the number of items in the user's cart.
+- [x] Define a method in `App` named `addToCart` with one parameter, `product`, which is a product `Object`. `addToCart` should `POST` the product to `"/api/cart.php"` before adding it to the `App`'s `cart` state.
+- [x] Modify `ProductDetails` to include an "Add to Cart" button.
+- [x] In `App`'s render method, pass `App`'s `addToCart` method to `ProductDetails` via props so that when a user clicks the "Add to Cart" button, the product is added to the cart.
+- [x] Push all commits to `origin add-to-cart-front-end`.
+- [x] Open a Pull Request from `add-to-cart-front-end` to `dev`.
