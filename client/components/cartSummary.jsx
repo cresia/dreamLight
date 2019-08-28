@@ -10,14 +10,11 @@ function getCartTotal(cartItems) {
 }
 
 function CartSummary(props) {
+  if (props.allItems.length === 0) {
+    return <div className="noItems">No Items</div>;
+  }
+
   const items = props.allItems.map((item, index) => {
-    if (props.cartItems.length === 0) {
-      return <CartSummaryItem text="No Item"/>;
-
-    } else if (props.cartItems.length > 0) {
-      return <CartSummaryItem />;
-    }
-
     return (
       <CartSummaryItem key={index}
         image= {item.image}
