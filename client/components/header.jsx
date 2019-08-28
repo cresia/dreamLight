@@ -14,7 +14,7 @@ function Header(props) {
         </ul>
 
         <div className= "itemText text-warning"> {props.cartItemCount} items
-          <i className= "fas fa-cart-plus text-warning cartIcon">
+          <i onClick= {() => props.setViewItem('cart', {})} className= "fas fa-cart-plus text-warning cartIcon">
           </i>
         </div>
       </div>

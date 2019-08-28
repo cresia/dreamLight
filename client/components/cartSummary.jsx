@@ -1,42 +1,46 @@
-// import React from 'react';
+import React from 'react';
+import CartSummaryItem from './cartSummaryItem.jsx';
 
-// function CartSummary(props){
-//   //props.cartItems -> return an object of the item which are the number of items inside the cart state on the app
-//   // need to map it through then pass the function getCartTotal
-//   // console.log(props.cartItems)
-//   const myArray = props.cartItems.map(item => {
-//     return( getCartTotal(item.price));
-//   });
-// }
+function getCartTotal(cartItems) {
+  var total = 0;
+  for (var i = 0; i < cartItems.length; i++) {
+    total += cartItems[i].price;
+  }
+  return total;
+}
 
-// // function getCartTotal(cartItems) {
-// //   // cartItems is an object
-// //   var total = 0;
-// //   for (var i = 0; i < cartItems.length; i++){
-// //     total += cartItems[i].price;
-// //   }
-// //   return total;
-// // }
+function CartSummary(props) {
+  const items = props.allItems.map((item, index) => {
+    return (
+      <CartSummaryItem key={index}
+        image= {item.image}
+        name = {item.name}
+        price = {item.price}
+        shortDescription={item.shortDescription}/>
+    );
+  });
 
-// render(){
-//    //check if the cartSummary total is 0
-//     if (myArray.length === 0) {
-//       return (
-//         <div>
-//           <Header text="Wicked Sales" cartItemCount = {this.state.cart.length}/>
-//           <CartSummaryItem text= "no Item"/>
-//         </div>
-//       );
-//     } else if (myArray.length > 0) {
-//       //check if the there is an item in the cartSummary and print the total Item
-//       return (
-//         <div>
-//           <Header text="Wicked Sales" cartItemCount = {this.state.cart.length} />
-//           <CartSummaryItem />
-//         </div>
-//       );
-//     }
+  const total = getCartTotal(props.allItems);
 
-//   }
+  return (
+    <div className= "container">
+      <button className= "btn btn-link mt-4" onClick= {() => props.setViewItem('catalog', {})}>
+        {'<'}  Back to Catalog
+      </button>
 
-// export default CartSummary;
+      <h1 className= "myCartTitle mt-3 mb-5 ml-2">My Cart </h1>
+
+      <div className= "cardSpaceItem">
+        {items}
+      </div>
+
+      <p className="itemTotal">
+      Item Total ${(total / 100).toFixed(2)}
+      </p>
+
+    </div>
+
+  );
+}
+
+export default CartSummary;

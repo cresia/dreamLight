@@ -5,7 +5,6 @@ function ProductListItem(props) {
   const params = { id: props.id };
 
   return (
-
     <div onClick={() => props.onClickOneItem(name, params)} className="card col-md-3 mb-3" >
       <div className="card-body">
         <img src={props.image} className="card-img-top" alt="item1" />
