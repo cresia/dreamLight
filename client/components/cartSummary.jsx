@@ -11,6 +11,13 @@ function getCartTotal(cartItems) {
 
 function CartSummary(props) {
   const items = props.allItems.map((item, index) => {
+    if (props.cartItems.length === 0) {
+      return <CartSummaryItem text="No Item"/>;
+
+    } else if (props.cartItems.length > 0) {
+      return <CartSummaryItem />;
+    }
+
     return (
       <CartSummaryItem key={index}
         image= {item.image}
@@ -18,17 +25,18 @@ function CartSummary(props) {
         price = {item.price}
         shortDescription={item.shortDescription}/>
     );
+
   });
 
   const total = getCartTotal(props.allItems);
-
   return (
+
     <div className= "container">
       <button className= "btn btn-link mt-4" onClick= {() => props.setViewItem('catalog', {})}>
         {'<'}  Back to Catalog
       </button>
 
-      <h1 className= "myCartTitle mt-3 mb-5 ml-2">My Cart </h1>
+      <h1 className= "myCartTitle mt-3 mb-5 ml-2">My Cart</h1>
 
       <div className= "cardSpaceItem">
         {items}
