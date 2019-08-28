@@ -25,7 +25,7 @@ export default class ProductDetails extends React.Component {
       return (
 
         <div key= {this.state.product.id} className="container itemDetails">
-          <button onClick= {() => this.props.setViewItem('catalog', {})}>
+          <button className= "btn btn-link" onClick= {() => this.props.setViewItem('catalog', {})}>
             {'<'}  Back to Catalog
           </button>
 
