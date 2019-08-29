@@ -3,6 +3,7 @@ import Header from './header.jsx';
 import ProductList from './productList.jsx';
 import ProductDetails from './ProductDetails.jsx';
 import CartSummary from './CartSummary.jsx';
+import CheckoutForm from './checkoutForm.jsx';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -16,6 +17,7 @@ export default class App extends React.Component {
     };
     this.setView = this.setView.bind(this);
     this.addToCart = this.addToCart.bind(this);
+    this.placeOrder = this.placeOrder.bind(this);
   }
 
   setView(name, params) {
@@ -29,7 +31,6 @@ export default class App extends React.Component {
 
   componentDidMount() {
     this.getCartItems();
-
   }
 
   getCartItems() {
@@ -54,6 +55,29 @@ export default class App extends React.Component {
 
   }
 
+  placeOrder(userOrderInfo) {
+
+    const userOrder = {
+      'name': userOrderInfo.customerName,
+      'creditCard': userOrderInfo.creditCardInfo,
+      'shippingAddress': userOrderInfo.shippingAddressInfo,
+      'cart': this.state.cart
+    };
+
+    const req = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(userOrder)
+    };
+
+    fetch('/api/orders.php', req)
+      .then(res => res.json())
+      .then(orderItem => {
+        this.setState({ cart: [] });
+        this.setState({ name: 'catalog', params: {} });
+      });
+  }
+
   render() {
     if (this.state.view.name === 'catalog') {
       return (
@@ -66,7 +90,6 @@ export default class App extends React.Component {
       return (
         <div>
           <Header text="Wicked Sales" setViewItem = {this.setView} cartItemCount = {this.state.cart.length} />
-
           <ProductDetails setViewItem= {this.setView} viewParams= {this.state.view.params} cartItem = {this.addToCart}/>
         </div>
 
@@ -77,9 +100,14 @@ export default class App extends React.Component {
           <Header text="Wicked Sales" setViewItem = {this.setView} cartItemCount = {this.state.cart.length} />
           <CartSummary allItems= {this.state.cart} setViewItem = {this.setView} />
         </div>
-
+      );
+    } else if (this.state.view.name === 'checkout') {
+      return (
+        <div>
+          <Header text="Wicked Sales" setViewItem = {this.setView} cartItemCount = {this.state.cart.length} />
+          <CheckoutForm userPaymentInfo = {this.placeOrder} setViewItem = {this.setView} allItems= {this.state.cart} />
+        </div>
       );
     }
-
   }
 }
