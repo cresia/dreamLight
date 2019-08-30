@@ -30,22 +30,29 @@ $query = "SELECT products.id, products.name, products.price, products.shortDescr
 GROUP_CONCAT(images.url) AS images
 FROM products
 JOIN images
-ON products.id = images.productId " .  $whereClause .
-"GROUP BY products.id";
+ON products.id = images.productId ". $whereClause . " GROUP BY products.id";
 
+
+//task-list:3
+// $query = "SELECT products.id, products.name, products.price, products.shortDescription,
+// GROUP_CONCAT(images.url) AS images
+// FROM products
+// JOIN images
+// ON products.id = images.productId $whereClause 
+// GROUP BY products.id";
 
 
 $result = mysqli_query($conn, $query);
 
  if (!$result) {
-   throw new Exception(mysqli_connect_error());
+   throw new Exception(mysqli_error());
  }
  else if(!mysqli_num_rows($result) && !empty($_GET['id']) ){
     throw new Exception('Invalid ID: ' . $_GET['id']);
  }
  
 
-//after modifying based on task-list: 3 --> specifically add explode() to split the url by a comma
+//after modifying based on task-list: 3 --> specifically add explode() to split the url by 
 $output = [];
 while($row = mysqli_fetch_assoc($result)) {
   $row['images'] = explode(",", $row['images']);
