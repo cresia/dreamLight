@@ -4,15 +4,36 @@ set_exception_handler('error_handler');
 startUp();
 require_once('./db_connection.php');
 
+
 if (empty($_GET['id'])) {
   $whereClause = "";
 } else if (!is_numeric($_GET['id'])) {
   throw new Exception("id needs to be a number");
 } else {
-  $whereClause = "WHERE `id`=" . $_GET['id'];
+  $whereClause = "WHERE products.`id`=" . $_GET['id'];
 }
 
-$query = "SELECT * FROM `products`" . $whereClause;
+// $query = "SELECT * FROM `products`" . $whereClause;
+
+// task-list: 1
+// $query = " SELECT products.id, products.name, products.shortDescription, products.price, (SELECT `url` FROM `images` WHERE `productId` = products.`id` LIMIT 1) AS image
+//  FROM `products` " . $whereClause;
+
+//task-list: 2
+// $query = "SELECT products.id, products.name, products.shortDescription, products.price, images.url
+// FROM products 
+// JOIN images
+// ON products.`id` = images.`productId`" . $whereClause ;
+
+//task-list: 3
+$query = "SELECT products.id, products.name, products.price, products.shortDescription,
+GROUP_CONCAT(images.url) AS images
+FROM products
+JOIN images
+ON products.id = images.productId " .  $whereClause .
+"GROUP BY products.id";
+
+
 
 $result = mysqli_query($conn, $query);
 
@@ -23,10 +44,14 @@ $result = mysqli_query($conn, $query);
     throw new Exception('Invalid ID: ' . $_GET['id']);
  }
  
-$output =[];
+
+//after modifying based on task-list: 3 --> specifically add explode() to split the url by a comma
+$output = [];
 while($row = mysqli_fetch_assoc($result)) {
-  $output[]= $row;
+  $row['images'] = explode(",", $row['images']);
+  $output[]=$row;
 };
+
 
 print(json_encode($output));
 ?>
