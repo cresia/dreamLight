@@ -1,5 +1,9 @@
 <?php
 
+define("INTERNAL", true);
+
+require('./functions.php');
+
 header('Content-Type: application/json');
 
 $method = $_SERVER['REQUEST_METHOD'];
@@ -17,5 +21,6 @@ if ($method == 'GET') {
     'message' => "Cannot $method /api/cart.php"
   ]));
 }
+
 
 ?>

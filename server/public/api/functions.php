@@ -11,8 +11,16 @@ function error_handler($error){
   print($json_output);
 }
 
+
 function startup(){
   header('Content-Type: application/json');
 }
 
+function getBodyData(){
+  $json = file_get_contents('php://inpuit');
+  $data = json_decode($json, true) // return json into a variable while encode return a json
+  return $data
+}
+
 ?>
+
