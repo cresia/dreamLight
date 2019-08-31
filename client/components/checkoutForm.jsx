@@ -80,7 +80,7 @@ export default class CheckoutForm extends React.Component {
             </button>
           </div>
           <div className="col">
-            <button type="submit" className="btn btn-dark placeOrderButton">Place Order</button>
+            <button type="submit" className="btn btn-dark placeOrderButton ">Place Order</button>
 
           </div>
         </div>
