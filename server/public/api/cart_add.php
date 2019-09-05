@@ -27,10 +27,22 @@ else{
    $cartID = false;
 }
 
+//Make a query to get the price from products for the 
+//given id you got from the body json
 $query= "SELECT price FROM `products`";
 
 //Send the query to the database and store the result
 $result = mysqli_query($conn, $query);
+
+//Check how many rows came back. 
+//Throw an exception if there isn’t one. It wasn’t a valid product id
+
+if(!$result){
+   throw new Exception(mysqli_connect_error());
+}
+else if(!mysqli_num_rows($result) && !empty($_GET['id']) ){
+    throw new Exception('Invalid ID: ' . $_GET['id']);
+ }
 
 
 
