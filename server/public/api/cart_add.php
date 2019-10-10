@@ -27,22 +27,38 @@ else{
    $cartID = false;
 }
 
-//Make a query to get the price from products for the 
+//Make a query to get the price from products for the
 //given id you got from the body json
 $query= "SELECT price FROM `products`";
 
 //Send the query to the database and store the result
 $result = mysqli_query($conn, $query);
 
-//Check how many rows came back. 
+//Check how many rows came back.
 //Throw an exception if there isn’t one. It wasn’t a valid product id
 
 if(!$result){
    throw new Exception(mysqli_connect_error());
 }
-else if(!mysqli_num_rows($result) && !empty($_GET['id']) ){
+else if(!mysqli_num_rows($conn) && !empty($_GET['id']) ){
     throw new Exception('Invalid ID: ' . $_GET['id']);
  }
+
+// Send a query to the database with the words “START TRANSACTION”,
+// this will start a mysql transaction set of queries that can be “rolled back” or “committed”
+$cart_transaction = "START TRANSACTION";
+$result1 = mysqli_query($conn, $cart_transaction);
+
+//If our cart ID is false
+
+
+
+
+
+
+
+
+
 
 
 
