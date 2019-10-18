@@ -56,13 +56,4 @@ $result1 = mysqli_query($conn, $cart_transaction);
 
 
 
-
-
-
-
-
-
-
-
-
 ?>
