@@ -52,7 +52,6 @@ export default class App extends React.Component {
         const allItems = this.state.cart.concat(countItem);
         this.setState({ cart: allItems });
       });
-
   }
 
   placeOrder(userOrderInfo) {
@@ -73,7 +72,6 @@ export default class App extends React.Component {
         }
         );
       });
-
   }
 
   render() {
@@ -90,7 +88,6 @@ export default class App extends React.Component {
           <Header text="Wicked Sales" setViewItem = {this.setView} cartItemCount = {this.state.cart.length} />
           <ProductDetails setViewItem= {this.setView} viewParams= {this.state.view.params} cartItem = {this.addToCart}/>
         </div>
-
       );
     } else if (this.state.view.name === 'cart') {
       return (
