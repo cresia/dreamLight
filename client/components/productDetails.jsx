@@ -29,7 +29,7 @@ export default class ProductDetails extends React.Component {
             {'<'}  Back to Catalog
           </button>
 
-          <div className="row productDes"> { /* wrapper */}
+          <div className="row productDes">
 
             <div className="col-12 col-md-8">
               <img src={this.state.product.image} className="card-img" alt="OneItem" />
@@ -40,24 +40,16 @@ export default class ProductDetails extends React.Component {
               <p className="card-text badge badge-primary">{(this.state.product.price / 100).toFixed(2)}</p>
               <p className="card-text">{this.state.product.shortDescription}</p>
               <button onClick={() => { this.props.cartItem(this.state.product); } } type="button" className="btn btn-outline-secondary mt-4" > Add to Cart</button>
-
-              <div className="row" >
-                <div className="col-sm">Add</div>
-                <div className="col-sm">1
-
-                </div>
-                <div className="col-sm">Minus</div>
-              </div>
-
             </div>
 
-          </div> { /* end of wrapper */}
+          </div>
 
           <div>
             <p className = "card-text shortDes">{this.state.product.longDescription}</p>
           </div>
 
-        </div> /* main */
+        </div>
+
       );
 
     }

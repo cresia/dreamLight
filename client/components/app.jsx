@@ -84,7 +84,7 @@ export default class App extends React.Component {
       );
     } else if (this.state.view.name === 'details') {
       return (
-        <div>onClick= {() => this.props.setViewItem('catalog', {})}
+        <div onClick= {() => this.props.setViewItem('catalog', {})}>
           <Header text="Wicked Sales" setViewItem = {this.setView} cartItemCount = {this.state.cart.length} />
           <ProductDetails setViewItem= {this.setView} viewParams= {this.state.view.params} cartItem = {this.addToCart}/>
         </div>
