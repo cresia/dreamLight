@@ -3,20 +3,22 @@
 
 
 // Add our INTERNAL check like in cart_add
-if( !defined( 'INTERNAL')){
-  throw new Exception('no direct calls');
+if(!INTERNAL){
+  exit('no direct calls');
 }
 
 // Check if SESSION[‘cart_id’] is empty
       // If it is, print a json encoded empty array
       // Exit to stop processing, we have no cart for this person
-$cartID = null;
+
 if(empty($_SESSION['cartID'])){
   print(json_encode("[]"));
   exit();
 }
-// Set the $cartId variable to the SESSION cart_id. To be safe, we probably should intval it, too
-$cartID = intval($_SESSION['cartID']);
+else{
+  // Set the $cartId variable to the SESSION cart_id. To be safe, we probably should intval it, too
+  $cartID = intval($_SESSION['cartID']);
+}
 
 
 // Write a query that fetches the appropriate data as found in dummy-cart-items.json
@@ -30,6 +32,10 @@ $query = "SELECT cartItems.count, products.id, products.name, products.price, pr
 // Send the query to mysql and get the result
 $result = mysqli_query($conn, $query);
 
+if(!$result){
+  throw new Exception("query error: " . mysqli_error($conn));
+};
+
 
 // Retrieve the data you got from the query and print it out. If there is nothing there, make sure it prints out an empty array
 $data = [];
@@ -39,6 +45,7 @@ while($row = mysqli_fetch_assoc($result)){
 
 if($data === []){
   print("empty array: []");
+  exit();
 }else{
   print(json_encode($data));
 }

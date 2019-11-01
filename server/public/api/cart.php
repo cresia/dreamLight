@@ -13,10 +13,10 @@ $method = $_SERVER['REQUEST_METHOD'];
 
 switch ($method) {
     case "POST":
-        require('cart_add.php');
+        require_once('cart_add.php');
         break;
     case "GET":
-        require('get_cart.php');
+        require_once('get_cart.php');
         break;
 }
 
