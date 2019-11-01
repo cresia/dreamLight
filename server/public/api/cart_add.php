@@ -22,6 +22,7 @@ if(!INTERNAL){
   exit('no direct calls');
 }
 
+// $item = file_get_contents('php://input');
 
 //Use the getBodyData function to get the json body, store to variable $id
 $data = getBodyData();
