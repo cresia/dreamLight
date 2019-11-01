@@ -13,18 +13,20 @@ export default class App extends React.Component {
       view: {
         name: 'catalog',
         params: {}
-      }
+      },
+      cartQuantity: 0
     };
     this.setView = this.setView.bind(this);
+    this.getCartItemQuantity = this.getCartItemQuantity.bind(this);
     this.addToCart = this.addToCart.bind(this);
     this.placeOrder = this.placeOrder.bind(this);
   }
 
-  setView(name, params) {
+  setView(name, id) {
     this.setState({
       view: {
         name: name,
-        params: params
+        params: id
       }
     });
   }
@@ -33,17 +35,33 @@ export default class App extends React.Component {
     this.getCartItems();
   }
 
+  getCartItemQuantity(cart) {
+    let cartQuantity = 0;
+    if (cart.length > 0) {
+      for (let i = 0; i < cart.length; i++) {
+        cartQuantity += parseInt(cart[i].count);
+      }
+      this.setState({ cartQuantity });
+    }
+  }
+
   getCartItems() {
     fetch(`/api/cart.php`)
       .then(res => res.json())
-      .then(response => this.setState({ cart: response }));
+      // .then(response => this.setState({ cart: response }));
+      .then(cart => {
+        this.setState({ cart }, () => this.getCartItemQuantity(cart));
+      });
   }
 
-  addToCart(product) {
+  addToCart(productId, quantity) {
     const req = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(product)
+      body: JSON.stringify({
+        id: parseInt(productId),
+        count: quantity
+      })
     };
 
     fetch('/api/cart.php', req)
@@ -52,6 +70,8 @@ export default class App extends React.Component {
         const allItems = this.state.cart.concat(countItem);
         this.setState({ cart: allItems });
       });
+
+    // this.getCartItems();
   }
 
   placeOrder(userOrderInfo) {
@@ -84,7 +104,8 @@ export default class App extends React.Component {
       );
     } else if (this.state.view.name === 'details') {
       return (
-        <div onClick= {() => this.props.setViewItem('catalog', {})}>
+        // <div onClick= {() => this.props.setViewItem('catalog', {})}>
+        <div>
           <Header text="Wicked Sales" setViewItem = {this.setView} cartItemCount = {this.state.cart.length} />
           <ProductDetails setViewItem= {this.setView} viewParams= {this.state.view.params} cartItem = {this.addToCart}/>
         </div>
@@ -93,7 +114,7 @@ export default class App extends React.Component {
       return (
         <div>
           <Header text="Wicked Sales" setViewItem = {this.setView} cartItemCount = {this.state.cart.length} />
-          <CartSummary allItems= {this.state.cart} setViewItem = {this.setView} />
+          <CartSummary allItems= {this.state.cart} setViewItem = {this.setView} cartQuantity={this.state.cartQuantity}/>
         </div>
       );
     } else if (this.state.view.name === 'checkout') {

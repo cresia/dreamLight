@@ -4,8 +4,13 @@ export default class ProductDetails extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      product: null
+      product: null,
+      quantity: 1
     };
+    this.getProductDetails = this.getProductDetails.bind(this);
+    this.incrementQuantity = this.incrementQuantity.bind(this);
+    this.decrementQuantity = this.decrementQuantity.bind(this);
+
   }
 
   componentDidMount() {
@@ -19,7 +24,28 @@ export default class ProductDetails extends React.Component {
       .then(response => this.setState({ product: response }));
   }
 
+  addItemToCart() {
+    // let product = this.state.product;
+    // let quantity = this.state.quantity;
+    // this.props.addToCart(product.id, quantity);
+  }
+
+  incrementQuantity() {
+    let quantity = this.state.quantity;
+    let newQuantity = ++quantity;
+    this.setState({ quantity: newQuantity });
+  }
+
+  decrementQuantity() {
+    let quantity = this.state.quantity;
+    let newQuantity = --quantity;
+    if (this.state.quantity > 1) {
+      this.setState({ quantity: newQuantity });
+    }
+  }
+
   render() {
+    let quantity = this.state.quantity;
 
     if (this.state.product != null) {
       return (
@@ -38,6 +64,22 @@ export default class ProductDetails extends React.Component {
             <div className="col-6 col-md-4 short">
               <h5 className="card-title">{this.state.product.name}</h5>
               <p className="card-text badge badge-primary">{(this.state.product.price / 100).toFixed(2)}</p>
+
+              <div className = "row">
+                <div className= "col-4 col-sm-2">
+                  <i onClick={this.decrementQuantity} className="fas fa-minus-square"></i>
+                </div>
+
+                <div className= "col-4 col-sm-2">
+                  <div>{quantity}</div>
+                </div>
+
+                <div className= "col-4 col-sm-2">
+                  <i onClick={this.incrementQuantity} className="fas fa-plus-square"></i>
+                </div>
+
+              </div>
+
               <p className="card-text">{this.state.product.shortDescription}</p>
               <button onClick={() => { this.props.cartItem(this.state.product); } } type="button" className="btn btn-outline-secondary mt-4" > Add to Cart</button>
             </div>
