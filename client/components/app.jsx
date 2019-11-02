@@ -71,7 +71,7 @@ export default class App extends React.Component {
         this.setState({ cart: allItems });
       });
 
-    // this.getCartItems();
+    this.getCartItems();
   }
 
   placeOrder(userOrderInfo) {

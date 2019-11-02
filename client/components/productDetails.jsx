@@ -10,7 +10,7 @@ export default class ProductDetails extends React.Component {
     this.getProductDetails = this.getProductDetails.bind(this);
     this.incrementQuantity = this.incrementQuantity.bind(this);
     this.decrementQuantity = this.decrementQuantity.bind(this);
-
+    this.addItemToCart = this.addItemToCart.bind(this);
   }
 
   componentDidMount() {
@@ -25,9 +25,9 @@ export default class ProductDetails extends React.Component {
   }
 
   addItemToCart() {
-    // let product = this.state.product;
-    // let quantity = this.state.quantity;
-    // this.props.addToCart(product.id, quantity);
+    let product = this.state.product;
+    let quantity = this.state.quantity;
+    this.props.addToCart(product.id, quantity);
   }
 
   incrementQuantity() {
@@ -81,7 +81,8 @@ export default class ProductDetails extends React.Component {
               </div>
 
               <p className="card-text">{this.state.product.shortDescription}</p>
-              <button onClick={() => { this.props.cartItem(this.state.product); } } type="button" className="btn btn-outline-secondary mt-4" > Add to Cart</button>
+              {/* <button onClick={() => { this.props.cartItem(this.state.product); } } type="button" className="btn btn-outline-secondary mt-4" > Add to Cart</button> */}
+              <button onClick={this.addItemToCart} type="button" className="btn btn-outline-secondary mt-4" > Add to Cart</button>
             </div>
 
           </div>
