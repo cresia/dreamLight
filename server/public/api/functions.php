@@ -7,7 +7,12 @@ function error_handler($error){
   );
 
   $json_output = json_encode($output);
+  http_response_code(500);
   print($json_output);
+}
+
+function startup(){
+  header('Content-Type: application/json');
 }
 
 ?>
