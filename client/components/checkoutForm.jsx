@@ -29,8 +29,15 @@ export default class CheckoutForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    return ('name:' + this.state.customerName + '\n CreditCardInfo:' + this.state.creditCardInfo + '\n shippingAddress:' + this.state.shippingAddressInfo);
 
+    const x = {
+      'name': this.state.customerName,
+      'CreditCardInfo': this.state.creditCardInfo,
+      'shippingAddress': this.state.shippingAddressInfo,
+      'cart': this.props.allItems
+
+    };
+    this.props.userPaymentInfo(x);
   }
 
   getCartTotal() {
@@ -73,7 +80,7 @@ export default class CheckoutForm extends React.Component {
             </button>
           </div>
           <div className="col">
-            <button type="submit" className="btn btn-dark placeOrderButton">Place Order</button>
+            <button type="submit" className="btn btn-dark placeOrderButton ">Place Order</button>
 
           </div>
         </div>

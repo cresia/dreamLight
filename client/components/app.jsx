@@ -56,26 +56,24 @@ export default class App extends React.Component {
   }
 
   placeOrder(userOrderInfo) {
-
-    const userOrder = {
-      'name': userOrderInfo.customerName,
-      'creditCard': userOrderInfo.creditCardInfo,
-      'shippingAddress': userOrderInfo.shippingAddressInfo,
-      'cart': this.state.cart
-    };
-
     const req = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(userOrder)
+      body: JSON.stringify(userOrderInfo)
     };
 
     fetch('/api/orders.php', req)
       .then(res => res.json())
       .then(orderItem => {
         this.setState({ cart: [] });
-        this.setState({ name: 'catalog', params: {} });
+        this.setState({ view:
+          {
+            name: 'catalog',
+            params: {} }
+        }
+        );
       });
+
   }
 
   render() {
@@ -88,7 +86,7 @@ export default class App extends React.Component {
       );
     } else if (this.state.view.name === 'details') {
       return (
-        <div>
+        <div>onClick= {() => this.props.setViewItem('catalog', {})}
           <Header text="Wicked Sales" setViewItem = {this.setView} cartItemCount = {this.state.cart.length} />
           <ProductDetails setViewItem= {this.setView} viewParams= {this.state.view.params} cartItem = {this.addToCart}/>
         </div>
