@@ -26,7 +26,7 @@ export default class ProductList extends React.Component {
           id = {singleProductData.id}
           name = {singleProductData.name}
           price = {singleProductData.price}
-          image = {singleProductData.image}
+          image = {singleProductData.images[1]}
           shortDescription = {singleProductData.shortDescription}
         />
       );

@@ -1,5 +1,6 @@
 <?php
 
+
 define("INTERNAL", true);
 require_once('./functions.php');
 set_error_handler('error_handler');
@@ -7,6 +8,7 @@ startUp();
 require_once('./db_connection.php');
 
 session_start();
+
 
 //It takes in the $_SERVER SERVER superglobal “REQUEST_METHOD”
 $method = $_SERVER['REQUEST_METHOD'];

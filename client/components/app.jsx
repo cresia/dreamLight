@@ -48,10 +48,13 @@ export default class App extends React.Component {
   getCartItems() {
     fetch(`/api/cart.php`)
       .then(res => res.json())
+      // .then(res => console.log('res', res))
       // .then(response => this.setState({ cart: response }));
       .then(cart => {
         this.setState({ cart }, () => this.getCartItemQuantity(cart));
       });
+
+    // console.log('hello');
   }
 
   addToCart(productId, quantity) {
@@ -71,7 +74,9 @@ export default class App extends React.Component {
         this.setState({ cart: allItems });
       });
 
+    // console.log('hello00');
     this.getCartItems();
+
   }
 
   placeOrder(userOrderInfo) {
