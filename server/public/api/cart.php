@@ -4,8 +4,8 @@
 define("INTERNAL", true);
 require_once('./functions.php');
 set_error_handler('error_handler');
-startUp();
 require_once('./db_connection.php');
+startUp();
 
 session_start();
 

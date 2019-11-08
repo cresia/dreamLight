@@ -1,7 +1,8 @@
 <?php
 //GET -- send the info from database to the website 
 require_once('functions.php');
-
+require_once('cart.php');
+set_exception_handler("error_handler");
 
 // Add our INTERNAL check like in cart_add
 if(!INTERNAL){
@@ -9,27 +10,30 @@ if(!INTERNAL){
   exit();
 }
 
-var_dump("cart id", empty($_SESSION['cartID']));
+
+// var_dump("cart id",($_SESSION['cartID']));
+// print("hello");
 
 
 // Check if SESSION[‘cart_id’] is empty
       // If it is, print a json encoded empty array
       // Exit to stop processing, we have no cart for this person
 
-if(empty($_SESSION['cartID'])){
-  // print(json_encode("[]"));
-  print_r(getBodyData([]));
+if(empty($_SESSION['cartId'])){
+  print(json_encode([]));
   exit();
 }
 else{
   // Set the $cartId variable to the SESSION cart_id. To be safe, we probably should intval it, too
-  $cartID = intval($_SESSION['cartID']);
-  var_dump("there is an id",$cartID);
+  $cartID = intval($_SESSION['cartId']);
+
+  // print("hello");
+  // var_dump("there is an id",$cartID);
 }
 
-var_dump("cart id2");
 
-var_dump("cart id", $_SESSION['cartID']);
+// var_dump("cart id2");
+// var_dump("cart id", $_SESSION['cartID']);
 
 
 // Write a query that fetches the appropriate data as found in dummy-cart-items.json
@@ -43,15 +47,18 @@ var_dump("cart id", $_SESSION['cartID']);
 $query = "SELECT cartItems.price, cartItems.count, products.name, products.image, products.id, cartItems.cartID 
         FROM `cartItems` 
         INNER JOIN `products` ON cartItems.productID = products.id
-        WHERE cartItems.cartID = {$cartId}";
+        WHERE cartItems.cartID = {$cartID}";
 
 // Send the query to mysql and get the result
 $result = mysqli_query($conn, $query);
+
+// var_dump("result from get: ", $result);
 
 if(!$result){
   throw new Exception("query error: " . mysqli_error($conn));
 };
 
+// var_dump("hello3");
 
 // Retrieve the data you got from the query and print it out. If there is nothing there, make sure it prints out an empty array
 $data = [];
@@ -65,7 +72,5 @@ if($data === []){
 }else{
   print(json_encode($data));
 }
-
-
 
 ?>

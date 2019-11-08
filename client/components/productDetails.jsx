@@ -11,6 +11,7 @@ export default class ProductDetails extends React.Component {
     this.incrementQuantity = this.incrementQuantity.bind(this);
     this.decrementQuantity = this.decrementQuantity.bind(this);
     this.addItemToCart = this.addItemToCart.bind(this);
+
   }
 
   componentDidMount() {
@@ -25,11 +26,10 @@ export default class ProductDetails extends React.Component {
   }
 
   addItemToCart() {
-    let product = this.state.product;
+    let product = this.state.product[0];
     let quantity = this.state.quantity;
     this.props.cartItem(product.id, quantity);
     // console.log("inside addItemCart");
-
   }
 
   incrementQuantity() {
@@ -50,6 +50,7 @@ export default class ProductDetails extends React.Component {
     let quantity = this.state.quantity;
 
     if (this.state.product != null) {
+      // console.log('the states are:', this.state);
       return (
 
         <div key= {this.state.product.id} className="container itemDetails">
@@ -60,12 +61,13 @@ export default class ProductDetails extends React.Component {
           <div className="row productDes">
 
             <div className="col-12 col-md-8">
-              <img src={this.state.product.image} className="card-img" alt="OneItem" />
+              <img src={this.state.product[0].images[1]} className="card-img" alt="OneItem" />
+
             </div>
 
             <div className="col-6 col-md-4 short">
-              <h5 className="card-title">{this.state.product.name}</h5>
-              <p className="card-text badge badge-primary">{(this.state.product.price / 100).toFixed(2)}</p>
+              <h5 className="card-title">{this.state.product[0].name}</h5>
+              <p className="card-text badge badge-primary">{(this.state.product[0].price / 100).toFixed(2)}</p>
 
               <div className = "row">
                 <div className= "col-4 col-sm-2">
@@ -84,7 +86,7 @@ export default class ProductDetails extends React.Component {
 
               <p className="card-text">{this.state.product.shortDescription}</p>
               {/* <button onClick={() => { this.props.cartItem(this.state.product); } } type="button" className="btn btn-outline-secondary mt-4" > Add to Cart</button> */}
-              {/* <button onClick={() => { this.addItemToCart; }} type="button" className="btn btn-outline-secondary mt-4" > Add to Cart</button> */}
+              <button onClick={this.addItemToCart} type="button" className="btn btn-outline-secondary mt-4" > Add to Cart</button>
             </div>
 
           </div>

@@ -1,9 +1,11 @@
 <?php
 
-function error_handler($error){
+function error_handler($errorNum, $error){
+  // print("error is" . $error);
+  // exit();
   $output = array(
     "success" => false,
-    "error" => $error->getMessage()
+    "error" => $error
   );
 
   $json_output = json_encode($output);

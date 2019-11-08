@@ -36,6 +36,7 @@ export default class App extends React.Component {
   }
 
   getCartItemQuantity(cart) {
+    // console.log('total cart', cart);
     let cartQuantity = 0;
     if (cart.length > 0) {
       for (let i = 0; i < cart.length; i++) {
@@ -53,11 +54,11 @@ export default class App extends React.Component {
       .then(cart => {
         this.setState({ cart }, () => this.getCartItemQuantity(cart));
       });
-
     // console.log('hello');
   }
 
   addToCart(productId, quantity) {
+    // debugger;
     const req = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -72,11 +73,10 @@ export default class App extends React.Component {
       .then(countItem => {
         const allItems = this.state.cart.concat(countItem);
         this.setState({ cart: allItems });
-      });
+      })
+      .then(() => this.getCartItems());
 
-    // console.log('hello00');
-    this.getCartItems();
-
+    // console.log('hellooo');
   }
 
   placeOrder(userOrderInfo) {
