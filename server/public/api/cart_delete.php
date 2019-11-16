@@ -2,23 +2,24 @@
 
 require_once('functions.php');
 // set_exception_handler("error_handler");
-startUp();
-require_once('db_connection.php');
+// startUp();
+// require_once('db_connection.php');
 
 $data = getBodyData();
 
-
 $id = intval($data['id']);
 
+var_dump("hello");
 // var_dump("the id is", $id);
 
 if($id <= 0){
-  throw new Exception("Error, Invalid id");
+  throw new Exception("Error, Invalid id " . $id);
 }
 
-var_dump("the id is", $id);
+
 
 $queryDelete = "DELETE FROM `cartItems` WHERE `productID` = $id";
+
 
 $deleteResult = mysqli_query($conn, $queryDelete);
 
