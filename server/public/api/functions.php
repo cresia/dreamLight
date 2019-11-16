@@ -1,8 +1,6 @@
 <?php
 
-function error_handler($errorNum, $error){
-  // print("error is" . $error);
-  // exit();
+function error_handler($error){
   $output = array(
     "success" => false,
     "error" => $error
@@ -26,4 +24,3 @@ function getBodyData(){
 }
 
 ?>
-

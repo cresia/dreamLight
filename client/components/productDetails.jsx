@@ -15,10 +15,10 @@ export default class ProductDetails extends React.Component {
   }
 
   componentDidMount() {
-    this.getProductDetails();
+    this.getProductDetails(this.props.id);
   }
 
-  getProductDetails() {
+  getProductDetails(props) {
     const setParamId = this.props.viewParams.id;
     fetch(`/api/products.php?id=` + setParamId)
       .then(res => res.json())

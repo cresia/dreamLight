@@ -5,13 +5,25 @@ startUp();
 require_once('./db_connection.php');
 
 
+
+// if (empty($_GET['id'])) {
+//   $whereClause = "";
+// } else if (!is_numeric($_GET['id'])) {
+//   throw new Exception("id needs to be a number");
+// } else {
+//   $whereClause = "WHERE products.id=" . $_GET['id'];
+// }
+
+
 if (empty($_GET['id'])) {
-  $whereClause = "";
+  $whereClause = " GROUP BY products.id";
 } else if (!is_numeric($_GET['id'])) {
   throw new Exception("id needs to be a number");
 } else {
-  $whereClause = "WHERE products.`id`=" . $_GET['id'];
+  $whereClause = " WHERE products.id=" . $_GET['id'];
 }
+
+
 
 // $query = "SELECT * FROM `products`" . $whereClause;
 
@@ -21,38 +33,30 @@ if (empty($_GET['id'])) {
 
 //task-list: 2
 // $query = "SELECT products.id, products.name, products.shortDescription, products.price, images.url
-// FROM products 
+// FROM products
 // JOIN images
-// ON products.`id` = images.`productId`" . $whereClause ;
+// ON products.id = images.productId" . $whereClause ;
 
 //task-list: 3
 $query = "SELECT products.id, products.name, products.price, products.shortDescription,
-GROUP_CONCAT(images.url) AS images
+GROUP_CONCAT(DISTINCT images.url ORDER BY images.url ASC) AS images
 FROM products
 JOIN images
-ON products.id = images.productId ". $whereClause . " GROUP BY products.id";
+ON products.id = images.productId". $whereClause;
 
-
-//task-list:3
-// $query = "SELECT products.id, products.name, products.price, products.shortDescription,
-// GROUP_CONCAT(images.url) AS images
-// FROM products
-// JOIN images
-// ON products.id = images.productId $whereClause 
-// GROUP BY products.id";
 
 
 $result = mysqli_query($conn, $query);
 
  if (!$result) {
-   throw new Exception(mysqli_error());
+   throw new Exception(mysqli_error($conn));
  }
  else if(!mysqli_num_rows($result) && !empty($_GET['id']) ){
     throw new Exception('Invalid ID: ' . $_GET['id']);
  }
- 
 
-//after modifying based on task-list: 3 --> specifically add explode() to split the url by 
+
+//after modifying based on task-list: 3 --> specifically add explode() to split the url by
 $output = [];
 while($row = mysqli_fetch_assoc($result)) {
   $row['images'] = explode(",", $row['images']);
@@ -62,6 +66,3 @@ while($row = mysqli_fetch_assoc($result)) {
 print(json_encode($output));
 
 ?>
-
-
-

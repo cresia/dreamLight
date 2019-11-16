@@ -9,17 +9,22 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cart: [],
       view: {
         name: 'catalog',
         params: {}
+
       },
+      cart: [],
+      count: 0,
       cartQuantity: 0
     };
     this.setView = this.setView.bind(this);
     this.getCartItemQuantity = this.getCartItemQuantity.bind(this);
     this.addToCart = this.addToCart.bind(this);
     this.placeOrder = this.placeOrder.bind(this);
+    this.removeItems = this.removeItems.bind(this);
+    this.deleteCartItems = this.deleteCartItems.bind(this);
+
   }
 
   setView(name, id) {
@@ -33,6 +38,77 @@ export default class App extends React.Component {
 
   componentDidMount() {
     this.getCartItems();
+  }
+
+  incrementItem() {
+    let currentCount = this.state.count;
+    let newCount = ++currentCount;
+    this.setState({ count: newCount });
+  }
+
+  decrementItem() {
+    let currentCount = this.state.count;
+    let newCount = --currentCount;
+    if (currentCount >= 1) {
+      this.setState({ count: newCount });
+    }
+  }
+
+  updateCart() {
+    let item = this.item;
+    let newCount = this.state.count;
+    this.updateCartItems(item, newCount);
+    // this.getCartItems();
+  }
+
+  updateCartItems(productId, quantity) {
+    const req = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        id: parseInt(productId),
+        count: quantity
+      })
+    };
+
+    fetch('/api/cart_update.php', req);
+    // .then(res => res.json())
+    // .then(countItem => {
+    //   const allItems = this.state.cart.concat(countItem);
+    //   this.setState({ cart: allItems });
+    // })
+    // .then(this.getCartItems);
+    this.getCartItems();
+  }
+
+  deleteCartItems(productId) {
+    const req = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        id: productId
+      })
+    };
+
+    fetch('/api/cart_delete.php', req)
+      .then(res => res.json());
+    // .catch(err => {
+
+    // });
+    // .then(res => res.json())
+    // .then(countItem => {
+    //   const allItems = this.state.cart.concat(countItem);
+    //   this.setState({ cart: allItems });
+    // })
+    // .then(this.getCartItems);
+
+    // this.getCartItems();
+  }
+
+  removeItems(productId) {
+    this.deleteCartItems(productId);
+    this.getCartItems();
+    this.setView('cart', '');
   }
 
   getCartItemQuantity(cart) {
@@ -54,6 +130,9 @@ export default class App extends React.Component {
       .then(cart => {
         this.setState({ cart }, () => this.getCartItemQuantity(cart));
       });
+    // .catch(error => {
+    //   // console.error('delete error: ', error);
+    // });
     // console.log('hello');
   }
 
@@ -68,14 +147,15 @@ export default class App extends React.Component {
       })
     };
 
-    fetch('/api/cart.php', req)
-      .then(res => res.json())
-      .then(countItem => {
-        const allItems = this.state.cart.concat(countItem);
-        this.setState({ cart: allItems });
-      })
-      .then(() => this.getCartItems());
-
+    fetch('/api/cart.php', req);
+    // .then(res => res.json())
+    // .then(countItem => {
+    //   const allItems = this.state.cart.concat(countItem);
+    //   this.setState({ cart: allItems });
+    // })
+    // .then(this.getCartItems);
+    // .then(res =>{this.getCartItemns();});
+    this.getCartItems();
     // console.log('hellooo');
   }
 
@@ -103,7 +183,7 @@ export default class App extends React.Component {
     if (this.state.view.name === 'catalog') {
       return (
         <div>
-          <Header text="Wicked Sales" setViewItem = {this.setView} cartItemCount = {this.state.cart.length}/>
+          <Header text="Wicked Sales" setViewItem = {this.setView} cartItemCount = {this.state.cartQuantity}/>
           <ProductList setViewItem= {this.setView} />
         </div>
       );
@@ -111,21 +191,22 @@ export default class App extends React.Component {
       return (
         // <div onClick= {() => this.props.setViewItem('catalog', {})}>
         <div>
-          <Header text="Wicked Sales" setViewItem = {this.setView} cartItemCount = {this.state.cart.length} />
+          <Header text="Wicked Sales" setViewItem = {this.setView} cartItemCount = {this.state.cartQuantity} />
           <ProductDetails setViewItem= {this.setView} viewParams= {this.state.view.params} cartItem = {this.addToCart}/>
         </div>
       );
     } else if (this.state.view.name === 'cart') {
       return (
         <div>
-          <Header text="Wicked Sales" setViewItem = {this.setView} cartItemCount = {this.state.cart.length} />
-          <CartSummary allItems= {this.state.cart} setViewItem = {this.setView} cartQuantity={this.state.cartQuantity}/>
+          <Header text="Wicked Sales" setViewItem = {this.setView} cartItemCount = {this.state.cartQuantity} />
+          <CartSummary allItems= {this.state.cart} setViewItem = {this.setView} cartQuantity={this.state.cartQuantity} deleteOneItem = {this.removeItems} />
         </div>
       );
     } else if (this.state.view.name === 'checkout') {
       return (
         <div>
-          <Header text="Wicked Sales" setViewItem = {this.setView} cartItemCount = {this.state.cart.length} />
+          {/* <Header text="Wicked Sales" setViewItem = {this.setView} cartItemCount = {this.state.cart.length} /> */}
+          <Header text="Wicked Sales" setViewItem={this.setView} cartItemCount={this.state.cartQuantity} />
           <CheckoutForm userPaymentInfo = {this.placeOrder} setViewItem = {this.setView} allItems= {this.state.cart} />
         </div>
       );

@@ -2,14 +2,18 @@ import React from 'react';
 import CartSummaryItem from './cartSummaryItem.jsx';
 
 function getCartTotal(cartItems) {
+  // console.log("cart items ",cartItems);
   var total = 0;
   for (var i = 0; i < cartItems.length; i++) {
-    total += cartItems[i].price;
+    total += parseFloat((cartItems[i].price) * (cartItems[i].count));
+
+    // total += parseFloat(cartItems[i].price);
   }
   return total;
 }
 
 function CartSummary(props) {
+
   if (props.allItems.length === 0) {
     return <div>
       <button className= "btn btn-link emptyCatalogLink" onClick= {() => props.setViewItem('catalog', {})}>
@@ -24,16 +28,18 @@ function CartSummary(props) {
       </div>
 
     </div>;
-
   }
 
   const items = props.allItems.map((item, index) => {
+
     return (
       <CartSummaryItem key={index}
         image= {item.image}
         name = {item.name}
         price = {item.price}
-        shortDescription= {item.shortDescription}/>
+        shortDescription= {item.shortDescription}
+        deleteOneItem = {props.deleteOneItem}
+      />
     );
   });
 
@@ -45,16 +51,23 @@ function CartSummary(props) {
         {'<'}  Back to Catalog
       </button>
 
-      <h1 className= "myCartTitle mt-3 mb-5 ml-2">My Cart</h1>
+      <div className="row">
+
+        <div className="col">
+          <h1 className="myCartTitle mt-3 mb-5 ml-2">My Cart</h1>
+        </div>
+
+        <div className="col">
+          <p className="itemTotal mt-3 mb-5 ">Item Total ${(total / 100).toFixed(2)}</p>
+        </div>
+
+      </div>
 
       <div className= "cardSpaceItem">
         {items}
       </div>
 
       <div className="row">
-        <div className="col-md-5">
-          <p className="itemTotal">Item Total ${(total / 100).toFixed(2)}</p>
-        </div>
 
         <div className="col-md-5 "> <button onClick={() => { props.setViewItem('checkout', {}); } } type="button" className="btn btn-outline-dark checkOutButton" >Checkout</button>
         </div>

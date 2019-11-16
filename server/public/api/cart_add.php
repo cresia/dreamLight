@@ -121,7 +121,7 @@ if($cartID == false){
 //                 ON DUPLICATE KEY UPDATE `count` = `count` + {$count}";
 
 $insertCartItems = "INSERT INTO `cartItems` SET `count`=$count, `productID`=$id, `price`=$price,
- `cartID`= $cartID ON DUPLICATE KEY UPDATE `count`=`count`+ {$count}";
+                    `cartID`= $cartID ON DUPLICATE KEY UPDATE `count`=`count`+ {$count}";
 
 
 $insertCartItemsResult = mysqli_query($conn, $insertCartItems);
@@ -148,6 +148,5 @@ $resultCommit = mysqli_query($conn, "COMMIT");
 if(!$resultCommit){
   throw new Exception("result failed");
 }
-
-
+print("connection is success to add items to cart");
 ?>

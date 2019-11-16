@@ -1,5 +1,5 @@
 <?php
-//GET -- send the info from database to the website 
+//GET -- send the info from database to the website
 require_once('functions.php');
 require_once('cart.php');
 set_exception_handler("error_handler");
@@ -23,13 +23,11 @@ if(empty($_SESSION['cartId'])){
   print(json_encode([]));
   exit();
 }
-else{
-  // Set the $cartId variable to the SESSION cart_id. To be safe, we probably should intval it, too
-  $cartID = intval($_SESSION['cartId']);
+// Set the $cartId variable to the SESSION cart_id. To be safe, we probably should intval it, too
+$cartID = intval($_SESSION['cartId']);
 
-  // print("hello");
-  // var_dump("there is an id",$cartID);
-}
+// print("hello");
+// var_dump("there is an id",$cartID);
 
 
 // var_dump("cart id2");
@@ -41,13 +39,17 @@ else{
       // You’ll need a subquery to get the first image from images table
       // You’ll need to only get the cart where the cart ID is the one you are looking for
 
-// $query = "SELECT cartItems.count, products.id, products.name, products.price, products.image, products.shortDescription FROM `cartItems` 
-//           JOIN `products` ON cartItems.productID = products.id";
+$query = "SELECT cartItems.count, products.id, products.name, products.price, products.image, products.shortDescription FROM `cartItems`
+          JOIN `products` ON cartItems.productID = products.id";
 
-$query = "SELECT cartItems.price, cartItems.count, products.name, products.image, products.id, cartItems.cartID 
-        FROM `cartItems` 
-        INNER JOIN `products` ON cartItems.productID = products.id
-        WHERE cartItems.cartID = {$cartID}";
+
+// var_dump("the query is", $query);
+
+// $query = "SELECT products.id, cartItems.count, cartItems.cartID, products.name,
+//           products.price, products.shortDescription, (SELECT images.url
+//           FROM `images` WHERE images.productId = productId ORDER BY images.productId ASC LIMIT 1) as image
+//           FROM `cartItems` JOIN `products` ON products.id = cartItems.productID ";
+
 
 // Send the query to mysql and get the result
 $result = mysqli_query($conn, $query);
@@ -55,7 +57,7 @@ $result = mysqli_query($conn, $query);
 // var_dump("result from get: ", $result);
 
 if(!$result){
-  throw new Exception("query error: " . mysqli_error($conn));
+  throw new Exception("query error: ");
 };
 
 // var_dump("hello3");
