@@ -42,9 +42,10 @@ export default class CheckoutForm extends React.Component {
 
   getCartTotal() {
     var cartTotalItem = this.props.allItems;
+    // console.log(cartTotalItem)
     var total = 0;
     for (var i = 0; i < cartTotalItem.length; i++) {
-      total += parseFloat(cartTotalItem[i].price);
+      total += parseFloat((cartTotalItem[i].price) * (cartTotalItem[i].count));
     }
     return total;
   }
@@ -80,7 +81,7 @@ export default class CheckoutForm extends React.Component {
             </button>
           </div>
           <div className="col">
-            <button type="submit" className="btn btn-dark placeOrderButton ">Place Order</button>
+            <button type="submit" className="btn btn-dark placeOrderButton">Place Order</button>
 
           </div>
         </div>
