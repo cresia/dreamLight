@@ -1,6 +1,5 @@
 <?php
 
-
 define("INTERNAL", true);
 require_once('./functions.php');
 set_error_handler('error_handler');
@@ -20,6 +19,11 @@ switch ($method) {
     case "GET":
         require_once('get_cart.php');
         break;
+    case "DELETE":
+        require_once('cart_delete.php');
+    case "PUT":
+        require_once('cart_update.php');
+
 }
 
 

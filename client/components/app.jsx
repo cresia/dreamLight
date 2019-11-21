@@ -15,7 +15,7 @@ export default class App extends React.Component {
 
       },
       cart: [],
-      count: 0,
+      // count: 0, // this is for the update quantity
       cartQuantity: 0
     };
     this.setView = this.setView.bind(this);
@@ -24,6 +24,12 @@ export default class App extends React.Component {
     this.placeOrder = this.placeOrder.bind(this);
     this.removeItems = this.removeItems.bind(this);
     this.deleteCartItems = this.deleteCartItems.bind(this);
+    this.getCartItems = this.getCartItems.bind(this);
+
+    this.updateCartItems = this.updateCartItems.bind(this);
+    this.updateCart = this.updateCart.bind(this);
+    this.incrementItem = this.incrementItem.bind(this);
+    this.decrementItem = this.decrementItem.bind(this);
 
   }
 
@@ -40,100 +46,94 @@ export default class App extends React.Component {
     this.getCartItems();
   }
 
-  incrementItem() {
-    let currentCount = this.state.count;
-    let newCount = ++currentCount;
-    this.setState({ count: newCount });
-  }
-
-  decrementItem() {
-    let currentCount = this.state.count;
-    let newCount = --currentCount;
-    if (currentCount >= 1) {
-      this.setState({ count: newCount });
-    }
-  }
-
-  updateCart() {
-    let item = this.item;
-    let newCount = this.state.count;
-    this.updateCartItems(item, newCount);
-    // this.getCartItems();
-  }
-
   updateCartItems(productId, quantity) {
     const req = {
-      method: 'POST',
+      method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         id: parseInt(productId),
-        count: quantity
+        count: parseInt(quantity)
       })
     };
 
-    fetch('/api/cart_update.php', req);
+    // this.incrementItem();
+    // this.decrementItem();
+
+    fetch('/api/cart.php', req)
     // .then(res => res.json())
     // .then(countItem => {
     //   const allItems = this.state.cart.concat(countItem);
     //   this.setState({ cart: allItems });
     // })
-    // .then(this.getCartItems);
-    this.getCartItems();
+      .then(this.getCartItems);
+    // this.getCartItems();
+  }
+
+  updateCart(id, quantity) {
+    // let item = this.state.view.params.id;
+    // let newCount = this.state.cartQuantity;
+    this.updateCartItems(id, quantity);
+
+  }
+
+  incrementItem(id, quantity) {
+    // let currentCount = this.state.cartQuantity;
+    // let newCount = ++currentCount;
+    // this.setState({ cartQuantity: newCount });
+    this.updateCart(id, quantity);
+  }
+
+  decrementItem(id, quantity) {
+    // let currentCount = this.state.cartQuantity;
+    // let newCount = --currentCount;
+    if (this.state.cartQuantity >= 1) {
+      this.updateCart(id, quantity);
+    }
+
   }
 
   deleteCartItems(productId) {
     const req = {
-      method: 'POST',
+      method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         id: parseInt(productId)
       })
     };
 
-    fetch('/api/cart_delete.php', req)
-      .then(res => res.json());
-    // .catch(err => {
-
-    // });
+    fetch('/api/cart.php', req)
     // .then(res => res.json())
     // .then(countItem => {
     //   const allItems = this.state.cart.concat(countItem);
     //   this.setState({ cart: allItems });
     // })
-    // .then(this.getCartItems);
+      .then(this.getCartItems);
 
-    // this.getCartItems();
   }
 
   removeItems(productId) {
     this.deleteCartItems(productId);
-    this.getCartItems();
-    this.setView('cart', '');
+    // this.getCartItems();
+    // this.setViewItem('cart', '');
   }
 
-  getCartItemQuantity(cart) {
+  getCartItemQuantity(cart) { // this is to retrieve an item to be added to the cart
     // console.log('total cart', cart);
     let cartQuantity = 0;
-    if (cart.length > 0) {
-      for (let i = 0; i < cart.length; i++) {
-        cartQuantity += parseInt(cart[i].count);
-      }
-      this.setState({ cartQuantity });
+    // if (cart.length > 0) {
+    for (let i = 0; i < cart.length; i++) {
+      cartQuantity += parseInt(cart[i].count);
     }
+    this.setState({ cartQuantity });
+    // };
   }
 
-  getCartItems() {
+  getCartItems() { // this is the one that retrieve all the total items after being added from getCat
     fetch(`/api/cart.php`)
       .then(res => res.json())
-      // .then(res => console.log('res', res))
-      // .then(response => this.setState({ cart: response }));
       .then(cart => {
         this.setState({ cart }, () => this.getCartItemQuantity(cart));
       });
-    // .catch(error => {
-    //   // console.error('delete error: ', error);
-    // });
-    // console.log('hello');
   }
 
   addToCart(productId, quantity) {
@@ -146,17 +146,8 @@ export default class App extends React.Component {
         count: quantity
       })
     };
-
-    fetch('/api/cart.php', req);
-    // .then(res => res.json())
-    // .then(countItem => {
-    //   const allItems = this.state.cart.concat(countItem);
-    //   this.setState({ cart: allItems });
-    // })
-    // .then(this.getCartItems);
-    // .then(res =>{this.getCartItemns();});
-    this.getCartItems();
-    // console.log('hellooo');
+    fetch('/api/cart.php', req)
+      .then(res => { this.getCartItems(); });
   }
 
   placeOrder(userOrderInfo) {
@@ -199,7 +190,7 @@ export default class App extends React.Component {
       return (
         <div>
           <Header text="Wicked Sales" setViewItem = {this.setView} cartItemCount = {this.state.cartQuantity} />
-          <CartSummary allItems= {this.state.cart} setViewItem = {this.setView} cartQuantity={this.state.cartQuantity} deleteOneItem = {this.removeItems} />
+          <CartSummary allItems= {this.state.cart} setViewItem = {this.setView} cartQuantity={this.state.cartQuantity} deleteOneItem = {this.removeItems} incItem = {this.incrementItem} decItem = {this.decrementItem} />
         </div>
       );
     } else if (this.state.view.name === 'checkout') {

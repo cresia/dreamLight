@@ -13,7 +13,7 @@
 
 require_once('functions.php');
 
-if(!INTERNAL){
+if(!defined("INTERNAL")){
   print('no direct calls');
   exit();
 }

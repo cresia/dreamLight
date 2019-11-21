@@ -4,9 +4,19 @@ function CartSummaryItem(props) {
   // console.log('the props are: ', props);
 
   function handleClick() {
-    props.deleteOneItem(props.cartItemId);
+    props.deleteItem(props.idPropCartItem);
+    // props.setViewItem('cart', '');
 
     // console.log("cartItemId",props.cartItemId);
+  }
+
+  function handleIncItem() {
+    props.incCartItem(props.idPropCartItem, parseInt(props.quantity) + 1);
+
+  }
+
+  function handleDecItem() {
+    props.decCartItem(props.idPropCartItem, parseInt(props.quantity) - 1);
 
   }
 
@@ -23,14 +33,14 @@ function CartSummaryItem(props) {
         </div>
 
         <div className="col">
-          <p>Quantity:</p>
+          <p>Quantity: {props.quantity}</p>
 
           <div className="col">
-            <i className="fas fa-plus-square"></i>
+            <i onClick={handleIncItem} className="fas fa-plus-square"></i>
           </div>
 
           <div className="col">
-            <i className="fas fa-minus-square"></i>
+            <i onClick={handleDecItem} className="fas fa-minus-square"></i>
           </div>
         </div>
 

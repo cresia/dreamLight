@@ -38,7 +38,14 @@ function CartSummary(props) {
         name = {item.name}
         price = {item.price}
         shortDescription= {item.shortDescription}
-        deleteOneItem = {props.deleteOneItem}
+        quantity ={item.count}
+
+        deleteItem = {props.deleteOneItem}
+        idPropCartItem={item.id}
+
+        incCartItem = {props.incItem }
+        decCartItem = {props.decItem}
+
       />
     );
   });

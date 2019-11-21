@@ -1,30 +1,29 @@
 <?php
 
-require_once('functions.php');
-// set_exception_handler("error_handler");
-// startUp();
-// require_once('db_connection.php');
+if (!defined("INTERNAL")) {
+  print('no direct calls');
+  exit();
+}
 
 $data = getBodyData();
 
 $id = intval($data['id']);
 
-var_dump("hello");
-// var_dump("the id is", $id);
 
 if($id <= 0){
   throw new Exception("Error, Invalid id " . $id);
 }
 
-
-
 $queryDelete = "DELETE FROM `cartItems` WHERE `productID` = $id";
-
 
 $deleteResult = mysqli_query($conn, $queryDelete);
 
 if(!$deleteResult){
-  throw new Exception("error, can't delete the items" . $deleteResult);
+  throw new Exception("error, can't delete the items" . mysqli_error($conn));
 }
+
+print(json_encode([
+  "success" => true
+]));
 
 ?>

@@ -5,7 +5,7 @@ require_once('cart.php');
 set_exception_handler("error_handler");
 
 // Add our INTERNAL check like in cart_add
-if(!INTERNAL){
+if(!defined("INTERNAL")){
   print('no direct calls');
   exit();
 }
@@ -64,12 +64,13 @@ if(!$result){
 
 // Retrieve the data you got from the query and print it out. If there is nothing there, make sure it prints out an empty array
 $data = [];
+
 while($row = mysqli_fetch_assoc($result)){
   $data[] = $row;
 }
 
 if($data === []){
-  print("empty array: []");
+  print(json_encode([]));
   exit();
 }else{
   print(json_encode($data));
