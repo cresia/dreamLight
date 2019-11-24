@@ -4,6 +4,7 @@ import ProductList from './productList.jsx';
 import ProductDetails from './ProductDetails.jsx';
 import CartSummary from './CartSummary.jsx';
 import CheckoutForm from './checkoutForm.jsx';
+import Confirmation from './confirmation.jsx';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -15,7 +16,6 @@ export default class App extends React.Component {
 
       },
       cart: [],
-      // count: 0, // this is for the update quantity
       cartQuantity: 0
     };
     this.setView = this.setView.bind(this);
@@ -125,7 +125,7 @@ export default class App extends React.Component {
       cartQuantity += parseInt(cart[i].count);
     }
     this.setState({ cartQuantity });
-    // };
+
   }
 
   getCartItems() { // this is the one that retrieve all the total items after being added from getCat
@@ -198,8 +198,19 @@ export default class App extends React.Component {
         <div>
           {/* <Header text="Wicked Sales" setViewItem = {this.setView} cartItemCount = {this.state.cart.length} /> */}
           <Header text="Wicked Sales" setViewItem={this.setView} cartItemCount={this.state.cartQuantity} />
-          <CheckoutForm userPaymentInfo = {this.placeOrder} setViewItem = {this.setView} allItems= {this.state.cart} />
+          <CheckoutForm userPaymentInfo={this.placeOrder} setViewItem={this.setView} allItems={this.state.cart} />
         </div>
+      );
+    } else if (this.state.view.name === 'confirmation') {
+      return (
+
+        <div>
+          <Header text="Wicked Sales" setViewItem={this.setView} cartItemCount={this.state.cartQuantity} />
+
+          <Confirmation setViewItem={this.setView}/>
+
+        </div>
+
       );
     }
   }
