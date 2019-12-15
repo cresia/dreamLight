@@ -3,20 +3,22 @@ import Header from './header.jsx';
 import ProductList from './productList.jsx';
 import ProductDetails from './ProductDetails.jsx';
 import CartSummary from './CartSummary.jsx';
-import CheckoutForm from './checkoutForm.jsx';
-import Confirmation from './confirmation.jsx';
+import Checkout from './checkout.jsx';
+import Home from './home.jsx';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       view: {
-        name: 'catalog',
+        name: 'home',
         params: {}
 
       },
+      // shopperInfoReceipt : [],
+      // productReceipt:[],
       cart: [],
-      cartQuantity: 0
+      cartQuantity: 1
     };
     this.setView = this.setView.bind(this);
     this.getCartItemQuantity = this.getCartItemQuantity.bind(this);
@@ -56,9 +58,6 @@ export default class App extends React.Component {
       })
     };
 
-    // this.incrementItem();
-    // this.decrementItem();
-
     fetch('/api/cart.php', req)
     // .then(res => res.json())
     // .then(countItem => {
@@ -70,26 +69,17 @@ export default class App extends React.Component {
   }
 
   updateCart(id, quantity) {
-    // let item = this.state.view.params.id;
-    // let newCount = this.state.cartQuantity;
     this.updateCartItems(id, quantity);
-
   }
 
   incrementItem(id, quantity) {
-    // let currentCount = this.state.cartQuantity;
-    // let newCount = ++currentCount;
-    // this.setState({ cartQuantity: newCount });
     this.updateCart(id, quantity);
   }
 
   decrementItem(id, quantity) {
-    // let currentCount = this.state.cartQuantity;
-    // let newCount = --currentCount;
-    if (this.state.cartQuantity >= 1) {
+    if (quantity >= 1) {
       this.updateCart(id, quantity);
     }
-
   }
 
   deleteCartItems(productId) {
@@ -113,19 +103,15 @@ export default class App extends React.Component {
 
   removeItems(productId) {
     this.deleteCartItems(productId);
-    // this.getCartItems();
-    // this.setViewItem('cart', '');
   }
 
   getCartItemQuantity(cart) { // this is to retrieve an item to be added to the cart
     // console.log('total cart', cart);
     let cartQuantity = 0;
-    // if (cart.length > 0) {
     for (let i = 0; i < cart.length; i++) {
       cartQuantity += parseInt(cart[i].count);
     }
     this.setState({ cartQuantity });
-
   }
 
   getCartItems() { // this is the one that retrieve all the total items after being added from getCat
@@ -137,7 +123,6 @@ export default class App extends React.Component {
   }
 
   addToCart(productId, quantity) {
-    // debugger;
     const req = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -158,15 +143,11 @@ export default class App extends React.Component {
     };
 
     fetch('/api/orders.php', req)
-      .then(res => res.json())
       .then(orderItem => {
-        this.setState({ cart: [] });
-        this.setState({ view:
-          {
-            name: 'catalog',
-            params: {} }
-        }
-        );
+        this.setState({
+          cart: [],
+          cartQuantity: 0
+        });
       });
   }
 
@@ -174,7 +155,7 @@ export default class App extends React.Component {
     if (this.state.view.name === 'catalog') {
       return (
         <div>
-          <Header text="Wicked Sales" setViewItem = {this.setView} cartItemCount = {this.state.cartQuantity}/>
+          <Header text="DreamLight" setViewItem = {this.setView} cartItemCount = {this.state.cartQuantity}/>
           <ProductList setViewItem= {this.setView} />
         </div>
       );
@@ -183,7 +164,7 @@ export default class App extends React.Component {
         // <div onClick= {() => this.props.setViewItem('catalog', {})}>
         <div>
           <Header text="Wicked Sales" setViewItem = {this.setView} cartItemCount = {this.state.cartQuantity} />
-          <ProductDetails setViewItem= {this.setView} viewParams= {this.state.view.params} cartItem = {this.addToCart}/>
+          <ProductDetails setViewItem= {this.setView} viewParams= {this.state.view.params} cartItem = {this.addToCart} resetQuantity = {this.placeOrder} />
         </div>
       );
     } else if (this.state.view.name === 'cart') {
@@ -196,22 +177,17 @@ export default class App extends React.Component {
     } else if (this.state.view.name === 'checkout') {
       return (
         <div>
-          {/* <Header text="Wicked Sales" setViewItem = {this.setView} cartItemCount = {this.state.cart.length} /> */}
           <Header text="Wicked Sales" setViewItem={this.setView} cartItemCount={this.state.cartQuantity} />
-          <CheckoutForm userPaymentInfo={this.placeOrder} setViewItem={this.setView} allItems={this.state.cart} />
+          <Checkout userPaymentInfo = {this.placeOrder} setViewItem={this.setView} allItems={this.state.cart} />
         </div>
       );
-    } else if (this.state.view.name === 'confirmation') {
+    } else if (this.state.view.name === 'home') {
       return (
-
         <div>
-          <Header text="Wicked Sales" setViewItem={this.setView} cartItemCount={this.state.cartQuantity} />
-
-          <Confirmation setViewItem={this.setView}/>
-
+          <Home setViewItem={this.setView}/>
         </div>
-
       );
     }
+
   }
 }

@@ -38,7 +38,7 @@ if (empty($_GET['id'])) {
 // ON products.id = images.productId" . $whereClause ;
 
 //task-list: 3
-$query = "SELECT products.id, products.name, products.price, products.shortDescription,
+$query = "SELECT products.id, products.name, products.price, products.shortDescription, products.longDescription,
 GROUP_CONCAT(DISTINCT images.url ORDER BY images.url ASC) AS images
 FROM products
 JOIN images

@@ -1,4 +1,5 @@
 import React from 'react';
+import NightLight from './carousel.jsx';
 
 export default class ProductDetails extends React.Component {
   constructor(props) {
@@ -16,9 +17,10 @@ export default class ProductDetails extends React.Component {
 
   componentDidMount() {
     this.getProductDetails(this.props.id);
+    // this.props.resetQuantity();
   }
 
-  getProductDetails(props) {
+  getProductDetails(props) { // to retrieve the cart by id
     const setParamId = this.props.viewParams.id;
     fetch(`/api/products.php?id=` + setParamId)
       .then(res => res.json())
@@ -61,7 +63,8 @@ export default class ProductDetails extends React.Component {
           <div className="row productDes">
 
             <div className="col-12 col-md-8">
-              <img src={this.state.product[0].images[1]} className="card-img" alt="OneItem" />
+              <NightLight className="card-img-top" carouselImages={this.state.product[0].images} />
+              {/* <img src={this.state.product[0].images[1]} className="card-img" alt="OneItem" /> */}
 
             </div>
 
@@ -84,15 +87,15 @@ export default class ProductDetails extends React.Component {
 
               </div>
 
-              <p className="card-text">{this.state.product.shortDescription}</p>
+              <p className="card-text">{this.state.product[0].shortDescription}</p>
               {/* <button onClick={() => { this.props.cartItem(this.state.product); } } type="button" className="btn btn-outline-secondary mt-4" > Add to Cart</button> */}
-              <button onClick={this.addItemToCart} type="button" className="btn btn-outline-secondary mt-4" > Add to Cart</button>
+              <button onClick={this.addItemToCart} type="button" className="btn btn-outline-secondary mt-4"> Add to Cart</button>
             </div>
 
           </div>
 
           <div>
-            <p className = "card-text shortDes">{this.state.product.longDescription}</p>
+            <p className = "card-text">{this.state.product[0].longDescription}</p>
           </div>
 
         </div>

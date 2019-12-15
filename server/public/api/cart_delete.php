@@ -16,6 +16,7 @@ if($id <= 0){
 
 $queryDelete = "DELETE FROM `cartItems` WHERE `productID` = $id";
 
+
 $deleteResult = mysqli_query($conn, $queryDelete);
 
 if(!$deleteResult){

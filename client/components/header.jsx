@@ -16,6 +16,9 @@ function Header(props) {
         <div className= "itemText text-warning"> {props.cartItemCount} items
           <i onClick= {() => props.setViewItem('cart', {})} className= "fas fa-cart-plus text-warning cartIcon">
           </i>
+
+          {/* <i onClick={() => props.setViewItem('home', {})} className="headerTitle">Home</i> */}
+
         </div>
       </div>
     </nav>

@@ -13,6 +13,7 @@ function getCartTotal(cartItems) {
 }
 
 function CartSummary(props) {
+  // console.log("props from cartSummary:",props)
 
   if (props.allItems.length === 0) {
     return <div>
@@ -38,13 +39,15 @@ function CartSummary(props) {
         name = {item.name}
         price = {item.price}
         shortDescription= {item.shortDescription}
-        quantity ={item.count}
+        quantity = {item.count}
 
         deleteItem = {props.deleteOneItem}
         idPropCartItem={item.id}
 
         incCartItem = {props.incItem }
         decCartItem = {props.decItem}
+
+        onClickImage = {props.setViewItem}
 
       />
     );
@@ -65,18 +68,19 @@ function CartSummary(props) {
         </div>
 
         <div className="col">
-          <p className="itemTotal mt-3 mb-5 ">Item Total ${(total / 100).toFixed(2)}</p>
+          <p className="itemTotal mt-3 mb-5 ">Total Purchase: ${(total / 100).toFixed(2)}</p>
         </div>
 
       </div>
 
-      <div className= "cardSpaceItem">
+      {/* <div className="cardSpaceItem" onClick={() => props.setViewItem('details', {})}> */}
+      <div className="cardSpaceItem">
         {items}
       </div>
 
       <div className="row">
-
-        <div className="col-md-5 "> <button onClick={() => { props.setViewItem('checkout', {}); } } type="button" className="btn btn-outline-dark checkOutButton" >Checkout</button>
+        <div className="col-md-5">
+          <button onClick={() => props.setViewItem('checkout', {}) } type="button" className="btn btn-outline-dark checkOutButton" >Checkout</button>
         </div>
 
       </div>
