@@ -1,4 +1,8 @@
+// import React from 'react';
+// import NightLight from './carousel.jsx';
+
 import React from 'react';
+import { Button, Modal, ModalHeader, ModalBody } from 'reactstrap';
 import NightLight from './carousel.jsx';
 
 export default class ProductDetails extends React.Component {
@@ -6,13 +10,20 @@ export default class ProductDetails extends React.Component {
     super(props);
     this.state = {
       product: null,
-      quantity: 1
+      quantity: 1,
+      modal: false,
+      buttonLabel: ''
     };
     this.getProductDetails = this.getProductDetails.bind(this);
     this.incrementQuantity = this.incrementQuantity.bind(this);
     this.decrementQuantity = this.decrementQuantity.bind(this);
     this.addItemToCart = this.addItemToCart.bind(this);
+    this.toggle = this.toggle.bind(this);
+  }
 
+  toggle() {
+    this.setState({ modal: !this.state.modal });
+    setTimeout(() => { this.setState({ modal: !this.state.modal }); }, 1500);
   }
 
   componentDidMount() {
@@ -63,8 +74,7 @@ export default class ProductDetails extends React.Component {
           <div className="row productDes">
 
             <div className="col-12 col-md-8">
-              <NightLight className="card-img-top" carouselImages={this.state.product[0].images} />
-              {/* <img src={this.state.product[0].images[1]} className="card-img" alt="OneItem" /> */}
+              <NightLight className="card-img-top" carouselImages={this.state.product[0].images} alt="OneItem" />
 
             </div>
 
@@ -89,13 +99,26 @@ export default class ProductDetails extends React.Component {
 
               <p className="card-text">{this.state.product[0].shortDescription}</p>
               {/* <button onClick={() => { this.props.cartItem(this.state.product); } } type="button" className="btn btn-outline-secondary mt-4" > Add to Cart</button> */}
-              <button onClick={this.addItemToCart} type="button" className="btn btn-outline-secondary mt-4"> Add to Cart</button>
+              {/* <button onClick={this.addItemToCart} type="button" className="btn btn-outline-secondary mt-4"> Add to Cart</button> */}
+
+              <Button color="secondary" onClick={() => { this.toggle(); this.addItemToCart(); }} type="button"> {this.state.buttonLabel} Add To Cart </Button>
             </div>
 
           </div>
 
           <div>
             <p className = "card-text">{this.state.product[0].longDescription}</p>
+          </div>
+
+          <div>
+            <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.state.className}>
+              <ModalHeader toggle={this.toggle}> DreamLight! </ModalHeader>
+
+              <ModalBody>
+               This Item is being added to the Cart
+              </ModalBody>
+
+            </Modal>
           </div>
 
         </div>

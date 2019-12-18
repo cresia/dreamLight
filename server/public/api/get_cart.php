@@ -40,7 +40,8 @@ $cartID = intval($_SESSION['cartId']);
       // You’ll need to only get the cart where the cart ID is the one you are looking for
 
 $query = "SELECT cartItems.count, products.id, products.name, products.price, products.image, products.shortDescription FROM `cartItems`
-          JOIN `products` ON cartItems.productID = products.id";
+          JOIN `products` ON cartItems.productID = products.id
+          WHERE cartItems.cartID = $cartID";
 
 
 // var_dump("the query is", $query);

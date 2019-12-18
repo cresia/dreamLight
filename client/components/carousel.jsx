@@ -75,7 +75,6 @@ const NightLight = props => {
       <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
       <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
     </Carousel>
-
   );
 };
 
