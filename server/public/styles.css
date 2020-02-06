@@ -1,121 +1,2188 @@
-.logoImage{
-  width:40%;
-  height:30%;
-  margin-left:8rem;
+
+body{
+  background-image: url("images/home2.jpg");
+  max-width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
 }
 
-.headerTitle{
+#root{
+  overflow: hidden;
+}
+
+.homeBody{
+  overflow: hidden;
+}
+
+/* ------------------- landing Page ------------------ */
+.landingHeader{
+  color:rgba(43, 40, 40, 0.712);
+  font-weight: bold;
+  text-align: center;
+  margin-top:25%;
+  font-family: 'Euphoria Script', cursive;
+  font-size: 65px;
+}
+
+.enterSiteButton{
+  margin-left:41%;
+  margin-top:5%;
+  width:20%;
+}
+
+.enterSiteText{
   color:white;
-  font-size:330%;
+  font-size:20px;
+  font-weight: bold;
 }
 
+.cardDetails{
+  margin-top:2.5rem;
+}
 
-.card{
-  width:50%;
-  margin-left:5rem;
-  margin-top:2rem; 
+/* ------------------- header section ----------------- */
+/* .wrapHeader{
+  position:fixed;
+  width:100%;
+  z-index:50;
+} */
+
+.navbar{
+  /* margin-top:3rem; */
+  position:fixed;
+  width:100%;
+  z-index:50;
+  box-shadow: 0px 2px 11px #7c7474;
 
 }
 
-.card-img-top{
-  width:80%;
-  height:50%;
+#navbarTogglerDemo01 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.backToCatalog{
-  margin-top:10rem;
-}
-
-.container{
-  margin-bottom:5rem;
-}
-
-.itemDetails{
-  margin-top:1.5rem;
-}
-
-.productDes{
-  margin-top:2rem;
-}
-
-.shortDes{
-  margin-top:3rem;
+.headerIcons{
+  display:flex;
+  justify-content:space-between;
+  list-style-type:none;
 }
 
 .cartIcon{
-  margin-left: 1rem;
-  font-size:2.5rem;
-} 
+  font-size:1.8rem;
+}
+
+.homeIcon{
+  font-size:1.75rem;
+  cursor: pointer;
+}
+
+.homeIcon:hover{
+   transform: scale(1.23);
+}
+
+.catalogIcon{
+  font-size:1.75rem;
+  cursor: pointer;
+}
+
+.catalogIcon:hover{
+   transform: scale(1.23);
+}
 
 .itemText{
-  margin-left: 30rem;
+  color:#6200ff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
 
-.summaryImg{
-  height:10rem;
-  width: 10rem;
+.itemText:hover{
+  transform:scale(1.2);
+}
+
+.headerTitle{
+  font-family: 'Berkshire Swash', cursive;
+  font-weight: bold;
+  color: rgb(124, 124, 124);
+  font-size:350%;
+}
+
+.toggleSpan{
+  display: none;
+}
+
+/* --------------- carousal home images --------------- */
+.homeImages{
+  width:100%;
+  height:34rem;
+  margin-bottom:1rem;
+  margin-top:5rem;
+}
+
+/* ---------------- catalog page -------------------------- */
+.card-img-top{
+  cursor: pointer;
+}
+
+.catalogImg{
+   transition: all .3s ease-in-out;
+}
+
+.catalogImg:hover{
+  transform: scale(1.1);
+}
+
+.card-title{
+  margin-top:1rem;
+  text-align: center;
+  cursor: pointer;
+
+}
+.card-title:hover{
+  text-decoration: underline;
+  text-decoration-color:rgb(58, 3, 3);
+}
+
+
+.card-textPrice{
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Calistoga', cursive;
+  font-size:18px;
+}
+
+.card-textPrice:hover{
+  text-decoration: underline;
+  text-decoration-color:rgb(58, 3, 3);
+}
+
+.catalogRow{
+  margin-top:2%;
+  margin-bottom:1.5%;
+}
+
+/* ----------------- product details page ----------------- */
+
+.cardDetails {
+  margin-top: 11rem;
+}
+
+
+img {
+  width: 100%;
+}
+
+.marginDetails{
+  margin-left: -2rem;
+}
+
+.card-titleDetails{
+  color:black;
+  margin-left:7.6%;
+  font-size:45px;
+  font-family: 'Baloo Bhaijaan', cursive;
+}
+
+.card-titlePrice{
+  margin-left:8%;
+  font-size: 22px;
+  font-family: 'Calistoga', cursive;
+}
+
+.card-Icons{
+  margin-left:5.7%;
+  margin-top:4%;
+}
+
+.quantityProDect{
+  margin-left:0.3rem;
+  margin-top:0.3rem;
+  font-size:20px;
+}
+
+.minusPlusButton{
+  margin-top:0.3rem;
+  font-size:1.8rem;
+  cursor: pointer;
+}
+
+.minusPlusButton:active{
+  transform: translateY(4px);
+}
+
+.minusPlusButton2{
+  margin-top:0.3rem;
+  font-size:1.8rem;
+  cursor: pointer;
+}
+
+.minusPlusButton2:active{
+  transform: translateY(4px);
+}
+
+
+.addToCartButton{
+  margin-left: 15%;
+  margin-right: 3%;
+  width: 48%;
+}
+
+.backToCatalogButton{
+  margin-left: 53%;
+  margin-right: 3%;
+  width: 47%;
+  margin-top: 3%;
+}
+
+.detailTitle{
+  margin-left:8%;
+  margin-top:10%;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.longDes{
+  margin-left:8%;
+  font-size:20px;
+  font-family: 'Amatic SC', cursive;
+  margin-top:1%;
+  /* white-space: pre-line; */
+}
+
+/* --------------------------- CartSummary ------------------ */
+.sumCardBody {
+  background-color: white;
+  width: 102.5%;
+  margin-left: -1.2%;
+}
+
+.sumCardBodyFinal{
+  background-color: white;
+  width: 110.3%;
+  margin-left: -5.6%;
 
 }
 
-.container {
-    margin-bottom: 3rem;
-}
-
-.cardSpaceItem{
-  width:70rem;
-  margin-left:0.5rem;
+.myCartTitle{
+  margin-top:8.8rem;
+  margin-bottom: 2%;
+  font-family: 'Passion One', cursive;
+  font-size: 55px;
+  margin-left:2%;
 }
 
 .itemTotal{
-  font-size:1.5rem;
-  margin-left:0.4rem;
+  color: black;
+  margin-top: 9rem;
+  margin-bottom: 2%;
+  font-size: 42px;
+  margin-left: 15rem;
+  font-family: 'Rancho', cursive;
 }
 
-.noItemsText{
-  font-weight:bold;
+.card-titleCart{
+  cursor: pointer;
+  font-size:38px;
+  font-family: 'Baloo Bhaijaan', cursive;
+}
+
+/* ---------- description inside the card ---------- */
+.card-titleCart:hover{
+  color:#6200ff;
+}
+
+.card-textCartPrice{
+  font-size: 22px;
+  margin-left: 0.3rem;
+  font-family: 'Calistoga', cursive;
+}
+
+.card-textShortDes{
+  font-size: 18px;
+  margin-left: 0.3rem;
+}
+
+.quantityCartSum{
+  font-size:20px;
+}
+
+.summaryImg{
+  cursor: pointer;
+  height: 15rem;
+  width: 17rem;
+  margin-left:-4%;
+}
+
+.summaryImg:hover{
+  transform: scale(0.96);
+}
+
+.minPlusCartSum{
+  justify-content:space-between;
+  display:flex;
   font-size:2rem;
-  margin-left:40rem;
-  margin-top:10rem;
+  cursor: pointer;
+}
+
+.minPlusCartSum2{
+  justify-content:space-between;
+  display:flex;
+  font-size:2rem;
+  cursor: pointer;
+}
+
+.minPlusCartSum:active{
+  transform: translateY(4px);
+}
+
+.cartButtonsSpace{
+  margin: 102px 65px;
+}
+
+.delCartSum{
+  margin-left: 3rem;
 }
 
 .checkOutButton {
-    margin-left: 35rem;
+    margin: 24px auto;
+    width:15%;
+    margin-left:45%;
 }
 
+/* ---------------------------- Checkout ------------------------- */
 .checkOutTitle {
-  margin-top:5rem;
-  margin-left:19rem;
+  margin-top:8rem;
+  font-family: 'Passion One', cursive;
+  font-size: 55px;
+  margin-left:6%;
 }
 
 .checkoutPrice{
-  margin-left:19rem;
-  font-size:20px;
-  color:grey;
+  color: black;
+  margin-top: 8rem;
+  font-size: 42px;
+  margin-left: 29rem;
+  font-family: 'Rancho', cursive;
 }
 
 form{
-  width:50rem;
-  margin-left:19rem;
-  margin-top:1rem;
+  width: 77.73rem;
+  background-color: white;
+  opacity: 0.93;
 }
 
 .placeOrderButton{
-  margin-top:2rem;
-  margin-left:16rem;
+  margin-top:1.5rem;
+  margin-left:30rem;
+  margin-bottom:1.5rem;
 }
 
 label{
   margin-top:2rem;
+  margin-left:2rem;
+}
+
+.form-control {
+    margin-left:2rem;
+}
+
+#nameInput{
+  width:90%;
+}
+
+#addressInput{
+   width:44%;
+}
+
+#FormTextarea{
+  width:85%;
+}
+
+/* ---------------------- EmptyCart ----------------------- */
+.noItemsText{
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+  color: black;
+  margin-left: 3%;
+  margin-top: -14%;
 }
 
 .emptyCatalogLink{
-  margin-left:10rem;
+  margin-left:36rem;
+  margin-top:2rem;
+}
+
+.noItemsImg{
+  width: 78%;
+  margin: 13% auto;
+  height: 28rem;
+  display: block;
+}
+
+/* ------------------------- Confirmation --------------------------- */
+.confirmationTitle{
+  margin-top:10rem;
+  margin-bottom:30px;
+  margin-left:28%;
+  font-size: 48px;
+  font-family: 'Calistoga', cursive;
+}
+
+.thankImg{
+  width: 7%;
+  margin-left: 2%;
+}
+
+.myCartSumTitle{
+  margin-top:2rem;
+  font-family: 'Passion One', cursive;
+  font-size: 55px;
+   margin-left:1%;
+}
+
+.addressInfoSummary{
+  margin-left:4%;
+  font-size:27px;
+  margin-bottom:8%;
+  font-family: 'Delius', cursive;
+}
+
+.confirmItemTotal{
+  margin-top: 2rem;
+  margin-bottom: 2%;
+  font-size: 35px;
+  margin-left: 1rem;
+  font-family: 'Delius', cursive;
+  font-weight: bold;
+}
+
+/* ----------- inside the cards description -----------------*/
+.confirmImg{
+  height:13rem;
+  width: 15rem;
+}
+
+.confirmTitle{
+  font-size:35px;
+  font-weight: bold;
+}
+
+.confirmPrice{
+  font-size: 22px;
+  margin-left: 0.3rem;
+  font-family: 'Calistoga', cursive;
+}
+
+.confirmShortDes{
+  font-size: 18px;
+  margin-left: 0.3rem;
+}
+
+.confirmQuantity{
+  text-align:center;
+  margin-top:2.8%;
+  font-family: 'Calistoga', cursive;
+  font-size:25px;
+}
+
+.continueShop{
+  margin-left: 33rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.sumCardBodyFinal {
+    width: 111.1%;
+}
+
+
+
+/* -------------------------- iphone 6,7,8 : landscape ----------------------------*/
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+
+.landingHeader {
+    margin-top: 14%;
+}
+
+/* ------------------- Header ------------------ */
+.navbar{
+  display:none;
+}
+
+.itemText:hover{
+  transform:none;
+}
+
+.toggleSpan{
+  display: flex;
+  justify-content: space-between
+}
+
+.wrapHeader{
+  background-color: white;
+  position: fixed;
+  z-index: 50;
+  width: 100%;
+  box-shadow: 0px 2px 11px #7c7474;
+}
+
+.homeImages {
+  height: 16rem;
+  margin-top: 3rem;
+}
+
+.headerTitle {
+  font-size: 23px;
+  color:black;
+  display: block;
+  margin-bottom: 1%;
+  margin-top: 1%;
+  margin-left: 2.5%;
+}
+
+.cartIcon{
+  font-size: 125%;
+}
+
+.itemText {
+  font-size: 20px;
+  margin-top: 1.5%;
+  margin-right: 4%;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 50;
+  background-color: #00000038;
+}
+
+.menuLink {
+  padding: 8px 8px 8px 32px;
+  border-top: 2px solid purple;
+  color: white;
+  transition: 0.5s;
+  display:flex;
+  justify-content: space-between;
+
+}
+
+.sidenav {
+  height: 100%;
+  width: 57%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index:10;
+  background-color: rgb(0, 0, 0);
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav div{
+  padding: 10px 5px 10px 22px;
+  text-decoration: none;
+  font-size: 23px;
+  display: flex;
+  transition: 0.3s;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 9px;
+  font-size: 36px;
+  color: white;
+  padding:1%;
+}
+
+.iconTextMobile{
+  text-decoration: none;
+  margin-top: -2%;
+  margin-right: 70%;
+}
+
+.homeIconMobile1{
+  font-size: 22px;
+  margin-left: -1%;
+}
+
+.menuImg{
+  margin-top: 30%;
+  margin-left: 9%;
+  height: 13rem;
+  width: 67%;
+}
+
+.iconTextMobile {
+    margin-right: 75%;
+}
+
+
+/* ------------ productDetails --------------- */
+.cardDetails {
+    margin-top: 6rem;
+}
+
+.marginDetails {
+    margin-left: 0rem;
+}
+
+.card-titleDetails {
+    font-size: 41px;
+    margin-left: 9.6%;
+}
+
+.card-titlePrice {
+    margin-left: 10%;
+}
+
+.addToCartButton {
+    margin-left: 5%;
+    margin-top: 9%;
+    width: 76.8%;
+}
+
+.backToCatalogButton {
+    margin-left: 11%;
+    width: 76.2%;
+    margin-top: 5%;
+}
+
+.detailTitle {
+    margin-left: -111%;
+    margin-top: 26%;
+}
+
+.longDes {
+    margin-left: -112%;
+    margin-top: 2%;
+}
+
+.minusPlusButton:active{
+  transform: none;
+}
+
+.minusPlusButton2:active{
+  transform: none;
+}
+
+.cardImgCarousel{
+  width:109%;
+}
+
+.quantityProDect{
+  margin-left: 0.1rem;
+}
+
+/* ---------------- cartSummary -------------- */
+
+.sumCardBody{
+  width:106%;
+  margin-left:-3%;
+  height: 21rem;
+}
+
+.myCartTitle{
+  margin-top:5rem;
+  font-size:45px;
+  margin-left:1%;
+}
+
+.itemTotal{
+  margin-top:5rem;
+  margin-bottom: 4%;
+  font-size: 34px;
+  margin-left: 1.5rem;
+}
+
+.summaryImg{
+  height:17rem;
+  width:18.8rem;
+  margin-left: -11%;
+  margin-top:5%;
+}
+
+.card-titleCart{
+  margin-top:-44%;
+  margin-left: 53%;
+}
+
+.card-textCartPrice{
+  font-size: 24px;
+  margin-left: 21rem;
+  margin-top: -32.5%
+}
+
+.minPlusCartSum{
+  margin-top:-19rem;
+  margin-left: 24.5rem;
+}
+
+.minPlusCartSum:active{
+  transform: none;
+}
+
+.quantityCartSum{
+  margin-top: -19rem;
+  margin-left: 28.6rem;
+}
+
+.minPlusCartSum2{
+  margin-top: -19rem;
+  margin-left: 32rem;
+}
+
+.minPlusCartSum2:active{
+  transform: none;
+}
+
+.card-textShortDes{
+  margin-top:-21%;
+  margin-left: 53%;
+}
+
+.delCartSum{
+  margin-left: 20rem;
+  margin-top: -17rem;
+  width:35%;
+  height:2.5rem;
+}
+
+.checkOutButton {
+    width: 30%;
+    margin-left: 34%;
+}
+
+/* --------------- checkout ------------- */
+
+.checkOutTitle{
+  font-size:55px;
+  margin-top:4rem;
+}
+
+.checkoutPrice {
+    font-size: 36px;
+    margin-left: 8rem;
+    margin-top:4.3rem;
+}
+
+.form-control{
+  margin-left: 0.5rem;
+}
+
+.form-group {
+    width: 53%;
+    margin-left: 0.2%;
+}
+
+.placeOrderButton{
+  margin-top: 1.5rem;
+  margin-left:-5rem;
+  margin-bottom:1.5rem;
+}
+
+label{
+  margin-top:2rem;
+  margin-left:0.6rem;
+}
+
+#FormTextarea {
+    width: 95%;
+}
+
+#nameInput{
+  width: 96.5%;
+}
+
+#addressInput {
+  width: 64%;
+}
+
+/* -------------------- confirmation ---------------------- */
+
+.confirmationTitle {
+    margin-left: 21%;
+    font-size: 35px;
+    margin-top:5rem;
+}
+
+.addressInfoSummary{
+  font-size: 23px;
+  margin-left: 18%;
+}
+
+.myCartSumTitle{
+  margin-top:1rem;
+  font-size: 54px;
+  margin-left: 21%;
+}
+
+.confirmItemTotal{
+  margin-top:1.5rem;
+  font-size: 25px;
+  margin-left: -1.3rem;
+}
+
+.confirmTitle {
+  margin-top: -14.3rem;
+  margin-left:54%;
+  font-size: 30px;
+}
+
+.confirmImg{
+  height:14rem;
+  width:15rem;
+}
+
+.confirmShortDes{
+  font-size: 17px;
+  margin-left: 16.6rem;
+}
+
+.confirmPrice{
+  font-size: 21px;
+  margin-left: 16.6rem;
+}
+
+.confirmQuantity{
+  font-size:23px;
+  margin-left: 19.5rem;
+  margin-top:-2rem;
+}
+
+.continueShop{
+  margin-left:17rem;
+  height:3rem;
+}
+
+/* ---------------- emptyCartPage -------------------- */
+
+.noItemsImg{
+  width: 67%;
+  height: 13rem;
+  margin-top: 4rem
+}
+
+.noItemsText{
+  font-size: 24px;
+  margin-top: -5%;
+}
+
+.emptyCatalogLink {
+  margin-left: 17.1rem;
+  margin-top: 1rem;
+}
+
+}
+
+/* -------------------------- iphone 6,7,8 : portrait ----------------------------*/
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+
+.landingHeader {
+    margin-top: 17%;
+    font-size: 79px;
+}
+.enterSiteButton{
+  width:35%;
+  margin: 60px auto;
+  display: block;
+}
+.modal-content{
+  height:16rem;
+  margin-top:44%;
+}
+
+
+/*------------------ Header ----------------------- */
+
+/*
+.headerIcons {
+  width: initial;
+  justify-content: space-between;
+  margin-left: -15%;
+  /*margin: initial; ---- do not use this one when the code is commented out; initial means it is reseting to initial margin of bootstrap
+} */
+
+
+
+/* ------ this is to change the view from desktop to mobile ---- */
+.navbar{
+  display:none;
+}
+
+.itemText:hover{
+  transform:none;
+}
+
+.wrapHeader{
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  z-index:50;
+  box-shadow: 0px 2px 11px #7c7474;
+}
+
+.headerTitle {
+  font-size: 20px;
+  color: black;
+  display: block;
+  margin-bottom: 3%;
+  margin-top: 1%;
+  margin-left: 2%;
+}
+
+.cartIcon{
+  font-size: 1.5rem;
+}
+
+.itemText {
+    font-size: 1rem;
+    margin-top: 2%;
+    margin-right: 4%;
+}
+
+.toggleSpan{
+  display: flex;
+  justify-content: space-between
+}
+
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 50;
+  background-color: #00000038;
+  /* overflow: hidden; */
+}
+
+/* body .overlay{
+  overflow: hidden;
+} */
+
+
+
+/* ------- iniside slide menu bar -------------*/
+.menuLink {
+  padding: 8px 8px 8px 32px;
+  border-top: 2px solid purple;
+  color: white;
+  transition: 0.5s;
+  display:flex;
+  justify-content: space-between;
+
+}
+
+.sidenav {
+  height: 100%;
+  width: 71%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index:10;
+  background-color: rgb(0, 0, 0);
+  /* overflow-x: hidden; */
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav div{
+  padding: 9px 1px 10px 18px;
+  text-decoration: none;
+  font-size: 19px;
+  display: flex;
+  transition: 0.3s;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 9px;
+  font-size: 36px;
+  color: white;
+  padding:1%;
+}
+
+.iconTextMobile{
+  text-decoration: none;
+  margin-top: -2%;
+  margin-right: 70%;
+}
+
+.homeIconMobile1{
+  font-size: 22px;
+  margin-left: -1%;
+}
+
+.menuImg{
+  margin-top: 30%;
+  margin-left: 9%;
+  height: 13rem;
+  width: 67%;
+}
+
+/*---------------- Catalog Page ---------------------- */
+.homeImages {
+  height: 12rem;
+  margin-top: 2rem;
+}
+
+.card-title {
+  font-size: 29px;
+}
+
+.card-textPrice {
+  font-size: 22px;
+}
+
+/* ----------------------- product details --------------------- */
+.cardDetails {
+    margin-top: 6rem;
+}
+
+.marginDetails {
+    margin-left: 0rem;
+}
+
+.card-titleDetails {
+    margin-left: 0%;
+    font-size: 44px;
+    margin-top: 4%;
+}
+
+.card-titlePrice {
+  margin-left: 1%;
+  margin-top:6%;
+}
+
+.card-Icons{
+  margin-left: 38%;
+  margin-top: -18%;
+}
+
+.minusPlusButton{
+  margin-left:35%;
+}
+
+.minusPlusButton:active{
+  transform: none;
+}
+
+.minusPlusButton2{
+  margin-left:24%;
+}
+
+.minusPlusButton2:active{
+  transform: none;
+}
+
+.quantityProDect{
+  margin-left: 34%;
+}
+
+.addToCartButton{
+  margin-left: -57%;
+  width:150%;
+  margin-top: 18%;
+}
+
+.backToCatalogButton{
+  margin-left:0%;
+  width:100%;
+  margin-top:5%;
+}
+
+.detailTitle {
+    margin-left: 0%;
+}
+
+.longDes{
+  margin-left: -1%;
+}
+
+
+/*---------------------- My Cart ------------------ */
+.myCartTitle{
+  margin-top: 4rem;
+  font-size: 28px;
+  margin-left: -5%;
+}
+
+.itemTotal {
+  margin-top: 4rem;
+  font-size: 23px;
+  margin-left: -1.5rem;
+  margin-bottom: 4%;
+}
+
+.summaryImg {
+  height: 18.5rem;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.sumCardBody {
+  margin-top: 2.5%;
+  height:39rem;
+  margin-left: -5%;
+  width: 111%;
+}
+
+.card-titleCart {
+    margin-top: 4%;
+    margin-left: 4.5%;
+}
+
+.card-textCartPrice {
+    margin-left: 1.3rem;
+    margin-top:6%;
+}
+
+.minPlusCartSum{
+  font-size: 1.8rem;
+  margin-top: -125%;
+  margin-left: 67%;
+}
+
+.minPlusCartSum:active{
+  transform: none;
+}
+
+.quantityCartSum{
+  margin-top: -125%;
+  margin-left: 95.5%;
+}
+
+.minPlusCartSum2{
+  font-size: 1.8rem;
+  margin-top: -125%;
+  margin-left: 119%
+}
+
+.minPlusCartSum2:active{
+  transform: none;
+}
+
+
+.card-textShortDes {
+    margin-left: 1.1rem;
+    margin-top:2%;
+}
+
+.delCartSum{
+  margin-left: -1rem;
+  width:114%;
+  margin-top: -88%;
+}
+
+.checkOutButton{
+  width: 59.5%;
+  margin-left: 20%;
+}
+
+/* ------------ empty Cart ----------- */
+.noItemsImg {
+    width: 94%;
+    height: 13rem;
+    margin-top: 26%;
+}
+
+.emptyCatalogLink{
+  margin-left: 7.5rem;
+  margin-top: 2rem;
+  width: 40%;
+  height: 2.5rem;
+}
+
+.noItemsText {
+  font-size: 1.5rem;
+}
+
+/* ---------- checkout -------------- */
+
+.checkOutTitle {
+    margin-top: 4rem;
+    font-size: 33px;
+    margin-left: 10%;
+    margin-bottom: 1.3rem;
+}
+
+.checkoutPrice{
+  margin-top: 3.8rem;
+  font-size: 26px;
+  margin-left: 2rem;
+}
+
+label{
+  margin-left:3rem;
+}
+
+#nameInput{
+  width:226%;
+  margin-bottom: 8%;
+}
+
+.colCheckout{
+  margin-left:-10%;
+}
+
+.form-group {
+    width: 40%;
+}
+
+#shipAddress{
+  margin-left:10%;
+  margin-top: 0%;
+}
+
+#FormTextarea{
+  width:226%;
+  margin-bottom: 10%;
+}
+
+#creditNumExpDate{
+  margin-left:30%;
+  width:100%;
+  margin-top: -1%;
+}
+
+form {
+  width: 24rem;
+  margin-top:-0.5rem;
+}
+
+.inputForm{
+  width:29%;
+}
+
+#firstName{
+  margin-left:21%;
+}
+
+#lastName{
+  width: 100%;
+  margin: 10px 2.1rem;
+}
+
+#addressInput {
+  width: 226%;
+  margin-left: 9%;
+  margin-bottom: 10%;
+}
+
+.inputSpaceCard{
+  margin-bottom: 9%;
+}
+
+#cvvStyle{
+  margin-top: 10%;
+  margin-left: 30%;
+}
+
+.placeOrderButton {
+  margin-left: 8rem;
+  margin-bottom: 2rem;
+  width: 50%;
   margin-top:1rem;
 }
 
-.emptyCartIcon{
-  margin-left:38.5rem;
-  margin-top:3rem;
-  font-size:10rem;
+/*------------------------ confirmation -----------------------*/
+.confirmationTitle {
+    margin-left: 6%;
+    font-size: 30px;
+    margin-top: 4.5rem;
 }
 
+.thankImg{
+  width:13%;
+  margin: 0 auto;
+  display:block;
+}
+
+.myCartSumTitle{
+  margin-top:-1rem;
+  font-size: 44px;
+  margin-left: 7%;
+}
+
+.addressInfoSummary{
+  margin-left:16%;
+  font-size: 18.7px;
+  width:100%;
+}
+
+.confirmItemTotal{
+  margin-top:10rem;
+  margin-bottom: 9%;
+  font-size:25px;
+  margin-left:-10.8rem;
+}
+
+.confirmImg{
+  height: 16rem;
+  width: 17rem;
+}
+
+.sumCardBodyFinal{
+  width:100%;
+  margin-left: 0%;
+  margin-bottom: 2%;
+}
+
+.continueShop {
+    font-size: 17px;
+    display: block;
+    margin: 6% auto;
+}
+
+}
+
+/* --------------------------- iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+
+.landingHeader{
+  margin-top: 17%;
+  font-size: 99px;
+}
+
+.enterSiteButton{
+  width: 23%;
+  display: block;
+  margin: 68px auto;
+  height: 4.3rem;
+}
+
+.enterSiteText{
+  font-size: 31px;
+}
+
+/* -------------- catalog page -------------------- */
+.navbar{
+  display:none;
+}
+
+.toggleSpan{
+  /* display: unset; */
+  display: flex;
+  justify-content: space-between
+}
+
+.wrapHeader{
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  z-index: 50;
+  box-shadow: 0px 2px 11px #7c7474;
+}
+
+.homeImages {
+  margin-top: 4rem;
+  height: 30rem;
+}
+
+.navbar-container {
+  flex-basis:100%;
+  margin: 0;
+  max-width: 100%;
+}
+
+.headerTitle {
+  font-size: 33px;
+  color: black;
+  display: block;
+  margin-bottom: 1%;
+  margin-top: 1.5%;
+  margin-left: 2%;
+}
+
+.cartIcon{
+  font-size: 2.1rem;
+}
+
+.itemText {
+    font-size: 1.6rem;
+    margin-top: 2%;
+    margin-right: 4%;
+}
+
+.itemText:hover{
+  transform:none;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 50;
+  background-color: #00000038;
+}
+
+.menuLink {
+  border-top: 3px solid purple;
+  color: white;
+  transition: 0.5s;
+  display:flex;
+  justify-content: space-between;
+  margin-top:2rem;
+
+}
+
+.sidenav {
+  height: 100%;
+  width: 57%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index:10;
+  background-color: rgb(0, 0, 0);
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav div{
+  padding: 24px 18px 5px 30px;
+  text-decoration: none;
+  font-size: 30px;
+  display: flex;
+  transition: 0.3s;
+  margin-bottom: 0rem;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 10px;
+  right: 9px;
+  font-size: 36px;
+  color: white;
+  padding:1%;
+}
+
+.iconTextMobile{
+  text-decoration: none;
+  margin-top: -2%;
+  margin-right: 70%;
+}
+
+.homeIconMobile1{
+  font-size: 22px;
+  margin-left: -1%;
+}
+
+.menuImg{
+  margin-top: 30%;
+  margin-left: 9%;
+  height: 13rem;
+  width: 67%;
+}
+
+.card-title {
+  font-size: 2rem;
+}
+
+.card-textPrice {
+    font-size: 26px;
+}
+
+/* ------------------- productDetails page ---------------------- */
+.cardDetails{
+  margin-top: 9rem;
+}
+
+.cardImgCarousel{
+  margin-top:1rem;
+  margin-bottom: 1rem;
+  margin-left: -0.2rem;
+}
+
+.card-titleDetails{
+  margin-top: 0.3rem;
+  font-size: 47px;
+}
+
+.card-titlePrice{
+  font-size: 25px;
+}
+
+.minusPlusButton{
+  font-size: 2.3rem;
+}
+
+.quantityProDect{
+  margin-left: -0.1rem;
+  font-size: 25px;
+}
+
+.minusPlusButton2{
+  font-size: 2.3rem;
+  margin-left: -1rem;
+}
+
+.addToCartButton{
+  margin-left: 6%;
+  margin-top: 0.3rem;
+}
+
+.backToCatalogButton{
+  margin-left: 53.4%;
+}
+
+.detailTitle{
+  margin-top: 7.5%;
+}
+
+/* --------------- cartSummary --------------------- */
+.myCartTitle{
+  margin-top:7rem;
+  margin-bottom: 3%;
+  margin-left: 4%;
+}
+
+.itemTotal{
+  margin-top:7rem;
+  margin-left: 8rem;
+}
+
+.sumCardBody {
+  width: 104%;
+  margin-left: -2%;
+  height:22rem;
+}
+
+.summaryImg{
+  height:16.8rem;
+  width:18.8rem;
+  margin-left: 0%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cartInfo{
+  margin-left:6rem;
+  margin-top:0.36rem;
+}
+
+.card-titleCart{
+  font-size: 43px;
+}
+
+.card-textCartPrice{
+  font-size: 25px;
+}
+
+.card-textShortDes{
+  font-size: 26px;
+}
+
+.minPlusCartSum{
+  margin-top: -16rem;
+  margin-left: 38.5rem;
+}
+
+.quantityCartSum{
+  margin-top: -16rem;
+  margin-left: 28.8rem;
+}
+
+.minPlusCartSum2{
+  margin-top: -16rem;
+  margin-left: 18.4rem;
+}
+
+.delCartSum{
+  margin-left: 9rem;
+  margin-top: -31.5rem;
+  width: 7rem;
+}
+
+.checkOutButton{
+  display: block;
+  margin: 40px auto;
+  width: 17%;
+  height: 3rem;
+}
+
+/* ------------------- checkout page ----------------- */
+.checkOutTitle {
+  margin-top: 6.5rem;
+}
+
+.checkoutPrice {
+  margin-top: 6.5rem;
+  font-size: 44px;
+  margin-left: 18rem;
+}
+
+form {
+  width: 64rem;
+  height: 36rem;
+}
+
+.form-group {
+  margin-left: -1rem;
+  margin-bottom: 0rem
+}
+
+label {
+  font-size: 1.5rem;
+}
+
+.placeOrderButton{
+  display: block;
+  margin: 5% auto;
+  width: 9rem;
+  height: 3rem;
+}
+
+/* -------------------- confirmation page ----------------------- */
+.confirmationTitle{
+  margin-left: 26%;
+  margin-top:7rem;
+}
+
+.myCartSumTitle{
+  margin-left: 33%;
+}
+
+.addressInfoSummary{
+  margin-left: 8%;
+  font-size: 30px;
+}
+
+.confirmItemTotal{
+  font-size: 38px;
+}
+
+.marginConfirm{
+  margin-left:5rem;
+}
+
+.confirmImg{
+  height: 16rem;
+  width: 19rem;
+}
+
+.confirmTitle{
+  font-size: 44px;
+}
+
+.confirmPrice{
+  font-size: 28px;
+}
+
+.confirmShortDes{
+  font-size: 25px;
+}
+
+.confirmQuantity {
+    margin-top: 12%;
+    font-size: 31px;
+}
+.continueShop {
+    display: block;
+    margin: 3% auto;
+    height: 3.5rem;
+    width: 11.5rem;
+    font-size: 110%;
+}
+
+.sumCardBodyFinal {
+    width: 111%;
+}
+
+/* --------------- emptyCart page --------------- */
+.noItemsImg {
+    margin: 12% auto;
+}
+
+.noItemsText {
+  font-size: 2.5rem;
+  margin-top: -14%;
+}
+
+.emptyCatalogLink {
+    margin-left: 27rem;
+    margin-top: 2rem;
+    height: 3rem;
+    width: 12rem;
+    font-size: 134%;
+}
+
+}
+
+/* ----------------------------------------- iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+
+/* --------------- switch from desktop to ipads view --------- */
+.navbar{
+  display:none;
+}
+
+/* ------------------------ homePage ------------------------ */
+.landingHeader{
+  margin-top: 20%;
+  font-size: 120px;
+}
+
+.enterSiteButton{
+  margin-left:36%;
+  margin-top:12%;
+  width:30%;
+  height: 4rem;
+}
+
+/* --------------- header ----------------- */
+
+.homeImages {
+    height: 22rem;
+    margin-top:4rem;
+}
+
+.toggleSpan{
+  /* display: unset; */
+  display: flex;
+  justify-content: space-between
+}
+
+.wrapHeader{
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  z-index:50;
+  box-shadow: 0px 2px 11px #7c7474;
+}
+
+.navbar-container {
+  flex-basis:100%;
+  margin: 0;
+  max-width: 100%;
+}
+
+.headerTitle {
+  font-size: 34px;
+  color: black;
+  display: block;
+  margin-bottom: 1%;
+  margin-top: 2%;
+  margin-left: 2%;
+}
+
+.menuBarImg{
+  margin-top: 2%;
+  margin-left:1.3rem;
+}
+
+.cartIcon{
+  font-size: 2.5rem;
+}
+
+.itemText {
+    font-size: 1.5rem;
+    margin-top: 3%;
+    margin-right: 4%;
+}
+
+.itemText:hover{
+  transform:none;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 50;
+  background-color: #00000038;
+}
+
+.menuLink {
+  padding: 8px 8px 8px 32px;
+  border-top: 3px solid purple;
+  color: white;
+  transition: 0.5s;
+  display:flex;
+  justify-content: space-between;
+  margin-top:3rem;
+  margin-bottom: -0.5rem;
+  margin-left: -3rem;
+
+}
+
+.sidenav {
+  height: 100%;
+  width: 62%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index:10;
+  background-color: rgb(0, 0, 0);
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav div{
+  padding: 14px 0px 0px 53px;
+  text-decoration: none;
+  font-size: 35px;
+  display: flex;
+  transition: 0.3s;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 6px;
+  right: 9px;
+  font-size: 36px;
+  color: white;
+  padding:1%;
+  font-size:53px;
+}
+
+.card-title {
+    font-size: 1.6rem;
+}
+
+.card-textPrice {
+    font-size: 21.8px;
+}
+
+/* ------------ inside sideNav menuBar ------------ */
+
+.iconTextMobile{
+  text-decoration: none;
+  margin-right: 57%;
+  margin-left: -0.5rem;
+}
+
+.homeIconMobile1{
+  font-size: 22px;
+  margin-left: 0%;
+  margin-top:0.5rem;
+}
+
+.menuImg{
+  margin-top: 30%;
+  margin-left: 9%;
+  height: 13rem;
+  width: 67%;
+}
+
+/* ------------------- productDetails ------------------*/
+.marginDetails {
+    margin-left: 0rem;
+}
+
+.cardDetails {
+    margin-top: 9rem;
+}
+
+.bodyDes{
+  margin: 1.5rem 0;
+}
+
+.cardImgCarousel {
+  width: 23rem;
+}
+
+.card-titleDetails {
+  margin-left: 12%;
+  margin-top: -0.5rem;
+  font-size: 47px;
+}
+
+.card-titlePrice {
+    margin-left: 14%;
+    font-size: 30px;
+    margin-top: 1rem;
+}
+
+.minusPlusButton{
+  font-size: 2rem;
+  margin-left: 4.5rem;
+  margin-top: 1rem;
+}
+
+.quantityProDect{
+  margin-left: 0.48rem;
+  margin-top: 1rem;
+  font-size: 22px;
+}
+
+.minusPlusButton2{
+  margin-top: 1rem;
+  margin-left: -1.9rem;
+  font-size: 2rem;
+}
+
+.addToCartButton{
+  margin-left: 7%;
+  width: 86.5%;
+  margin-top: 3rem;
+  height: 3rem;
+}
+
+.backToCatalogButton{
+  margin-left: 14%;
+  width: 84.5%;
+  height: 3rem;
+  margin-top: 6%;
+}
+
+
+.detailTitle {
+  margin-left: -109%;
+  margin-top: 22%;
+  font-size: 1.7rem;
+}
+
+.longDes {
+  margin-left: -108%;
+  font-size: 24px;
+  margin-top: 2%;
+}
+
+.card-Icons{
+  margin-left: 7.6%;
+  margin-top: 4%;
+}
+
+/* ----------------------- myCart -------------------------- */
+.myCartTitle{
+  margin-top: 7rem;
+  margin-bottom: 3%;
+  margin-left: 1.3rem;
+}
+
+.itemTotal{
+  margin-top:7.5rem;
+  margin-bottom: 5%;
+  font-size: 39px;
+  margin-left: 2rem;
+}
+
+.sumCardBody{
+  width:104%;
+  margin-left: -2%;
+  height:27rem;
+}
+
+.summaryImg{
+  height:21rem;
+  width:23rem;
+  margin-left:-2%;
+  margin-top: 1.5rem;
+}
+
+.card-titleCart{
+  margin-top: 1.5rem;
+  font-size: 39px;
+}
+
+.cartInfo{
+  margin-left: 14.5rem;
+}
+
+.card-textCartPrice{
+  font-size: 24px
+}
+
+.minPlusCartSum{
+  margin-top: -14.5rem;
+  margin-left: 25rem;
+}
+
+.quantityCartSum{
+  font-size: 27px;
+  margin-top: -15rem;
+  margin-left: 20.6rem;
+}
+
+.minPlusCartSum2{
+  margin-top: -14.5rem;
+  margin-left: 16rem;
+}
+
+.delCartSum{
+  margin-left:-7rem;
+  margin-top:-18rem;
+  height: 3rem;
+  width: 19rem;
+}
+
+.checkOutButton{
+  height: 3rem;
+  width: 11rem;
+  display: block;
+  margin: 2.5rem auto;
+}
+
+/* ------------------ Checkout -------------------- */
+
+.checkOutTitle{
+  margin-left: 11%;
+  margin-top: 7rem;
+  margin-bottom: 1rem;
+}
+
+.checkoutPrice{
+  margin-top: 7rem;
+  margin-left: 8rem;
+}
+
+form{
+  width:48rem;
+  height:39rem;
+}
+
+.form-group{
+  width: 48rem;
+  margin-left: -1rem;
+  font-size: 23px;
+}
+
+#addressInput{
+  width: 52%;
+}
+
+.placeOrderButton{
+  display:block;
+  margin: 3rem auto;
+  height: 3rem;
+  width: 11rem;
+}
+
+/* ------------------- confirmation ------------------ */
+
+.confirmationTitle{
+  display:block;
+  margin: 3% 11%;
+  font-size: 48px;
+  margin-top: 7rem;
+}
+
+.thankImg{
+  width:9%;
+  margin-left: 1%;
+}
+
+.myCartSumTitle{
+  display: block;
+  margin: 5% 24%;
+}
+
+.addressInfoSummary{
+  margin-left: 11%;
+  font-size: 25px;
+}
+
+.confirmItemTotal{
+  margin-top: 1rem;
+  font-size: 32px;
+  margin-left: -1rem;
+}
+
+.continueShop{
+  display: block;
+  margin: 35px auto;
+  height:3.5rem;
+  width:12rem;
+}
+
+
+/* ------------ inside Card ------------- */
+.marginConfirm{
+  margin-left: 6rem;
+}
+
+.confirmTitle{
+  font-size: 33px;
+}
+
+.confirmQuantity{
+  margin-top: -16.2%;
+  margin-left: 31rem;
+}
+
+.sumCardBodyFinal {
+    width: 112%;
+    margin-left: -6.6%;
+}
+
+/* ---------------------- empytCart Page ------------------ */
+.noItemsImg{
+  width:96%;
+  margin: 19% auto;
+}
+
+.noItemsText{
+  font-size: 2.5rem;
+  margin-left: 2rem;
+  margin-top: -22%
+}
+
+.emptyCatalogLink{
+  margin-left: 19.2rem;
+  margin-top: 4rem;
+  height: 3rem;
+  font-size: 23px;
+}
+
+}
+
+/* @media screen and (max-width: 640px){
+  .navbar {
+    display: none;
+  }
+
+  .toggleSpan {
+    display: unset;
+  }
+} */
+
+/* Desktops and laptops ----------- */
+
+
+/*
+@media (min-width:1281px) {
+  .enterSiteButton {
+    width: 44%;
+  }
+} */
+
+
+/* @media only screen and (min-width: 150px) and (max-width: 1136px){
+   .enterSiteButton {
+    width: 44%;
+  }
+
+}
+
+
+@media only screen and (min-width: 992px) and (max-width: 1136px){
+ .enterSiteButton {
+    width: 41%;
+    margin-left: 21rem;
+  }
+
+} */
+
+
+
+/* -------------------- something off ---------------------- */
+
+/* @media only screen and (min-width: 260px) and (max-width: 992px){
+ .enterSiteButton {
+    width: 38%;
+    margin-left: 18rem;
+  }
+
+} */

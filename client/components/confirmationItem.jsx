@@ -4,27 +4,25 @@ import React from 'react';
 function ConfirmationItem(props) {
   // console.log("props from confirmation item", props);
   return (
-    <div className="container border">
+    <div className="container">
 
-      <div className="card-body row ">
-
-        <div className="col">
-          <img src={props.image} className="card-img summaryImg" alt="item" />
+      <div className="card-body sumCardBodyFinal border row ">
+        <div className="col-sm-3">
+          <img src={props.image} className="card-img confirmImg" alt="item" />
         </div>
 
-        <div className="col short">
-          <h5 className="card-title">{props.name}</h5>
-          <p className="card-text badge badge-primary">Price: {((props.quantity) * (props.price / 100)).toFixed(2)}</p>
+        <div className="col-md-4 marginConfirm">
+          <h5 className="confirmTitle">{props.name}</h5>
+          <p className="confirmPrice">${((props.quantity) * (props.price / 100)).toFixed(2)}</p>
           {/* <p className="card-text badge badge-primary">Price: {((props.price / 100)).toFixed(2)}</p> */}
-          <p className="card-text">{props.shortDescription}</p>
+          <p className="confirmShortDes">{props.shortDescription}</p>
         </div>
 
-        <div className="col">
+        <div className="col-sm-4 confirmQuantity">
           <p>Quantity: {props.quantity}</p>
         </div>
 
       </div>
-
     </div>
 
   );

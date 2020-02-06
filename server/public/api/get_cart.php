@@ -46,10 +46,6 @@ $query = "SELECT cartItems.count, products.id, products.name, products.price, pr
 
 // var_dump("the query is", $query);
 
-// $query = "SELECT products.id, cartItems.count, cartItems.cartID, products.name,
-//           products.price, products.shortDescription, (SELECT images.url
-//           FROM `images` WHERE images.productId = productId ORDER BY images.productId ASC LIMIT 1) as image
-//           FROM `cartItems` JOIN `products` ON products.id = cartItems.productID ";
 
 
 // Send the query to mysql and get the result

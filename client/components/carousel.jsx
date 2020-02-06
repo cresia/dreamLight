@@ -64,6 +64,7 @@ const NightLight = props => {
 
   return (
     <Carousel
+      className= "cardImgCarousel"
       activeIndex = {activeIndex}
       next = {next}
       previous = {previous}

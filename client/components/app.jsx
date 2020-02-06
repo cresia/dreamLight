@@ -15,8 +15,6 @@ export default class App extends React.Component {
         params: {}
 
       },
-      // shopperInfoReceipt : [],
-      // productReceipt:[],
       cart: [],
       cartQuantity: 1
     };
@@ -32,7 +30,6 @@ export default class App extends React.Component {
     this.updateCart = this.updateCart.bind(this);
     this.incrementItem = this.incrementItem.bind(this);
     this.decrementItem = this.decrementItem.bind(this);
-
   }
 
   setView(name, id) {
@@ -154,32 +151,114 @@ export default class App extends React.Component {
   render() {
     if (this.state.view.name === 'catalog') {
       return (
-        <div>
-          <Header text="DreamLight" setViewItem = {this.setView} cartItemCount = {this.state.cartQuantity}/>
-          <ProductList setViewItem= {this.setView} />
+
+        <div className="row">
+
+          <div className= "col-12 navbar-container">
+            <Header text="DreamLight" setViewItem={this.setView} cartItemCount={this.state.cartQuantity} />
+          </div>
+
+          <div id="carouselExampleControls" className="carousel slide col-12 navbar-container" data-ride="carousel">
+
+            <div className="carousel-inner">
+
+              <div className="carousel-item active">
+                <img className="d-block homeImages" src={'/images/home6.gif'} alt="First slide" />
+              </div>
+
+              <div className="carousel-item">
+                <img className="d-block homeImages" src={'/images/home1.gif'} alt="Second slide" />
+              </div>
+
+              <div className="carousel-item">
+                <img className="d-block homeImages" src={'/images/home5.gif'} alt="Third slide" />
+              </div>
+
+            </div>
+
+            <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span className="sr-only">Previous</span>
+            </a>
+            <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span className="carousel-control-next-icon" aria-hidden="true"></span>
+              <span className="sr-only">Next</span>
+            </a>
+
+          </div>
+
+          {/* <div className="col-12 col-sm-10 offset-sm-1"> */}
+          <div className="col-12 col-sm-10 offset-sm-1">
+            <ProductList setViewItem= {this.setView} />
+          </div>
+
         </div>
       );
     } else if (this.state.view.name === 'details') {
       return (
-        // <div onClick= {() => this.props.setViewItem('catalog', {})}>
-        <div>
-          <Header text="Wicked Sales" setViewItem = {this.setView} cartItemCount = {this.state.cartQuantity} />
-          <ProductDetails setViewItem= {this.setView} viewParams= {this.state.view.params} cartItem = {this.addToCart} resetQuantity = {this.placeOrder} />
+
+        <div className="row">
+          <div className="col-12 col-md-10 offset-md-1 navbar-container">
+            <Header text="DreamLight" setViewItem={this.setView} cartItemCount={this.state.cartQuantity} />
+          </div>
+
+          <div className="col-12 col-md-10 offset-md-1 navbar-container">
+            <ProductDetails setViewItem={this.setView} viewParams={this.state.view.params} cartItem={this.addToCart} />
+          </div>
+
         </div>
+
+      // <div className="col-10 offset-1">
+      //   <div>
+      //     <Header text="DreamLight" setViewItem={this.setView} cartItemCount={this.state.cartQuantity} />
+      //   </div>
+      //   <ProductDetails setViewItem= {this.setView} viewParams= {this.state.view.params} cartItem = {this.addToCart} />
+      // </div>
       );
     } else if (this.state.view.name === 'cart') {
       return (
-        <div>
-          <Header text="Wicked Sales" setViewItem = {this.setView} cartItemCount = {this.state.cartQuantity} />
-          <CartSummary allItems= {this.state.cart} setViewItem = {this.setView} cartQuantity={this.state.cartQuantity} deleteOneItem = {this.removeItems} incItem = {this.incrementItem} decItem = {this.decrementItem} />
+
+        <div className="row">
+          <div className="col-12 col-md-10 offset-md-1 navbar-container">
+            <Header text="DreamLight" setViewItem={this.setView} cartItemCount={this.state.cartQuantity} />
+          </div>
+
+          <div className="col-12 col-md-10 offset-md-1 navbar-container">
+            <CartSummary allItems={this.state.cart} setViewItem={this.setView} cartQuantity={this.state.cartQuantity} deleteOneItem={this.removeItems} incItem={this.incrementItem} decItem={this.decrementItem} />
+          </div>
+
         </div>
+
+      // <div className="col-10 offset-1">
+      //   <div>
+      //     <Header text="DreamLight" setViewItem={this.setView} cartItemCount={this.state.cartQuantity} />
+      //   </div>
+
+      //   <div>
+      //     <CartSummary allItems= {this.state.cart} setViewItem = {this.setView} cartQuantity={this.state.cartQuantity} deleteOneItem = {this.removeItems} incItem = {this.incrementItem} decItem = {this.decrementItem} />
+      //   </div>
+      // </div>
       );
     } else if (this.state.view.name === 'checkout') {
       return (
-        <div>
-          <Header text="Wicked Sales" setViewItem={this.setView} cartItemCount={this.state.cartQuantity} />
-          <Checkout userPaymentInfo = {this.placeOrder} setViewItem={this.setView} allItems={this.state.cart} />
+
+        <div className="row">
+          <div className="col-12 col-md-10 offset-md-1 navbar-container">
+            <Header text="DreamLight" setViewItem={this.setView} cartItemCount={this.state.cartQuantity} />
+          </div>
+          <div className="col-12 col-md-10 offset-md-1 navbar-container">
+            <Checkout userPaymentInfo={this.placeOrder} setViewItem={this.setView} allItems={this.state.cart} />
+          </div>
         </div>
+
+      // <div className="col-10 offset-1">
+      //   <div>
+      //     <Header text="DreamLight" setViewItem={this.setView} cartItemCount={this.state.cartQuantity} />
+      //   </div>
+      //   <div>
+      //     <Checkout userPaymentInfo = {this.placeOrder} setViewItem={this.setView} allItems={this.state.cart} />
+      //   </div>
+      // </div>
       );
     } else if (this.state.view.name === 'home') {
       return (

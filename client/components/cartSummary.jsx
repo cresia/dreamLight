@@ -17,16 +17,19 @@ function CartSummary(props) {
 
   if (props.allItems.length === 0) {
     return <div>
-      <button className= "btn btn-link emptyCatalogLink" onClick= {() => props.setViewItem('catalog', {})}>
-        {'<'}  Back to Catalog
-      </button>
-      <div className="noItemsText">
-         No Items
+      <div>
+        <img className="noItemsImg" src="/images/noItems.png" alt="NoItems"/>
+        {/* <i className= "fas fa-shopping-cart text-warning emptyCartIcon"/> */}
       </div>
 
-      <div>
-        <i className= "fas fa-shopping-cart text-warning emptyCartIcon"/>
+      <div className="noItemsText">
+        No Items
       </div>
+
+      <button className="btn btn-info emptyCatalogLink" onClick={() => props.setViewItem('catalog', {})}>
+         Back to Catalog
+        {/* {'<'}  Back to Catalog */}
+      </button>
 
     </div>;
   }
@@ -56,19 +59,18 @@ function CartSummary(props) {
   const total = getCartTotal(props.allItems);
   return (
 
-    <div className= "container">
-      <button className= "btn btn-link mt-4" onClick= {() => props.setViewItem('catalog', {})}>
+    <div className= "container col-12">
+      {/* <button className= "btn btn-link mt-4" onClick= {() => props.setViewItem('catalog', {})}>
         {'<'}  Back to Catalog
-      </button>
+      </button> */}
 
       <div className="row">
-
-        <div className="col">
-          <h1 className="myCartTitle mt-3 mb-5 ml-2">My Cart</h1>
+        <div className="col-6">
+          <h1 className="myCartTitle">Cart Summary</h1>
         </div>
 
-        <div className="col">
-          <p className="itemTotal mt-3 mb-5 ">Total Purchase: ${(total / 100).toFixed(2)}</p>
+        <div className="col-6">
+          <p className="itemTotal">Total Purchase: ${(total / 100).toFixed(2)}</p>
         </div>
 
       </div>
@@ -79,8 +81,8 @@ function CartSummary(props) {
       </div>
 
       <div className="row">
-        <div className="col-md-5">
-          <button onClick={() => props.setViewItem('checkout', {}) } type="button" className="btn btn-outline-dark checkOutButton" >Checkout</button>
+        <div className="col">
+          <button onClick={() => props.setViewItem('checkout', {})} type="button" className="btn btn-dark checkOutButton" >Checkout</button>
         </div>
 
       </div>

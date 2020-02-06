@@ -18,24 +18,42 @@ function Confirmation(props) {
 
   if (props.userInfo !== null && props.cartItems !== []) {
     return (
-      <div className="confirmationContents rounded">
-        <h3 className="ml-2 mt-3 py-2">Thank you for Shopping!</h3>
-        <h3 className="ml-2 mt-3">Customer Summary</h3>
-        <div className="addressSummary">
-          <div className="ml-3">{props.userInfo.name + ' ' + props.userInfo.lastName}</div>
-          <div className="ml-3">{props.userInfo.shippingAddress}</div>
-          <div className="ml-3">{props.userInfo.city + ', ' + props.userInfo.state + ' ' + props.userInfo.zipcode}</div>
+      <div className="confirmationContents">
+
+        <div className="row">
+          <div className="col">
+            <h3 className="confirmationTitle">Thank you for Shopping!
+              <img className="thankImg" src="/images/smile.gif" alt="thankYouImg" />
+            </h3>
+          </div>
         </div>
 
-        <div className ="row">
+        <h3 className="myCartSumTitle">Customer Summary</h3>
+
+        <div className="row">
           <div className="col">
-            <h3 className="ml-2 mt-3">Cart Summary</h3>
+            <div className="addressInfoSummary">
+              <div>Name: {props.userInfo.name + ' ' + props.userInfo.lastName}</div>
+              <div>Shipping Address: </div>
+              <div>{props.userInfo.shippingAddress}</div>
+              <div>{props.userInfo.city + ', ' + props.userInfo.state + ' ' + props.userInfo.zipcode}</div>
+            </div>
+
           </div>
 
           <div className="col">
-            <h3 className="ml-2 mt-3">Total Purchase: $ {(total / 100).toFixed(2)}</h3>
+            <h3 className="confirmItemTotal">Total Purchase: $ {(total / 100).toFixed(2)}</h3>
           </div>
         </div>
+
+        {/* <div className="addressInfoSummary">
+          <div>Name: {props.userInfo.name + ' ' + props.userInfo.lastName}</div>
+          <div>Shipping Address: </div>
+          <div>{props.userInfo.shippingAddress}</div>
+          <div>{props.userInfo.city + ', ' + props.userInfo.state + ' ' + props.userInfo.zipcode}</div>
+        </div>
+
+        <h3 className="confirmItemTotal">Total Purchase: $ {(total / 100).toFixed(2)}</h3> */}
 
         {props.userInfo.cart.map((item, index) => {
           return (
@@ -48,11 +66,11 @@ function Confirmation(props) {
           );
         })}
 
-        <button type="submit" className="btn btn-primary mt-4 ml-2 mb-2" onClick={() => props.setView('catalog', {})}>
-          {'<'}Continue Shopping</button>
+        {/* <button type="submit" className="btn btn-dark mt-5 ml-5 mb-2" onClick={() => props.setView('home', {})}>
+          back to Home page</button> */}
 
-        <button type="submit" className="btn btn-primary mt-4 ml-2 mb-2" onClick={() => props.setView('home', {})}>
-          {'<'}back to Home page</button>
+        <button type="submit" className="btn btn-dark continueShop" onClick={() => props.setView('catalog', {})}>
+          Continue Shopping</button>
 
       </div>
 

@@ -33,8 +33,8 @@ export default class ProductList extends React.Component {
       );
     });
     return (
-      <div className="container">
-        <div className="row">
+      <div className="container col-12">
+        <div className="row catalogRow justify-content-center justify-content-sm-between">
           {products}
         </div>
       </div>
