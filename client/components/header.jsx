@@ -23,12 +23,12 @@ class Header extends React.Component {
 
     if (!this.state.showMenu) {
       return (
-        // close the menu bar: it contains one for mobile and the second for website
+        // menu bar: it contains one for mobile and the second for website
         <>
           <div className="wrapHeader">
             <div className="toggleSpan">
-              <div className="headerTitle menuBarImg" onClick={this.setMenu}>&#9776;</div>
-              {/* <div className="headerTitle" onClick={() => { this.setMenu(); this.toggle(); }}>&#9776; </div> */}
+              <div className="headerTitle" onClick={this.setMenu}>&#9776;</div>
+              {/* <div className="headerTitle" onClick={() => { this.setMenu(); this.toggle(); }}>&#9776; when using react </div> */}
               <div className="headerTitle">
                 DreamLight
               </div>
@@ -83,15 +83,15 @@ class Header extends React.Component {
 
             <div className="wrapHeader">
               <div className="toggleSpan">
-                <div className="headerTitle menuBarImg" onClick={this.setMenu}>&#9776;</div>
-                {/* <div className="headerTitle" onClick={() => { this.setMenu(); this.toggle(); }}>&#9776; </div> */}
+                {/* <div className="headerTitle sidenav" onClick={this.setMenu}>&#9776;</div> */}
+
+                <div className="headerTitle" onClick={this.setMenu}>&#9776;</div>
                 <div className="headerTitle">
                   DreamLight
                 </div>
                 <div className="itemText" onClick={() => this.props.setViewItem('cart', {})}> {this.props.cartItemCount}
                   <i onClick={() => this.props.setViewItem('cart', {})} className="fas fa-cart-plus text-dark cartIcon"></i>
                 </div>
-
               </div>
             </div>
 

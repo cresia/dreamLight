@@ -53,7 +53,8 @@ function CartSummaryItem(props) {
       <div className="row cartButtonsSpace">
 
         <div className="col-sm-3">
-          <i onClick={handleDecItem} className="far fa-minus-square minPlusCartSum"></i>
+          <i onClick={handleDecItem} className="far fa-minus-square minPlusCartSum "></i>
+          {/* <i onClick={handleDecItem} className="far fa-minus-square minPlusCartSumDes1"></i> */}
         </div>
 
         <div className="col-md-3">

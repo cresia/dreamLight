@@ -258,84 +258,88 @@ export default class CheckoutForm extends React.Component {
 
     </div>
 
-    <form onSubmit={this.handleSubmit}>
-      <div className="form-group">
+    <div className="card col-12 cardMargin">
 
-        <div className= "row">
-          <div className= "col colCheckout">
-            <label id="firstName" >First Name</label>
-            <input type="text" value={this.state.customerName} onChange={this.handleNameChange} className= {`form-control ${this.state.validate.nameState === '' ? '' : this.state.validate.nameState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="nameInput" placeholder="Enter first name" required />
-          </div>
+      <form onSubmit={this.handleSubmit}>
+        <div className="form-group">
 
-          <div className= "col colCheckout">
-            <label id="lastName" >Last Name</label>
-            <input type="text" value={this.state.customerLastName} onChange={this.handleLastNameChange} className={`form-control ${this.state.validate.lastNameState === '' ? '' : this.state.validate.lastNameState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="nameInput" placeholder="Enter last name" required />
-          </div>
-        </div>
+          <div className="form-row">
+            <div className="col colCheckout">
+              <label id="firstName" >First Name</label>
+              <input type="text" value={this.state.customerName} onChange={this.handleNameChange} className={`form-control ${this.state.validate.nameState === '' ? '' : this.state.validate.nameState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="nameInput" placeholder="Enter first name" required />
+            </div>
 
-      </div>
-
-      <div className="form-group">
-        <label id="shipAddress">Shipping Address</label>
-        <input value={this.state.shippingAddressInfo} onChange={this.handleShippingAddressInfo} className={`form-control ${this.state.validate.addressState === '' ? '' : this.state.validate.addressState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="addressInput" placeholder="e.g: 1357 Spectrum" required></input>
-
-        <div className="row">
-
-          <div className="col colCheckout">
-            <label id="lastName">City</label>
-            <input value={this.state.shippingCityInfo} onChange={this.handleCityInfo} className={`form-control ${this.state.validate.cityState === '' ? '' : this.state.validate.cityState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="City" required></input>
-          </div>
-
-          <div className="col colCheckout">
-            <label id="lastName">State</label>
-            <input value={this.state.shippingStateInfo} onChange={this.handleStateInfo} className={`form-control ${this.state.validate.stateState === '' ? '' : this.state.validate.stateState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="State" required></input>
-          </div>
-
-          <div className="col colCheckout">
-            <label id="lastName">Zip</label>
-            <input value={this.state.shippingZipCodeInfo} onChange={this.handleZipCodeInfo} className={`form-control ${this.state.validate.zipCodeState === '' ? '' : this.state.validate.zipCodeState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="Zip Code - 5 digits" required></input>
+            <div className="col colCheckout">
+              <label id="lastName" >Last Name</label>
+              <input type="text" value={this.state.customerLastName} onChange={this.handleLastNameChange} className={`form-control ${this.state.validate.lastNameState === '' ? '' : this.state.validate.lastNameState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="nameInput" placeholder="Enter last name" required />
+            </div>
           </div>
 
         </div>
-      </div>
 
-      <div className="form-group inputForm">
+        <div className="form-group">
+          <label id="shipAddress">Shipping Address</label>
+          <input value={this.state.shippingAddressInfo} onChange={this.handleShippingAddressInfo} className={`form-control ${this.state.validate.addressState === '' ? '' : this.state.validate.addressState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="addressInput" placeholder="e.g: 1357 Spectrum" required></input>
 
-        <div className="row">
-          <div className= "col colCheckout inputSpaceCard">
-            <label id="creditNumExpDate">Credit Card</label>
-            <input type="text" value={this.state.creditCardInfo} onChange={this.handleCreditCardChange} className={`form-control ${this.state.validate.creditCardInfoState === '' ? '' : this.state.validate.creditCardInfoState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="Enter 16 digit numbers" required />
-          </div>
+          <div className="form-row">
 
-          <div className= "col colCheckout">
-            <label id="creditNumExpDate">Expiration Date</label>
-            <input type="text" value={this.state.creditCardExpInfo} onChange={this.handleCreditCardExpChange} className={`form-control ${this.state.validate.ccExpState === '' ? '' : this.state.validate.ccExpState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="e.g: 12/25" required />
-          </div>
+            <div className="col colCheckout">
+              <label id="lastName">City</label>
+              <input value={this.state.shippingCityInfo} onChange={this.handleCityInfo} className={`form-control ${this.state.validate.cityState === '' ? '' : this.state.validate.cityState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="City" required></input>
+            </div>
 
-          <div className="col colCheckout">
-            <label id="cvvStyle">CVV</label>
-            <input type="text" value={this.state.creditCardCvvInfo} onChange={this.handleCreditCardCvvChange} className={`form-control ${this.state.validate.cvvState === '' ? '' : this.state.validate.cvvState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="e.g: 123" required />
-          </div>
+            <div className="col colCheckout">
+              <label id="lastName">State</label>
+              <input value={this.state.shippingStateInfo} onChange={this.handleStateInfo} className={`form-control ${this.state.validate.stateState === '' ? '' : this.state.validate.stateState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="State" required></input>
+            </div>
 
-        </div>
-      </div>
-
-      <div className="container">
-        <div className="row">
-          {/* <div className="col">
-            <button className= "btn btn-link mt-4" onClick= {() => this.props.setView('catalog', {})}>
-              {'<'}  continue shopping
-            </button>
-          </div> */}
-          <div className="col colCheckout" >
-            {/* <button className="btn btn-dark placeOrderButton" type="submit" onSubmit={() =>this.props.placeOrder}>Place Order</button> */}
-            <button className="btn btn-dark placeOrderButton" type="submit" >Place Order</button>
+            <div className="col colCheckout">
+              <label id="lastName">Zip</label>
+              <input value={this.state.shippingZipCodeInfo} onChange={this.handleZipCodeInfo} className={`form-control ${this.state.validate.zipCodeState === '' ? '' : this.state.validate.zipCodeState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="Zip Code - 5 digits" required></input>
+            </div>
 
           </div>
         </div>
-      </div>
 
-    </form>
+        <div className="form-group inputForm">
+
+          <div className="form-row">
+            <div className="col colCheckout inputSpaceCard">
+              <label id="creditNumExpDate">Credit Card</label>
+              <input type="text" value={this.state.creditCardInfo} onChange={this.handleCreditCardChange} className={`form-control ${this.state.validate.creditCardInfoState === '' ? '' : this.state.validate.creditCardInfoState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="Enter 16 digit numbers" required />
+            </div>
+
+            <div className="col colCheckout">
+              <label id="creditNumExpDate">Expiration Date</label>
+              <input type="text" value={this.state.creditCardExpInfo} onChange={this.handleCreditCardExpChange} className={`form-control ${this.state.validate.ccExpState === '' ? '' : this.state.validate.ccExpState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="e.g: 12/25" required />
+            </div>
+
+            <div className="col colCheckout">
+              <label id="cvvStyle">CVV</label>
+              <input type="text" value={this.state.creditCardCvvInfo} onChange={this.handleCreditCardCvvChange} className={`form-control ${this.state.validate.cvvState === '' ? '' : this.state.validate.cvvState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="e.g: 123" required />
+            </div>
+
+          </div>
+        </div>
+
+        <div className="container">
+          <div className="form-row">
+            {/* <div className="col">
+        <button className= "btn btn-link mt-4" onClick= {() => this.props.setView('catalog', {})}>
+          {'<'}  continue shopping
+        </button>
+      </div> */}
+            <div className="col colCheckout" >
+              {/* <button className="btn btn-dark placeOrderButton" type="submit" onSubmit={() =>this.props.placeOrder}>Place Order</button> */}
+              <button className="btn btn-dark placeOrderButton" type="submit" >Place Order</button>
+
+            </div>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
 
         {/* <button className="btn btn-dark placeOrderButton" type="button" onClick={ this.handleSubmit}>Place Order</button> */}
   </>

@@ -17,19 +17,22 @@ function CartSummary(props) {
 
   if (props.allItems.length === 0) {
     return <div>
-      <div>
-        <img className="noItemsImg" src="/images/noItems.png" alt="NoItems"/>
-        {/* <i className= "fas fa-shopping-cart text-warning emptyCartIcon"/> */}
-      </div>
 
-      <div className="noItemsText">
-        No Items
-      </div>
+      <div className="contianer">
+        <div>
+          <img className="noItemsImg" src="/images/noItems.png" alt="NoItems" />
+          {/* <i className= "fas fa-shopping-cart text-warning emptyCartIcon"/> */}
+        </div>
 
-      <button className="btn btn-info emptyCatalogLink" onClick={() => props.setViewItem('catalog', {})}>
-         Back to Catalog
-        {/* {'<'}  Back to Catalog */}
-      </button>
+        <div className="noItemsText">
+          No Items
+        </div>
+
+        <button className="btn btn-info emptyCatalogLink" onClick={() => props.setViewItem('catalog', {})}>
+          Back to Catalog
+          {/* {'<'}  Back to Catalog */}
+        </button>
+      </div>
 
     </div>;
   }

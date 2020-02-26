@@ -154,11 +154,11 @@ export default class App extends React.Component {
 
         <div className="row">
 
-          <div className= "col-12 navbar-container">
+          <div className= "col-12 col-md-10 offset-md-1 navbar-container">
             <Header text="DreamLight" setViewItem={this.setView} cartItemCount={this.state.cartQuantity} />
           </div>
 
-          <div id="carouselExampleControls" className="carousel slide col-12 navbar-container" data-ride="carousel">
+          <div id="carouselExampleControls" className="carousel slide col-12 col-md-10 offset-md-1 navbar-container" data-ride="carousel">
 
             <div className="carousel-inner">
 

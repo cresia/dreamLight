@@ -5,6 +5,7 @@ body{
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
+  /* position: absolute; */
 }
 
 #root{
@@ -20,14 +21,14 @@ body{
   color:rgba(43, 40, 40, 0.712);
   font-weight: bold;
   text-align: center;
-  margin-top:25%;
+  margin-top:22%;
   font-family: 'Euphoria Script', cursive;
-  font-size: 65px;
+  font-size: 68px;
 }
 
 .enterSiteButton{
-  margin-left:41%;
-  margin-top:5%;
+  margin-left:40%;
+  margin-top:6%;
   width:20%;
 }
 
@@ -51,7 +52,8 @@ body{
 .navbar{
   /* margin-top:3rem; */
   position:fixed;
-  width:100%;
+  /* width:100%; */
+  width:83%;
   z-index:50;
   box-shadow: 0px 2px 11px #7c7474;
 
@@ -67,6 +69,7 @@ body{
   display:flex;
   justify-content:space-between;
   list-style-type:none;
+  margin-top:1%;
 }
 
 .cartIcon{
@@ -118,7 +121,7 @@ body{
   width:100%;
   height:34rem;
   margin-bottom:1rem;
-  margin-top:5rem;
+  margin-top:2rem;
 }
 
 /* ---------------- catalog page -------------------------- */
@@ -193,8 +196,7 @@ img {
 }
 
 .card-Icons{
-  margin-left:5.7%;
-  margin-top:4%;
+  margin-left: 32px;
 }
 
 .quantityProDect{
@@ -223,17 +225,16 @@ img {
   transform: translateY(4px);
 }
 
-
-.addToCartButton{
+ .addToCartButton{
   margin-left: 15%;
   margin-right: 3%;
   width: 48%;
 }
 
-.backToCatalogButton{
-  margin-left: 53%;
+ .backToCatalogButton{
+  margin-left: 53.1%;
   margin-right: 3%;
-  width: 47%;
+  width: 46.6%;
   margin-top: 3%;
 }
 
@@ -301,7 +302,7 @@ img {
 }
 
 .card-textShortDes{
-  font-size: 18px;
+  font-size: 20px;
   margin-left: 0.3rem;
 }
 
@@ -320,7 +321,13 @@ img {
   transform: scale(0.96);
 }
 
+/* .minPlusCartSum {
+  display:none;
+
+} */
+
 .minPlusCartSum{
+  display:flex;
   justify-content:space-between;
   display:flex;
   font-size:2rem;
@@ -369,7 +376,7 @@ img {
 }
 
 form{
-  width: 77.73rem;
+  /* width: 77.73rem; */
   background-color: white;
   opacity: 0.93;
 }
@@ -394,7 +401,7 @@ label{
 }
 
 #addressInput{
-   width:44%;
+   width:44.6%;
 }
 
 #FormTextarea{
@@ -412,8 +419,9 @@ label{
 }
 
 .emptyCatalogLink{
-  margin-left:36rem;
   margin-top:2rem;
+  margin-left:30rem;
+  width:20rem
 }
 
 .noItemsImg{
@@ -643,15 +651,16 @@ label{
     margin-left: 10%;
 }
 
+
 .addToCartButton {
-    margin-left: 5%;
+    margin-left: -1%;
     margin-top: 9%;
-    width: 76.8%;
+    width: 90.8%;
 }
 
 .backToCatalogButton {
-    margin-left: 11%;
-    width: 76.2%;
+    margin-left: 10.53%;
+    width: 85.4%;
     margin-top: 5%;
 }
 
@@ -744,7 +753,7 @@ label{
 }
 
 .card-textShortDes{
-  margin-top:-21%;
+  margin-top:-23%;
   margin-left: 53%;
 }
 
@@ -778,13 +787,13 @@ label{
 }
 
 .form-group {
-    width: 53%;
+    width: 100%;
     margin-left: 0.2%;
 }
 
 .placeOrderButton{
   margin-top: 1.5rem;
-  margin-left:-5rem;
+  margin-left:13rem;
   margin-bottom:1.5rem;
 }
 
@@ -872,7 +881,7 @@ label{
 
 .noItemsText{
   font-size: 24px;
-  margin-top: -5%;
+  margin-top: -13%;
 }
 
 .emptyCatalogLink {
@@ -929,6 +938,7 @@ label{
   box-shadow: 0px 2px 11px #7c7474;
 }
 
+
 .headerTitle {
   font-size: 20px;
   color: black;
@@ -937,6 +947,7 @@ label{
   margin-top: 1%;
   margin-left: 2%;
 }
+
 
 .cartIcon{
   font-size: 1.5rem;
@@ -950,8 +961,10 @@ label{
 
 .toggleSpan{
   display: flex;
-  justify-content: space-between
+  justify-content: space-between;
 }
+
+
 
 
 .overlay {
@@ -963,11 +976,6 @@ label{
   background-color: #00000038;
   /* overflow: hidden; */
 }
-
-/* body .overlay{
-  overflow: hidden;
-} */
-
 
 
 /* ------- iniside slide menu bar -------------*/
@@ -981,18 +989,18 @@ label{
 
 }
 
-.sidenav {
+.sidenav{
   height: 100%;
   width: 71%;
   position: fixed;
   top: 0;
   left: 0;
-  z-index:10;
+  z-index:50;
   background-color: rgb(0, 0, 0);
-  /* overflow-x: hidden; */
   transition: 0.5s;
   padding-top: 60px;
 }
+
 
 .sidenav div{
   padding: 9px 1px 10px 18px;
@@ -1005,10 +1013,11 @@ label{
 .sidenav .closebtn {
   position: absolute;
   top: 0;
-  right: 9px;
+  right: 25px;
   font-size: 36px;
   color: white;
   padding:1%;
+  transition: 0.5s;
 }
 
 .iconTextMobile{
@@ -1034,6 +1043,8 @@ label{
   height: 12rem;
   margin-top: 2rem;
 }
+
+
 
 .card-title {
   font-size: 29px;
@@ -1095,8 +1106,8 @@ label{
 }
 
 .backToCatalogButton{
-  margin-left:0%;
-  width:100%;
+  margin-left: -0.1%;
+  width: 100.6%;
   margin-top:5%;
 }
 
@@ -1104,17 +1115,19 @@ label{
     margin-left: 0%;
 }
 
-.longDes{
-  margin-left: -1%;
-}
+
 
 
 /*---------------------- My Cart ------------------ */
+
+
 .myCartTitle{
   margin-top: 4rem;
-  font-size: 28px;
-  margin-left: -5%;
+  font-size: 29px;
+  margin-left: -4%;
+
 }
+
 
 .itemTotal {
   margin-top: 4rem;
@@ -1149,7 +1162,7 @@ label{
 
 .minPlusCartSum{
   font-size: 1.8rem;
-  margin-top: -125%;
+  margin-top: -120%;
   margin-left: 67%;
 }
 
@@ -1158,13 +1171,13 @@ label{
 }
 
 .quantityCartSum{
-  margin-top: -125%;
+  margin-top: -121%;
   margin-left: 95.5%;
 }
 
 .minPlusCartSum2{
   font-size: 1.8rem;
-  margin-top: -125%;
+  margin-top: -120%;
   margin-left: 119%
 }
 
@@ -1176,12 +1189,13 @@ label{
 .card-textShortDes {
     margin-left: 1.1rem;
     margin-top:2%;
+    font-size: 17px;
 }
 
 .delCartSum{
   margin-left: -1rem;
   width:114%;
-  margin-top: -88%;
+  margin-top: -100%;
 }
 
 .checkOutButton{
@@ -1240,8 +1254,10 @@ label{
 }
 
 #shipAddress{
-  margin-left:10%;
+  margin-left:14%;
   margin-top: 0%;
+  width: 10rem;
+
 }
 
 #FormTextarea{
@@ -1250,14 +1266,13 @@ label{
 }
 
 #creditNumExpDate{
-  margin-left:30%;
-  width:100%;
+  margin-left:35%;
+  width:10rem;
   margin-top: -1%;
 }
 
-form {
-  width: 24rem;
-  margin-top:-0.5rem;
+.cardMargin{
+    margin-top: -1rem;
 }
 
 .inputForm{
@@ -1265,17 +1280,17 @@ form {
 }
 
 #firstName{
-  margin-left:21%;
+  margin-left:25%;
 }
 
 #lastName{
   width: 100%;
-  margin: 10px 2.1rem;
+  margin: 10px 2.2rem;
 }
 
 #addressInput {
   width: 226%;
-  margin-left: 9%;
+  margin-left: 13%;
   margin-bottom: 10%;
 }
 
@@ -1285,11 +1300,11 @@ form {
 
 #cvvStyle{
   margin-top: 10%;
-  margin-left: 30%;
+  margin-left: 35%;
 }
 
 .placeOrderButton {
-  margin-left: 8rem;
+  margin-left: 7.5rem;
   margin-bottom: 2rem;
   width: 50%;
   margin-top:1rem;
@@ -1354,15 +1369,15 @@ form {
   font-size: 99px;
 }
 
-.enterSiteButton{
-  width: 23%;
-  display: block;
-  margin: 68px auto;
-  height: 4.3rem;
+.enterSiteButton {
+    width: 22%;
+    display: block;
+    margin: 97px auto;
+    height: 3.5rem;
 }
 
 .enterSiteText{
-  font-size: 31px;
+  font-size: 26px;
 }
 
 /* -------------- catalog page -------------------- */
@@ -1511,6 +1526,7 @@ form {
 
 .card-titlePrice{
   font-size: 25px;
+  margin-top: 0.5rem;
 }
 
 .minusPlusButton{
@@ -1533,7 +1549,8 @@ form {
 }
 
 .backToCatalogButton{
-  margin-left: 53.4%;
+  margin-left: 54.1%;
+  width: 46.3%;
 }
 
 .detailTitle{
@@ -1541,7 +1558,7 @@ form {
 }
 
 /* --------------- cartSummary --------------------- */
-.myCartTitle{
+ .myCartTitle{
   margin-top:7rem;
   margin-bottom: 3%;
   margin-left: 4%;
@@ -1585,12 +1602,12 @@ form {
 
 .minPlusCartSum{
   margin-top: -16rem;
-  margin-left: 38.5rem;
+  margin-left: 39rem;
 }
 
 .quantityCartSum{
   margin-top: -16rem;
-  margin-left: 28.8rem;
+  margin-left: 29rem;
 }
 
 .minPlusCartSum2{
@@ -1611,6 +1628,7 @@ form {
   height: 3rem;
 }
 
+
 /* ------------------- checkout page ----------------- */
 .checkOutTitle {
   margin-top: 6.5rem;
@@ -1624,7 +1642,7 @@ form {
 
 form {
   width: 64rem;
-  height: 36rem;
+  height: 37rem;
 }
 
 .form-group {
@@ -1733,11 +1751,15 @@ label {
   font-size: 120px;
 }
 
-.enterSiteButton{
-  margin-left:36%;
-  margin-top:12%;
-  width:30%;
-  height: 4rem;
+.enterSiteButton {
+    display: block;
+    margin: 15% auto;
+    width: 30%;
+    height: 4rem;
+}
+
+.enterSiteText{
+  font-size: 29px;
 }
 
 /* --------------- header ----------------- */
@@ -1748,7 +1770,6 @@ label {
 }
 
 .toggleSpan{
-  /* display: unset; */
   display: flex;
   justify-content: space-between
 }
@@ -1765,6 +1786,7 @@ label {
   flex-basis:100%;
   margin: 0;
   max-width: 100%;
+
 }
 
 .headerTitle {
@@ -1774,11 +1796,6 @@ label {
   margin-bottom: 1%;
   margin-top: 2%;
   margin-left: 2%;
-}
-
-.menuBarImg{
-  margin-top: 2%;
-  margin-left:1.3rem;
 }
 
 .cartIcon{
@@ -1834,13 +1851,13 @@ label {
   text-decoration: none;
   font-size: 35px;
   display: flex;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 
 .sidenav .closebtn {
   position: absolute;
   top: 6px;
-  right: 9px;
+  right: 14px;
   font-size: 36px;
   color: white;
   padding:1%;
@@ -1928,6 +1945,7 @@ label {
   width: 86.5%;
   margin-top: 3rem;
   height: 3rem;
+  font-size: 20px;
 }
 
 .backToCatalogButton{
@@ -1935,6 +1953,7 @@ label {
   width: 84.5%;
   height: 3rem;
   margin-top: 6%;
+  font-size: 20px;
 }
 
 
@@ -2053,6 +2072,14 @@ form{
   width: 52%;
 }
 
+label {
+    margin-left: 1rem;
+}
+
+.form-control{
+  margin-left:1rem;
+}
+
 .placeOrderButton{
   display:block;
   margin: 3rem auto;
@@ -2138,51 +2165,3414 @@ form{
 
 }
 
-/* @media screen and (max-width: 640px){
-  .navbar {
-    display: none;
+/*----------------------- Desktops and laptops ----------- */
+
+@media (min-width:1180px) and (max-width: 1259px){
+  .addToCartButton {
+    margin-left: 6%;
   }
 
-  .toggleSpan {
-    display: unset;
+  .backToCatalogButton {
+    margin-left: 54.3%;
+    width: 46.3%;
   }
-} */
 
-/* Desktops and laptops ----------- */
-
-
-/*
-@media (min-width:1281px) {
-  .enterSiteButton {
-    width: 44%;
+  /* ------------- mycart -------------- */
+  .itemTotal{
+    margin-left: 6rem;
   }
-} */
+
+  .card-titleCart{
+    margin-left:5rem;
+    font-size:36px;
+  }
+
+  .card-textCartPrice{
+    margin-left:5rem;
+  }
+
+  .card-textShortDes{
+    font-size: 18px;
+    margin-left: 5rem;
+  }
+
+  .minPlusCartSum{
+    margin-top: -15rem;
+    margin-left: 33rem;
+  }
+
+  .quantityCartSum{
+    margin-top: -15rem;
+    margin-left: 23.3rem;
+  }
+
+  .minPlusCartSum2{
+    margin-top: -15rem;
+    margin-left:13rem;
+  }
+
+  .delCartSum{
+    margin-left:6rem;
+    margin-top:-30rem;
+    height:2.5rem;
+    width:6rem;
+  }
+
+  .sumCardBody{
+    height:18rem;
+    margin-left: -0.9rem;
+    width: 103%;
+  }
+
+  /* ------------- checkout -------------- */
+  .checkoutPrice{
+    margin-left: 19rem;
+  }
+
+  .placeOrderButton{
+    margin-left:27rem;
+  }
+
+  /* ------------------ confirmation ------------- */
+  .marginConfirm{
+    margin-left: 2rem;
+  }
+
+  .continueShop{
+    margin-left: 30rem;
+  }
+
+  .sumCardBodyFinal {
+    width: 103.3%;
+    margin-left: -1.5%;
+  }
+
+  .confirmQuantity{
+    margin-top: 9%;
+  }
+
+  /*--------- empty cart ---------------*/
+  .emptyCatalogLink {
+    margin-left: 24rem;
+    width: 18rem;
+  }
+}
+
+@media (min-width:1140px) and (max-width: 1179px){
+  .addToCartButton{
+    margin-left: -1%;
+  }
+
+  .backToCatalogButton{
+    margin-left: 54.6%;
+    width: 46.1%;
+  }
+
+  /* -------- myCart --------- */
+  .cartInfo{
+    margin-left:5rem;
+  }
+
+  .card-titleCart {
+    font-size: 36px;
+  }
+
+  .itemTotal{
+    margin-left: 6rem;
+  }
+
+  .minPlusCartSum{
+    margin-top: -15rem;
+    margin-left: 35rem;
+  }
+
+  .quantityCartSum{
+    margin-top: -14.9rem;
+    margin-left: 26.3rem;
+  }
+
+  .minPlusCartSum2{
+    margin-top: -15rem;
+    margin-left: 17rem;
+  }
+
+  .delCartSum{
+    margin-left: 9rem;
+    margin-top: -30rem;
+    width:5rem;
+  }
+
+  .sumCardBody{
+    height:18rem;
+  }
+
+  /* ---------- checkoutForm ------------- */
+  .checkoutPrice{
+    margin-left: 17rem;
+  }
 
 
-/* @media only screen and (min-width: 150px) and (max-width: 1136px){
+  /* form{
+    width:58rem;
+  } */
+
+  /* .form-group{
+    margin-left: -2rem;
+  }
+
+  .form-control {
+    margin-left: 2rem;
+  } */
+
+  .placeOrderButton{
+    margin-left: 27rem;
+  }
+
+/* ------------ confirmation --------------- */
+  .marginConfirm{
+    margin-left: 3rem;
+  }
+
+  .sumCardBodyFinal{
+    width:103.3%;
+    margin-left: -1.5%;
+  }
+
+  .confirmQuantity {
+    margin-top: 10%;
+  }
+
+  .continueShop{
+    margin-left: 28rem;
+  }
+
+/*--------- empty Cart --------------- */
+  .emptyCatalogLink {
+    margin-left: 21rem;
+    width: 19rem;
+  }
+}
+
+
+@media (min-width:1083px) and (max-width: 1139px){
+  .addToCartButton{
+    margin-left: 6%;
+  }
+
+  .backToCatalogButton{
+    margin-left: 54.6%;
+    width: 46.3%;
+  }
+
+  /* ------------ myCart ------------ */
+  .cartInfo{
+    margin-left:5rem;
+  }
+
+  .itemTotal{
+    margin-left: 4rem;
+  }
+
+  .sumCardBody{
+    height: 18rem;
+  }
+
+  .card-textShortDes{
+    font-size: 20px;
+  }
+
+  .minPlusCartSum{
+    margin-top: -15rem;
+    margin-left: 32rem;
+  }
+
+  .quantityCartSum{
+    margin-top: -15rem;
+    margin-left: 24.3rem;
+  }
+
+  .minPlusCartSum2{
+    margin-top: -15rem;
+    margin-left: 16rem;
+  }
+
+  .delCartSum{
+    margin-left: 8.6rem;
+    margin-top: -30rem;
+    width:5rem;
+  }
+
+  /* ------------ checkoutForm ------------ */
+  .checkoutPrice{
+    margin-left: 14rem;
+  }
+
+  form{
+    width:55.2rem;
+  }
+
+  label{
+    margin-left:1rem;
+  }
+
+  .form-control{
+    margin-left: 1rem;
+  }
+
+  .placeOrderButton{
+    margin-left:24rem;
+  }
+
+  /* ----------- confirmation ------------- */
+  .sumCardBodyFinal{
+    width:103.3%;
+    margin-left: -1.5%;
+  }
+
+  .marginConfirm{
+    margin-left: 4rem;
+  }
+
+  .confirmQuantity{
+    margin-top: 11%;
+  }
+
+  .confirmationTitle{
+    margin-left: 20%;
+  }
+  .continueShop {
+    margin-left: 25rem;
+  }
+
+  /*-------- emptyCart ----------- */
+  .emptyCatalogLink {
+    margin-left: 20rem;
+    width: 18rem;
+  }
+}
+
+
+@media (min-width: 1030px) and (max-width: 1081px){
+  .headerTitle {
+    font-size: 320%;
+  }
+   .addToCartButton{
+     margin-left: 4%;
+   }
+
+   .backToCatalogButton{
+    margin-left: 55%;
+    width: 46%;
+   }
+
+/* ------------ cartSummary ------------ */
+  .itemTotal{
+    margin-left: 4rem;
+  font-size: 40px;
+  }
+
+  .myCartTitle {
+
+  font-size: 53px;
+  }
+
+  .cartInfo{
+    margin-left: 5rem;
+  }
+
+  .summaryImg{
+    margin-left: -10%;
+    width:16rem;
+  }
+
+  .sumCardBody {
+  width: 103%;
+  height: 18rem;
+  }
+
+  .card-textShortDes{
+    font-size: 19px;
+  }
+
+  .minPlusCartSum{
+    margin-top:-14.5rem;
+    margin-left:30rem;
+  }
+
+  .quantityCartSum{
+    margin-top: -14.5rem;
+    margin-left: 23rem;
+  }
+
+  .minPlusCartSum2{
+    margin-top: -14.5rem;
+    margin-left: 15.2rem
+  }
+
+  .delCartSum{
+    margin-left:8.3rem;
+    margin-top: -29rem;
+  }
+
+/*------------- checkoutForm ---------------*/
+  .checkoutPrice{
+    margin-left:13rem;
+  }
+
+  .form-control{
+    margin-left:0.5rem;
+  }
+
+  form {
+  width: 52.4rem;
+  }
+
+  label{
+    margin-left: 0.5rem;
+  }
+
+  .placeOrderButton {
+  margin-left: 23rem;
+  }
+
+/* ------------------- confirmation ----------------- */
+  .sumCardBodyFinal{
+    width:103.5%;
+    margin-left: -1.5%;
+  }
+
+  .marginConfirm{
+    margin-left: 4rem;
+  }
+
+  .confirmQuantity{
+    margin-top: 12%;
+  }
+
+  .confirmItemTotal{
+    font-size: 33px;
+    margin-left: 0rem;
+  }
+
+  .confirmationTitle{
+    margin-left: 20%;
+  }
+
+  .continueShop {
+  margin-left: 25rem;
+  }
+
+/*------- emptyCart -------*/
+.emptyCatalogLink {
+    margin-left: 18rem;
+    width: 20rem;
+  }
+}
+
+
+/* ------------ Danger Zone: conflict with ipad landscape ----------*/
+@media (min-width: 940px) and (max-width: 1029px){
+
+  .addToCartButton{
+    margin-left:-1%;
+    font-size: 18px;
+  }
+
+  .backToCatalogButton{
+    margin-left: 54%;
+    width: 46.3%;
+    font-size: 18px;
+  }
+
+/* -------------- myCart -------------- */
+  .myCartTitle{
+  margin-top:7rem;
+  margin-bottom: 3%;
+  margin-left: 4%;
+  }
+
+  .itemTotal{
+  margin-top:7rem;
+  margin-left: 8rem;
+  }
+
+  .cartInfo{
+    margin-left: 6.3rem;
+    margin-top: 1rem;
+  }
+
+  .delCartSum {
+    width: 7rem;
+  }
+
+
+/* --------- checkout --------- */
+  .checkoutPrice{
+    font-size: 39px;
+    margin-left: 18rem;
+  }
+
+  label {
+  margin-left: 1.5rem;
+  }
+
+  .form-control {
+    margin-left: 1.5rem;
+  }
+
+  .placeOrderButton {
+    margin-left: 24rem;
+  }
+
+
+/*  --------------- confirmation: conflict with ipads landscape ---------------- */
+
+   .confirmationTitle{
+  margin-left: 26%;
+  margin-top:7rem;
+}
+
+.myCartSumTitle{
+  margin-left: 33%;
+}
+
+.addressInfoSummary{
+  margin-left: 8%;
+  font-size: 30px;
+}
+
+.confirmItemTotal{
+  font-size: 38px;
+}
+
+.marginConfirm{
+  margin-left:3.5rem;
+}
+
+.confirmImg{
+  height: 15rem;
+  width: 15rem;
+}
+
+.confirmTitle{
+  font-size: 34px;
+}
+
+.confirmPrice{
+  font-size: 27px;
+}
+
+.confirmShortDes{
+  font-size: 22px;
+}
+
+.confirmQuantity {
+    margin-top: 12%;
+    font-size: 29px;
+}
+.continueShop {
+    display: block;
+    margin: 3% auto;
+    height: 3.5rem;
+    width: 11.5rem;
+    font-size: 110%;
+}
+
+.sumCardBodyFinal {
+    width: 111%;
+}
+
+/*------- emptyCart ---------*/
+   .emptyCatalogLink {
+    /* margin-left: 27rem; */
+    margin-top: 2rem;
+    height: 3rem;
+    /* width: 12rem; */
+    font-size: 134%;
+    margin-left: 17rem;
+    width: 32rem;
+  }
+}
+
+
+@media (min-width: 863px) and (max-width: 939px){
+  .addToCartButton{
+    margin-left: -1%;
+    font-size: 14px;
+    width:43%
+  }
+
+  .backToCatalogButton{
+    margin-left: 60.7%;
+    width: 41%;
+    font-size: 14px;
+  }
+
+  .headerTitle{
+    font-size: 338%;
+  }
+
+/* -------------  myCart  ---------------*/
+  .myCartTitle{
+    font-size: 53px;
+  }
+
+  .itemTotal{
+    font-size: 39px;
+    margin-left: 0rem;
+  }
+
+  .sumCardBody{
+    width: 104.5%;
+    margin-left: -2%;
+    height: 18rem;
+  }
+
+  .summaryImg{
+    margin-left: -11%;
+  }
+
+  .card-titleCart{
+    font-size: 34px;
+  }
+
+  .cartInfo{
+    margin-left:8rem;
+  }
+
+  .minPlusCartSum{
+    margin-top: -14.5rem;
+    margin-left: 29rem;
+  }
+
+  .quantityCartSum{
+    margin-top: -14.5rem;
+    margin-left: 23.92rem;
+  }
+
+  .minPlusCartSum2{
+    margin-top: -14.5rem;
+    margin-left: 18rem;
+  }
+
+  .delCartSum{
+    margin-left: -4rem;
+    margin-top: -16.8rem;
+    width: 10rem;
+  }
+
+/* --------- checkout ----------- */
+  .checkoutPrice{
+      margin-left:7rem;
+  }
+
+  label {
+    margin-left: 0.5rem;
+  }
+
+  .form-control {
+    margin-left: 0.5rem;
+  }
+
+  .placeOrderButton{
+      margin-left: 18rem;
+  }
+
+/* ---- confirmation ----- */
+  .confirmationTitle{
+    margin-left: 10%;
+    font-size: 47px;
+  }
+
+  .addressInfoSummary{
+    margin-left: 4%;
+    font-size: 25px;
+  }
+
+  .confirmTitle {
+  font-size: 30px;
+  }
+
+  .confirmItemTotal{
+    font-size:29px;
+    margin-left: 0rem;
+  }
+
+  .marginConfirm{
+    margin-left: 6rem;
+  }
+
+  .confirmQuantity{
+    margin-top: -18%;
+    margin-left: 30rem;
+  }
+
+  .continueShop{
+    margin-left: 19rem;
+  }
+
+  .sumCardBodyFinal{
+    margin-left: -2.4%;
+    width:105.1%;
+  }
+
+  /*--------- emptyCart -----------*/
+  .emptyCatalogLink {
+    margin-left: 16rem;
+    width: 17rem;
+  }
+}
+
+@media (min-width: 798px) and (max-width: 862px){
+
+  .headerTitle{
+    font-size: 320%;
+  }
+
+  .card-titleDetails{
+    font-size:40px;
+  }
+
+  .card-titlePrice{
+    margin-left:10%;
+  }
+
+  .minusPlusButton{
+    font-size: 1.8rem;
+    margin-left: -0.1rem;
+  }
+
+  .quantityProDect{
+    margin-left: -0.5rem;
+    font-size: 20px;
+  }
+
+  .minusPlusButton2{
+    font-size: 1.8rem;
+    margin-left: -1rem;
+  }
+
+  .addToCartButton{
+    margin-left: 0%;
+    width:45%;
+    font-size: 13px;
+  }
+
+  .backToCatalogButton{
+    margin-left: 59.5%;
+    width: 42.5%;
+    font-size: 13px;
+  }
+
+/* -------------- mycart --------------- */
+  .myCartTitle{
+    font-size:45px;
+    margin-left:2%;
+  }
+
+  .itemTotal{
+    font-size: 32px;
+    margin-left: 2rem;
+  }
+
+  .sumCardBody{
+    width:104.5%;
+    margin-left: -2%;
+    height: 18rem;
+  }
+
+  .summaryImg{
+    height:15rem;
+    width:17rem;
+    margin-left:-14%;
+  }
+
+  .cartInfo{
+    margin-left: 8rem;
+  }
+
+  .card-titleCart{
+    font-size: 30px;
+  }
+
+  .card-textCartPrice{
+    font-size: 22px;
+  }
+
+  .card-textShortDes{
+    font-size: 15px;
+  }
+
+  .minPlusCartSum{
+    font-size: 23px;
+    margin-top: -15rem;
+    margin-left: 27rem;
+  }
+
+  .quantityCartSum{
+    font-size: 20px;
+    margin-top: -15.3rem;
+    margin-left: 21.5rem;
+  }
+
+  .minPlusCartSum2{
+    font-size: 23px;
+    margin-top: -15rem;
+    margin-left: 16rem;
+  }
+
+  .delCartSum{
+    margin-left: -5rem;
+    margin-top:-19rem;
+    width:12rem;
+  }
+
+/* --------------- checkout ----------------- */
+  .checkOutTitle{
+    font-size: 53px;
+    margin-top: 7.8rem;
+  }
+
+  .checkoutPrice{
+    font-size: 37px;
+    margin-left: 6rem;
+  }
+
+  .placeOrderButton{
+    margin-left: 17rem;
+  }
+
+/* ------------ confirmation ---------------- */
+
+  .confirmationTitle{
+    margin-left: 12%;
+    font-size: 43px;
+  }
+
+  .myCartSumTitle{
+    font-size: 53px;
+  }
+
+  .addressInfoSummary{
+    margin-left: 3%;
+    font-size: 23px;
+  }
+
+  .confirmItemTotal{
+    font-size: 26px;
+    margin-left: -1rem;
+  }
+
+  .sumCardBodyFinal{
+    margin-left:-2.5%;
+    width:105.5%;
+  }
+
+  .confirmImg{
+    margin-left: -1rem;
+  }
+
+  .marginConfirm{
+    margin-left: 6rem;
+  }
+
+  .confirmTitle{
+    font-size: 27px;
+  }
+
+  .confirmQuantity{
+    font-size: 23px;
+    margin-left: 26.5rem;
+    margin-top: -18%;
+  }
+
+  .continueShop{
+    margin-left: 17rem;
+  }
+/*--------- myCart -----------*/
+.emptyCatalogLink {
+    margin-left: 13rem;
+    width: 19rem;
+  }
+}
+
+
+/* ------------ Danger Zone: conflict with ipads patroit ---------- */
+/* @media (min-width: 780px) and (max-width: 796px){ */
+@media (min-width: 768px) and (max-width: 796px){
+
+  .card-titleDetails{
+    font-size: 39px;
+  }
+
+  .card-titlePrice{
+    margin-left: 12%;
+  }
+
+  .minusPlusButton2 {
+    margin-left: -2rem;
+  }
+
+  .minusPlusButton {
+    margin-left: 2rem;
+  }
+
+  .backToCatalogButton{
+  margin-left: 13%;
+  width: 74%;
+  margin-top: 6%;
+  }
+
+.addToCartButton {
+  margin-left: 6%;
+  width: 76%;
+  margin-top: 2rem;
+}
+
+/* --------------- myCart -- conflict with ipads patroit ------------ */
+.myCartTitle {
+    margin-top: 7rem;
+    margin-bottom: 3%;
+    margin-left: 1.3rem;
+}
+
+.itemTotal {
+    margin-top: 7.5rem;
+    margin-bottom: 5%;
+    font-size: 39px;
+    margin-left: 2rem;
+}
+
+.sumCardBody {
+    width: 104%;
+    margin-left: -2%;
+    height: 23rem;
+}
+
+.cartInfo{
+  margin-left:10rem;
+}
+
+.summaryImg {
+    height: 17rem;
+    width: 18rem;
+    margin-left: -2%;
+    margin-top: 1.5rem;
+}
+
+.card-titleCart {
+    margin-top: 1.5rem;
+    font-size: 30px;
+}
+
+.card-textShortDes {
+    font-size: 18px;
+    margin-left: 0.3rem;
+    margin-top: 1rem;
+}
+
+.minPlusCartSum {
+    margin-top: -20.5rem;
+    margin-left: 25rem;
+}
+
+.quantityCartSum {
+    font-size: 27px;
+    margin-top: -20.8rem;
+    margin-left: 20.6rem;
+}
+
+.minPlusCartSum2 {
+    margin-top: -20.5rem;
+    margin-left: 16rem;
+}
+
+.delCartSum {
+    margin-left: -7rem;
+    margin-top: -18rem;
+    height: 3rem;
+    width: 15rem;
+}
+
+/* ----------- Checkout : conflict with ipad patroit ------------*/
+  .checkOutTitle{
+    margin-left: 6%;
+    margin-top:7rem;
+    font-size: 52px;
+  }
+
+
+  .checkoutPrice{
+    margin-left: 9rem;
+  font-size: 36px;
+  margin-top: 7rem;
+  }
+
+  .placeOrderButton{
+    margin-left: 16rem;
+  }
+
+  label{
+    margin-left:1rem;
+  }
+
+  .form-control{
+    margin-left:1rem;
+  }
+
+/* ------------ confirmation : conflict with ipads patroit ------------ */
+     .confirmationTitle{
+      margin-left:21%;
+      font-size: 39px;
+    }
+
+     .confirmTitle{
+      font-size: 26px;
+    }
+
+    .marginConfirm{
+          margin-left: 6rem;
+    }
+
+    .continueShop {
+    display: block;
+    margin: 35px auto;
+    height: 3.5rem;
+    width: 12rem;
+}
+
+/*--------- emptyCart -------------*/
+.emptyCatalogLink{
+  /* margin-left: 19.2rem;
+  margin-top: 4rem; */
+    height: 3rem;
+    font-size: 23px;
+    margin-left: 12rem;
+    width: 25rem;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 767px){
+/* --------------- switch from desktop to ipads view --------- */
+.navbar{
+  display:none;
+}
+
+/* ------------------------ homePage ------------------------ */
+.landingHeader{
+  margin-top: 20%;
+  font-size: 112px;
+}
+
+.enterSiteButton {
+    display: block;
+    margin: 15% auto;
+    width: 30%;
+    height: 4rem;
+}
+
+.enterSiteText{
+  font-size: 29px;
+}
+
+/* --------------- header ----------------- */
+
+.homeImages {
+    height: 22rem;
+    margin-top:4rem;
+}
+
+.toggleSpan{
+  /* display: unset; */
+  display: flex;
+  justify-content: space-between
+}
+
+.wrapHeader{
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  z-index:50;
+  box-shadow: 0px 2px 11px #7c7474;
+}
+
+.navbar-container {
+  flex-basis:100%;
+  margin: 0;
+  max-width: 100%;
+
+}
+
+.headerTitle {
+  font-size: 32px;
+  color: black;
+  display: block;
+  margin-bottom: 1%;
+  margin-top: 2%;
+  margin-left: 2%;
+}
+
+
+.cartIcon{
+  font-size: 2.5rem;
+   font-size: 2.3rem;
+}
+
+.itemText {
+    font-size: 1.5rem;
+    margin-top: 3%;
+    margin-right: 4%;
+}
+
+.itemText:hover{
+  transform:none;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 50;
+  background-color: #00000038;
+}
+
+.menuLink {
+  padding: 8px 8px 8px 32px;
+  border-top: 3px solid purple;
+  color: white;
+  transition: 0.5s;
+  display:flex;
+  justify-content: space-between;
+  margin-top:3rem;
+  margin-bottom: -0.5rem;
+  margin-left: -3rem;
+
+}
+
+.sidenav {
+  height: 100%;
+  width: 62%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index:10;
+  background-color: rgb(0, 0, 0);
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav div{
+  padding: 14px 0px 0px 53px;
+  text-decoration: none;
+  font-size: 35px;
+  display: flex;
+  transition: 0.5s;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 6px;
+  right: 14px;
+  font-size: 36px;
+  color: white;
+  padding:2%;
+  font-size:53px;
+   /* transition: 0.5s; */
+}
+
+.card-title {
+    font-size: 1.6rem;
+}
+
+.card-textPrice {
+    font-size: 21.8px;
+}
+
+/* ------------ inside sideNav menuBar ------------ */
+
+.iconTextMobile{
+  text-decoration: none;
+  margin-right: 57%;
+  margin-left: -0.5rem;
+}
+
+.homeIconMobile1{
+  font-size: 22px;
+  margin-left: 0%;
+  margin-top:0.5rem;
+}
+
+.menuImg{
+  margin-top: 30%;
+  margin-left: 9%;
+  height: 13rem;
+  width: 67%;
+}
+
+
+/* ----------- productDetails ------------- */
+
+.card-titleDetails {
+  margin-left: 12%;
+  margin-top: -0.5rem;
+  font-size: 40px;
+}
+
+.card-titlePrice {
+    margin-left: 14%;
+    font-size: 28px;
+    margin-top: 1rem;
+}
+
+.minusPlusButton{
+  font-size: 2rem;
+  margin-left: 4.5rem;
+  margin-top: 1rem;
+}
+
+.quantityProDect{
+  margin-left: 0.48rem;
+  margin-top: 1rem;
+  font-size: 22px;
+}
+
+.minusPlusButton2{
+  margin-top: 1rem;
+  margin-left: -1.9rem;
+  font-size: 2rem;
+}
+
+.addToCartButton{
+  margin-left: 7%;
+  width: 86.5%;
+  margin-top: 3rem;
+  height: 3rem;
+  font-size: 20px;
+}
+
+.backToCatalogButton{
+  margin-left: 14%;
+  width: 84.5%;
+  height: 3rem;
+  margin-top: 6%;
+  font-size: 20px;
+}
+
+
+.detailTitle {
+  margin-left: -109%;
+  margin-top: 22%;
+  font-size: 1.7rem;
+}
+
+.longDes {
+  margin-left: -108%;
+  font-size: 24px;
+  margin-top: 2%;
+}
+
+.card-Icons{
+  margin-left: 7.6%;
+}
+
+/* ------------ myCart ---------- */
+
+  .myCartTitle{
+    margin-top:7.7rem;
+    font-size: 51px;
+  }
+
+  .itemTotal{
+    margin-top:8.1rem;
+    font-size: 33px;
+    margin-left: 2rem;
+  }
+
+  .sumCardBody{
+    width:106%;
+    margin-left:-3%;
+    height:18rem;
+  }
+
+    .card-titleCart{
+    font-size: 38px;
+  }
+
+  .card-textShortDes {
+    font-size: 18px;
+}
+
+  .cartInfo{
+    margin-left: 20rem;
+    margin-top: -15rem;
+  }
+
+  .minPlusCartSum{
+    margin-top: -10rem;
+    margin-left: 16rem;
+  }
+
+  .quantityCartSum{
+    margin-top: -10rem;
+    margin-left: 19.85rem;
+  }
+
+  .minPlusCartSum2{
+    margin-top:-10rem;
+    margin-left: 23.01rem;
+  }
+
+  .delCartSum{
+    margin-left: 28rem;
+    margin-top: -20rem;
+    width:7rem;
+  }
+
+/*----------- checkout -------------- */
+.checkoutPrice{
+      font-size: 41px;
+      margin-left: 8rem;
+    }
+
+      label {
+    margin-left: 1.2rem;
+}
+
+.form-control {
+    margin-left: 1rem;
+}
+
+
+  .placeOrderButton{
+      margin-left: 15rem;
+    }
+
+/* ----------- confirmation ---------------- */
+    .confirmationTitle{
+      margin-left:13%;
+      font-size:43px;
+    }
+
+    .myCartSumTitle{
+      margin-top:1rem;
+      font-size: 51px;
+      margin-left: 4%;
+    }
+
+    .addressInfoSummary{
+      margin-left: 9%;
+      font-size: 22px;
+    }
+
+    .confirmItemTotal{
+      font-size: 25px;
+      margin-left:0rem;
+    }
+
+    .sumCardBodyFinal{
+      width:148%;
+      margin-left: -24%;
+    }
+
+    .confirmImg{
+      height:15rem;
+      width:16rem;
+      margin-left:1rem;
+    }
+
+    .marginConfirm{
+      margin-top:-15rem;
+      margin-left:19rem;
+    }
+
+    .confirmQuantity{
+      font-size: 25px;
+      margin-left: 22rem;
+      margin-top: -3rem;
+    }
+
+    .continueShop{
+      margin-left: 19rem;
+    }
+
+/*-------- emptyCart --------- */
+.emptyCatalogLink {
+    /* margin-left: 13rem;
+    width: 23rem; */
+    margin-left: 13rem;
+    width: 24rem;
+
+  }
+
+}
+
+/* --------------- Danger Zone: conflict with iphone landscape ----------------------*/
+@media (min-width: 576px) and (max-width: 699px){
+      .navbar{
+  display:none;
+}
+
+.itemText:hover{
+  transform:none;
+}
+
+.wrapHeader{
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  z-index:50;
+  box-shadow: 0px 2px 11px #7c7474;
+}
+
+
+.headerTitle {
+  font-size: 25px;
+  color: black;
+  display: block;
+  margin-bottom: 1%;
+  margin-top: 1%;
+  margin-left: 2%;
+}
+
+
+.cartIcon{
+  font-size: 1.5rem;
+}
+
+.itemText {
+    font-size: 1rem;
+    margin-top: 2%;
+    margin-right: 4%;
+}
+
+.toggleSpan{
+  display: flex;
+  justify-content: space-between;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 50;
+  background-color: #00000038;
+}
+
+/* ------- iniside slide menu bar -------------*/
+.menuLink {
+  padding: 8px 8px 8px 32px;
+  border-top: 2px solid purple;
+  color: white;
+  transition: 0.5s;
+  display:flex;
+  justify-content: space-between;
+
+}
+
+.sidenav{
+  height: 100%;
+  width: 71%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index:50;
+  background-color: rgb(0, 0, 0);
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+
+.sidenav div{
+  padding: 9px 21px 10px 21px;
+  text-decoration: none;
+  font-size: 19px;
+  display: flex;
+  transition: 0.3s;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 16px;
+  font-size: 36px;
+  color: white;
+  padding:1%;
+  transition: 0.5s;
+}
+
+.iconTextMobile{
+  text-decoration: none;
+  margin-top: -2%;
+  margin-right: 70%;
+}
+
+.homeIconMobile1{
+  font-size: 22px;
+  margin-left: -1%;
+}
+
+.menuImg{
+  margin-top: 30%;
+  margin-left: 9%;
+  height: 13rem;
+  width: 67%;
+}
+
+
+/* ---------------- productDetails --------------------- */
+
+  .cardDetails {
+    margin-top: 6rem;
+}
+
+.marginDetails {
+    margin-left: 0rem;
+}
+
+.card-titleDetails {
+    font-size: 34px;
+    margin-left: 9.6%;
+}
+
+.card-titlePrice {
+    margin-left: 10%;
+}
+
+
+.addToCartButton {
+    margin-left: -1%;
+    margin-top: 9%;
+    width: 90.8%;
+}
+
+.backToCatalogButton {
+    margin-left: 10.53%;
+    width: 85.4%;
+    margin-top: 5%;
+}
+
+.detailTitle {
+    margin-left: -111%;
+    margin-top: 26%;
+}
+
+.longDes {
+    margin-left: -112%;
+    margin-top: 2%;
+}
+
+.minusPlusButton:active{
+  transform: none;
+}
+
+.minusPlusButton2:active{
+  transform: none;
+}
+
+.cardImgCarousel{
+  width:109%;
+}
+
+.quantityProDect{
+  margin-left: 0.1rem;
+}
+
+
+/* ---------- mycart : iphone landscape conflicts -------------*/
+
+	.sumCardBody {
+    background-color: white;
+    width: 106%;
+    margin-left: -3%;
+}
+
+.myCartTitle {
+    margin-top: 5.3rem;
+    font-size: 41px;
+    margin-left: 4%;
+	}
+
+	.itemTotal {
+    margin-top: 5.3rem;
+    font-size: 30px;
+    margin-left: 3rem;
+  }
+
+  .cartButtonsSpace {
+    margin: 100px 65px;
+}
+
+.cartInfo{
+      margin-left: 0.5rem;
+}
+
+.checkOutButton {
+    width: 18%;
+    margin-left: 42%;
+}
+
+
+/* --------- checkout ----------- */
+
+.checkOutTitle {
+  font-size: 49px;
+  margin-left: 14%;
+  margin-top: 4.3rem;
+}
+
+  label {
+    margin-left: 0.5rem;
+}
+
+.form-control {
+    margin-left: 0.5rem;
+}
+
+.checkoutPrice {
+  font-size: 36px;
+  margin-left: 8rem;
+  margin-top: 4.3rem;
+}
+
+.placeOrderButton {
+      margin-top: 1.5rem;
+    margin-left: 13rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ---------- confirmation ------------ */
+
+.confirmationTitle {
+    margin-left: 21%;
+    font-size: 35px;
+    margin-top:5rem;
+}
+
+.addressInfoSummary{
+  font-size: 23px;
+  margin-left: 18%;
+}
+
+.myCartSumTitle{
+  margin-top:1rem;
+  font-size: 54px;
+  margin-left: 21%;
+}
+
+.confirmItemTotal{
+  margin-top:1.5rem;
+  font-size: 25px;
+  margin-left: -1.3rem;
+}
+
+.confirmTitle {
+  margin-top: -14.3rem;
+  margin-left:54%;
+  font-size: 30px;
+}
+
+.confirmImg{
+  height:14rem;
+  width:15rem;
+}
+
+.confirmShortDes{
+  font-size: 17px;
+  margin-left: 16.6rem;
+}
+
+.confirmPrice{
+  font-size: 21px;
+  margin-left: 16.6rem;
+}
+
+.confirmQuantity{
+  font-size:23px;
+  margin-left: 19.5rem;
+  margin-top:-2rem;
+}
+
+.continueShop{
+  margin-left:16rem;
+  height:3rem;
+}
+
+/*---------- emptyCart ----------- */
+.emptyCatalogLink {
+  /* margin-left: 17.1rem; */
+  margin-top: 1rem;
+    margin-left: 9.5rem;
+    width: 24rem;
+
+
+  }
+}
+
+@media (min-width: 480px) and (max-width: 575px){
+  .navbar{
+    width:100%;
+  }
+
+  .headerTitle{
+    font-size: 213%;
+  }
+
+  .headerIcons{
+    margin-top:3%;
+  }
+
+  .homeImages{
+    height:19rem;
+    margin-top: 4rem;
+  }
+
+  .homeIcon{
+    font-size:1.5rem;
+  }
+
+  .catalogIcon{
+    font-size: 1.5rem;
+  }
+
+  .itemText{
+    font-size: 1rem;
+  }
+
+  .cartIcon{
+    font-size: 1.5rem;
+  }
+
+
+/*--------- productDetails ---------- */
+  .addToCartButton {
+  margin-left: 0%;
+  width: 51%;
+  }
+  .backToCatalogButton {
+  margin-left: 51%;
+  width: 49.3%;
+  margin-top: 3%;
+  }
+
+/* ------------- myCart ------------------- */
+  .myCartTitle {
+      margin-top: 7.3rem;
+      font-size: 28px;
+      margin-left: -3%;
+  }
+
+  .itemTotal {
+      margin-top: 6.8rem;
+      margin-bottom: 2.5%;
+      font-size: 29px;
+      margin-left: -1rem;
+  }
+
+  .sumCardBody {
+      width: 110%;
+      margin-left: -4%;
+      height: 18rem;
+  }
+
+  .summaryImg {
+      height: 15rem;
+      width: 16rem;
+      margin-left: -4%;
+  }
+
+  .cartInfo{
+      margin-top: -15rem;
+      margin-left: 17rem;
+  }
+
+  .card-titleCart {
+      font-size: 25px;
+  }
+
+  .card-textCartPrice {
+      font-size: 20px;
+  }
+
+  .card-textShortDes {
+      font-size: 13.5px;
+  }
+
+  .minPlusCartSum {
+      font-size: 1.3rem;
+      cursor: pointer;
+      margin-top: -11rem;
+      margin-left: 14rem;
+  }
+
+  .quantityCartSum {
+      font-size: 17px;
+      margin-top: -11.3rem;
+      margin-left: 17.1rem;
+  }
+
+  .minPlusCartSum2 {
+      font-size: 1.3rem;
+      margin-top: -11rem;
+      margin-left: 20rem;
+  }
+
+  .delCartSum {
+      margin-left: 13rem;
+      margin-top: -16.8rem;
+      width: 9rem;
+  }
+
+  .checkOutButton {
+      width: 25%;
+      margin-left: 43%;
+  }
+
+/* ----------- checkout ------------ */
+  .checkOutTitle {
+      margin-top: 7rem;
+      font-size: 40px;
+  }
+
+  .checkoutPrice {
+      margin-top: 7rem;
+      font-size: 29px;
+      margin-left: 5rem;
+  }
+
+    label {
+      margin-left: 0.5rem;
+  }
+
+  .form-control {
+      margin-left: 0.5rem;
+  }
+
+  #addressInput {
+      width: 95.5%;
+  }
+
+  .placeOrderButton {
+      margin-top: 1.5rem;
+      margin-left: 10.5rem;
+  }
+
+/* ------------- confirmation -------------- */
+  .confirmationTitle {
+      margin-top: 9rem;
+      margin-left: 8%;
+      font-size: 32px;
+  }
+
+  .myCartSumTitle {
+      margin-top: 1rem;
+      font-size: 46px;
+      margin-left: 11%;
+  }
+
+  .addressInfoSummary {
+      font-size: 17px;
+  }
+
+  .confirmItemTotal {
+      margin-top: 1rem;
+      font-size: 20px;
+      margin-left: -2rem;
+  }
+
+  .confirmImg {
+      height: 13rem;
+      width: 14rem;
+      margin-left: -1rem;
+  }
+
+  .marginConfirm{
+      margin-left: 14rem;
+      margin-top: -13rem;
+  }
+
+  .confirmTitle {
+      font-size: 29px;
+  }
+
+  .confirmShortDes {
+      font-size: 14px;
+  }
+
+  .confirmQuantity {
+      margin-top: -10%;
+      margin-left: 13rem;
+      font-size: 25px;
+  }
+
+  .continueShop {
+      margin-left: 12rem;
+  }
+
+/*---------- emptyCart -------------- */
+.emptyCatalogLink {
+    margin-left: 6rem;
+    width: 22rem;
+  }
+}
+
+ @media (min-width: 380px) and (max-width: 479px){
+  .navbar{
+    width:100%;
+  }
+
+  .headerTitle{
+    font-size: 178%;
+  }
+
+  .headerIcons{
+    margin-left: -2rem;
+    margin-top: 0.5rem;
+  }
+
+  .homeImages{
+    height:19rem;
+    margin-top: 3rem;
+  }
+
+  .homeIcon{
+    font-size:1.2rem;
+  }
+
+  .catalogIcon{
+    font-size: 1.2rem;
+  }
+
+  .itemText{
+    font-size: 0.9rem;
+    margin-top:0.2rem;
+  }
+
+  .cartIcon{
+    font-size: 1.2rem;
+  }
+
+/* ---------- productDetails ----------- */
+  .cardDetails {
+    margin-top: 9rem;
+  }
+
+  .card-titleDetails {
+      font-size: 43px;
+  }
+
+  .minusPlusButton {
+      margin-top: 0.3rem;
+      font-size: 1.5rem;
+      margin-left: 4rem;
+  }
+
+  .quantityProDect {
+      margin-left: 0.35rem;
+      margin-top: 0.3rem;
+      font-size: 17px;
+  }
+
+  .minusPlusButton2 {
+      margin-top: 0.3rem;
+      font-size: 1.5rem;
+      margin-left: -2rem;
+  }
+
+  .addToCartButton {
+    margin-left: -4%;
+    width: 101%;
+    margin-top: 1rem;
+  }
+
+  .backToCatalogButton {
+      margin-left: 5%;
+      width: 95.7%;
+      margin-top: 4%;
+    }
+
+/* --------- myCart ----------- */
+  .myCartTitle {
+    margin-top: 6rem;
+    margin-bottom: 2%;
+    font-size: 33px;
+  }
+
+  .itemTotal {
+      margin-top: 6rem;
+      margin-bottom: 4%;
+      font-size: 25px;
+      margin-left: 0rem;
+    }
+
+  .sumCardBody {
+      width: 110%;
+      margin-left: -5%;
+      height: 23rem;
+    }
+
+  .summaryImg {
+      height: 12rem;
+      width: 13rem;
+      margin-left: -5%;
+    }
+
+  .cartInfo{
+  margin-top: -12rem;
+      margin-left: 14rem;
+  }
+
+  .card-titleCart {
+      font-size: 18px;
+  }
+
+  .card-textCartPrice {
+      font-size: 14px;
+  }
+
+  .card-textShortDes {
+      font-size: 14px;
+  }
+
+  .minPlusCartSum {
+      font-size: 1.5rem;
+      margin-left: -3rem;
+      margin-top: -5rem;
+  }
+
+  .quantityCartSum {
+      font-size: 17px;
+      margin-top: -5rem;
+      margin-left: 0.6rem;
+  }
+
+  .minPlusCartSum2 {
+      font-size: 1.5rem;
+      margin-top: -5rem;
+      margin-left: 4rem;
+  }
+
+  .delCartSum {
+      margin-left: -4.5rem;
+      margin-top: -5rem;
+      width: 11rem;
+      font-size: 12px;
+  }
+
+  .checkOutButton {
+      width: 27%;
+  }
+
+/* ------------ checkoutForm ----------*/
+  .checkoutPrice {
+      margin-top: 6rem;
+      font-size: 28px;
+      margin-left: 5rem;
+  }
+
+  .checkOutTitle {
+      margin-top: 6rem;
+      font-size: 36px;
+      margin-left: 16%;
+  }
+
+  #addressInput {
+      width: 95%;
+  }
+
+  label {
+      margin-left: 0rem;
+  }
+
+  .form-control {
+      margin-left: 0rem;
+  }
+
+  .placeOrderButton{
+      margin-left: 7rem;
+  }
+
+/*----------- confirmation ------------*/
+  .confirmationTitle {
+    margin-left: 4%;
+    margin-top: 7rem;
+    font-size: 43px;
+}
+
+.myCartSumTitle {
+    margin-top: 2rem;
+    font-size: 51px;
+    margin-left: 4%;
+}
+
+.addressInfoSummary {
+    margin-left: 7%;
+    font-size: 27px;
+}
+
+.continueShop {
+    margin-left: 9rem;
+}
+
+/*---------- emptyCart -------------- */
+.emptyCatalogLink {
+    margin-left: 3rem;
+    width: 20rem;
+  }
+
+}
+
+/* -----------working in progress: need to continue working up until this queries for product details, cart and confirmation except the form is done */
+
+/* ------------ danger zone: conflict with iphone patroits ------------ */
+
+@media (min-width: 310px) and (max-width: 379px){
    .enterSiteButton {
-    width: 44%;
+    margin-left: 32%;
+    width: 37%;
+  }
+
+
+/* ------ this is to change the view from desktop to mobile ---- */
+.navbar{
+  display:none;
+}
+
+.itemText:hover{
+  transform:none;
+}
+
+.wrapHeader{
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  z-index:50;
+  box-shadow: 0px 2px 11px #7c7474;
+}
+
+
+.headerTitle {
+  font-size: 20px;
+  color: black;
+  display: block;
+  margin-bottom: 3%;
+  margin-top: 1%;
+  margin-left: 2%;
+}
+
+
+.cartIcon{
+  font-size: 1.5rem;
+}
+
+.itemText {
+    font-size: 1rem;
+    margin-top: 2%;
+    margin-right: 4%;
+}
+
+.toggleSpan{
+  display: flex;
+  justify-content: space-between;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 50;
+  background-color: #00000038;
+}
+
+
+
+/* ------- iniside slide menu bar -------------*/
+.menuLink {
+  padding: 8px 8px 8px 32px;
+  border-top: 2px solid purple;
+  color: white;
+  transition: 0.5s;
+  display:flex;
+  justify-content: space-between;
+
+}
+
+.sidenav{
+  height: 100%;
+  width: 71%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index:50;
+  background-color: rgb(0, 0, 0);
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+
+.sidenav div{
+  padding: 9px 1px 10px 18px;
+  text-decoration: none;
+  font-size: 19px;
+  display: flex;
+  transition: 0.3s;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 11px;
+  font-size: 36px;
+  color: white;
+  padding:1%;
+  transition: 0.5s;
+}
+
+.iconTextMobile{
+  text-decoration: none;
+  margin-top: -2%;
+  margin-right: 70%;
+}
+
+.homeIconMobile1{
+  font-size: 22px;
+  margin-left: -1%;
+}
+
+.menuImg{
+  margin-top: 30%;
+  margin-left: 9%;
+  height: 13rem;
+  width: 67%;
+}
+
+.homeImages {
+    width: 100%;
+    height: 15rem;
+
+}
+
+/* ------------------ productDetails -------------- */
+
+.cardDetails {
+    margin-top: 6rem;
+}
+
+.marginDetails {
+    margin-left: 0rem;
+}
+
+.card-titleDetails {
+    margin-left: 0%;
+    font-size: 39px;
+    margin-top: 4%;
+}
+
+.card-titlePrice {
+  margin-left: 1%;
+  margin-top:6%;
+}
+
+.card-Icons{
+  margin-left: 38%;
+  margin-top: -18%;
+}
+
+.minusPlusButton{
+  margin-left:35%;
+}
+
+.minusPlusButton:active{
+  transform: none;
+}
+
+.minusPlusButton2{
+  margin-left:24%;
+}
+
+.minusPlusButton2:active{
+  transform: none;
+}
+
+.quantityProDect{
+  margin-left: 34%;
+}
+
+.addToCartButton{
+  margin-left: -57%;
+  width:150%;
+  margin-top: 18%;
+}
+
+.backToCatalogButton{
+  margin-left: -0.1%;
+  width: 100.6%;
+  margin-top:5%;
+}
+
+.detailTitle {
+    margin-left: 0%;
+}
+
+/*------------ myCart ---------- */
+.myCartTitle{
+  margin-top: 4rem;
+  font-size: 29px;
+  margin-left: -4%;
+
+}
+
+.itemTotal {
+  margin-top: 4rem;
+  font-size: 23px;
+  margin-left: -1.5rem;
+  margin-bottom: 4%;
+}
+
+.sumCardBody {
+  background-color: white;
+  width: 112%;
+  margin-left: -6%;
+}
+
+.checkOutButton {
+    width: 34%;
+    margin-left: 33%;
+}
+
+
+/*--------- checkout -------- */
+.checkOutTitle {
+    margin-top: 4rem;
+    font-size: 33px;
+    margin-left: 10%;
+    margin-bottom: 1.3rem;
+}
+
+.checkoutPrice{
+  margin-top: 4rem;
+  font-size: 26px;
+  margin-left: 2rem;
+}
+
+label{
+  margin-left:3rem;
+}
+
+#nameInput{
+  width:226%;
+  margin-bottom: 8%;
+}
+
+.colCheckout{
+  margin-left:-10%;
+}
+
+.form-group {
+    width: 40%;
+}
+
+#shipAddress{
+  margin-left:14%;
+  margin-top: 0%;
+  width: 10rem;
+
+}
+
+#FormTextarea{
+  width:226%;
+  margin-bottom: 10%;
+}
+
+#creditNumExpDate{
+  margin-left:35%;
+  width:10rem;
+  margin-top: -1%;
+}
+
+.cardMargin{
+    margin-top: -1rem;
+}
+
+.inputForm{
+  width:29%;
+}
+
+#firstName{
+  margin-left:25%;
+}
+
+#lastName{
+  width: 100%;
+  margin: 10px 2.2rem;
+}
+
+#addressInput {
+  width: 226%;
+  margin-left: 13%;
+  margin-bottom: 10%;
+}
+
+.inputSpaceCard{
+  margin-bottom: 9%;
+}
+
+#cvvStyle{
+  margin-top: 10%;
+  margin-left: 35%;
+}
+
+.placeOrderButton {
+  margin-left: 7.5rem;
+  margin-bottom: 2rem;
+  width: 50%;
+  margin-top:1rem;
+}
+
+/*----------- confirmation ------------*/
+.confirmationTitle {
+    margin-top: 5rem;
+    margin-left: 2%;
+    font-size: 41px;
+}
+
+.myCartSumTitle {
+    font-size: 50px;
+}
+
+.addressInfoSummary {
+    font-size: 25px;
+}
+
+.confirmItemTotal {
+    margin-top: 1rem;
+    font-size: 32px;
+}
+
+.continueShop {
+    margin-left: 6rem;
+}
+
+
+
+/*---------- emptyCart -----------*/
+.emptyCatalogLink{
+  /* margin-left: 7.5rem; */
+  margin-top: 2rem;
+  /* width: 40%; */
+  height: 2.5rem;
+  font-size:14px;
+
+  margin-left: 5rem;
+  width: 60%;
+}
+
+.noItemsImg {
+    margin-top: 35%;
+}
+
+}
+
+@media (min-width: 261px) and (max-width: 309px){
+  .enterSiteButton {
+    width: 34%;
+    margin-left: 33%;
+}
+
+ .navbar{
+  display:none;
+}
+
+.toggleSpan {
+    display: flex;
+}
+
+
+.wrapHeader{
+  background-color: white;
+  position: fixed;
+  z-index: 50;
+  width: 100%;
+  box-shadow: 0px 2px 11px #7c7474;
+}
+
+.homeImages {
+  height: 16rem;
+  margin-top: 2rem;
+}
+
+.itemText {
+    font-size: 16px;
+    margin-top: 3%;
+    margin-left: 24%;
+}
+
+.headerTitle {
+    font-size: 21px;
+    color: black;
+    display: block;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    margin-left: 2.5%;
+}
+
+.cartIcon{
+  font-size: 125%;
+}
+
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 50;
+  background-color: #00000038;
+}
+
+.menuLink {
+  padding: 8px 8px 8px 32px;
+  border-top: 2px solid purple;
+  color: white;
+  transition: 0.5s;
+  display:flex;
+  justify-content: space-between;
+
+}
+
+.sidenav {
+  height: 100%;
+  width: 83%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index:10;
+  background-color: rgb(0, 0, 0);
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav div{
+  padding: 10px 5px 10px 10px;
+  text-decoration: none;
+  font-size: 19px;
+  display: flex;
+  transition: 0.3s;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 9px;
+  font-size: 36px;
+  color: white;
+  padding:1%;
+}
+
+.iconTextMobile{
+  text-decoration: none;
+  margin-top: -2%;
+  margin-right: 70%;
+}
+
+.homeIconMobile1{
+  font-size: 22px;
+  margin-left: -1%;
+}
+
+.menuImg{
+  margin-top: 30%;
+  margin-left: 9%;
+  height: 13rem;
+  width: 67%;
+}
+
+.iconTextMobile {
+    margin-right: 75%;
+  }
+
+/* --------- productDetails ----------- */
+  .cardDetails {
+    margin-top: 6rem;
+}
+.longDes {
+    font-size: 16px;
+}
+ .card-titleDetails {
+    font-size: 27px;
+ }
+
+ .card-titlePrice {
+    font-size: 20px;
+}
+
+ .card-Icons {
+    margin-left: 14px;
+}
+
+.addToCartButton {
+    margin-left: 5%;
+    width: 88%;
+    margin-top: 1rem;
+}
+
+.backToCatalogButton {
+    margin-left: 12%;
+    width: 89%;
+    margin-top: 6%;
+}
+
+/*---------------- myCart -------------------- */
+
+.sumCardBody {
+    width: 114%;
+    margin-left: -7%;
+}
+
+.myCartTitle {
+    margin-top: 4rem;
+    font-size: 38px;
+}
+
+.itemTotal {
+    margin-top: 11rem;
+    margin-bottom: 6%;
+    font-size: 33px;
+    margin-left: -7rem;
+}
+
+.summaryImg {
+    height: 14rem;
+    width: 14rem;
+    margin-left: -11%;
+}
+
+.card-titleCart {
+    font-size: 36px;
+}
+
+.cartButtonsSpace {
+    margin: 7px 65px;
+}
+
+.minPlusCartSum {
+    margin-left: -2rem;
+}
+
+.quantityCartSum {
+    margin-top: -2rem;
+    margin-left: 1.5rem;
+}
+
+.minPlusCartSum2 {
+    margin-left: 4rem;
+    margin-top: -2.9rem;
+}
+
+.delCartSum {
+    margin-left: -5rem;
+    width: 14rem;
+}
+
+.checkOutButton {
+    width: 47%;
+    margin-left: 24%;
+}
+
+
+/*-------- checkout --------- */
+  .checkOutTitle {
+    margin-top: 4rem;
+    font-size: 36px;
+    margin-left: 16%;
+}
+
+.checkoutPrice {
+    margin-top: 7rem;
+    font-size: 27px;
+    margin-left: -4rem;
+}
+
+  form {
+    width: 5rem;
+  }
+
+   label{
+      margin-left:0.5rem;
+    }
+ .form-control{
+      margin-left: 0.5rem;
+    }
+
+  #nameInput {
+    width: 249%;
+}
+
+#addressInput {
+    width: 245%;
+}
+
+#FormTextarea {
+    width: 243%;
+}
+
+#firstName{
+    width: 10rem;
+}
+
+#lastName{
+    width: 10rem;
+}
+
+#creditNumExpDate{
+    width: 10rem;
+}
+
+#shipAddress{
+  width: 10rem;
+}
+
+.placeOrderButton {
+    margin-left: 2.5rem;
+    width: 7rem;
+}
+
+/*-------------- confirmation -------------*/
+.confirmationTitle {
+    margin-top: 6rem;
+    margin-left: 4%;
+    font-size: 34px;
+}
+
+.thankImg {
+    width: 17%;
+    margin-left: 3%;
+}
+
+.myCartSumTitle {
+    margin-top: 2rem;
+    font-size: 53px;
+    margin-left: 3%;
+}
+
+.addressInfoSummary {
+    font-size: 27px;
+}
+
+.confirmItemTotal {
+    font-size: 35px;
+}
+
+.confirmImg {
+    height: 12rem;
+    width: 13rem;
+    margin-left: -1rem;
+}
+
+.confirmTitle {
+    font-size: 29px;
+}
+
+.continueShop {
+    margin-left: 4rem;
+}
+
+/*-------- emptyCart ---------- */
+.emptyCatalogLink {
+    margin-left: 3rem;
+    width: 13rem;
   }
 
 }
 
 
-@media only screen and (min-width: 992px) and (max-width: 1136px){
- .enterSiteButton {
-    width: 41%;
-    margin-left: 21rem;
-  }
-
-} */
-
-
-
-/* -------------------- something off ---------------------- */
-
-/* @media only screen and (min-width: 260px) and (max-width: 992px){
- .enterSiteButton {
+@media (min-width: 220px) and (max-width: 260px){
+  .enterSiteButton {
+    margin-left: 32%;
     width: 38%;
-    margin-left: 18rem;
+}
+  .navbar{
+  display:none;
+}
+
+.toggleSpan {
+    display: flex;
+}
+
+.wrapHeader{
+  background-color: white;
+  position: fixed;
+  z-index: 50;
+  width: 100%;
+  box-shadow: 0px 2px 11px #7c7474;
+}
+
+.homeImages {
+  height: 16rem;
+  margin-top: 2rem;
+}
+
+.itemText {
+    font-size: 16px;
+    margin-top: 2.5%;
+    margin-left: 18%;
+}
+
+.headerTitle {
+    font-size: 18px;
+    color: black;
+    display: block;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    margin-left: 2.5%;
+}
+
+.cartIcon{
+  font-size: 125%;
+}
+
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 50;
+  background-color: #00000038;
+}
+
+.menuLink {
+  padding: 8px 8px 8px 32px;
+  border-top: 2px solid purple;
+  color: white;
+  transition: 0.5s;
+  display:flex;
+  justify-content: space-between;
+
+}
+
+.sidenav {
+  height: 100%;
+  width: 81%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index:10;
+  background-color: rgb(0, 0, 0);
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav div{
+  padding: 10px 5px 10px 14px;
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  transition: 0.3s;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 9px;
+  font-size: 36px;
+  color: white;
+  padding:1%;
+}
+
+.iconTextMobile{
+  text-decoration: none;
+  margin-top: -2%;
+  margin-right: 70%;
+}
+
+.homeIconMobile1{
+  font-size: 22px;
+  margin-left: -1%;
+}
+
+.menuImg{
+  margin-top: 30%;
+  margin-left: 9%;
+  height: 13rem;
+  width: 67%;
+}
+
+.iconTextMobile {
+    margin-right: 75%;
+}
+
+/* ----------- productDetails ---------- */
+.cardDetails {
+    margin-top: 6rem;
+}
+.card-titleDetails {
+    margin-left: 11%;
+    font-size: 20px;
+    margin-top: 0.5rem;
+}
+
+.minusPlusButton {
+    font-size: 1.3rem;
+    margin-left: 0.6rem;
+}
+.card-titlePrice {
+    margin-left: 10%;
+    font-size: 17px;
+}
+
+.card-Icons {
+    margin-left: -3%;
+}
+
+.quantityProDect {
+    margin-left: 0.3rem;
+    margin-top: 0.3rem;
+    font-size: 15px;
+}
+
+.minusPlusButton2 {
+    margin-top: 0.3rem;
+    font-size: 1.3rem;
+}
+
+.addToCartButton {
+    width: 80%;
+    font-size: 12px;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.backToCatalogButton {
+    width: 90%;
+    font-size: 12px;
+    margin-top: 1rem;
+    margin-left: 0.7rem;
+}
+
+.longDes {
+    font-size: 17px;
+}
+
+.detailTitle {
+    font-size: 1.2rem;
+}
+
+/*------------------ myCart -------------- */
+.myCartTitle {
+    margin-top: 3rem;
+    font-size: 45px;
+    margin-left: -2%;
+}
+
+.itemTotal {
+    margin-top: 11rem;
+    margin-bottom: 26%;
+    font-size: 32px;
+    margin-left: -6rem;
+}
+
+.sumCardBody {
+    width: 120%;
+    margin-left: -9%;
+}
+
+.summaryImg {
+    height: 12rem;
+    width: 12rem;
+    margin-left: -16%;
+}
+
+.card-titleCart {
+    font-size: 26px;
+}
+
+.cartButtonsSpace {
+    margin: 15px 65px;
+}
+
+.minPlusCartSum {
+    margin-left: -3rem;
+}
+
+.quantityCartSum {
+    margin-top: -2rem;
+}
+
+.minPlusCartSum2 {
+    margin-top: -2.8rem;
+    margin-left: 2.3rem;
+}
+
+.delCartSum {
+    margin-left: -5rem;
+    width: 11rem;
+}
+
+.checkOutButton {
+    width: 52%;
+    margin-left: 27%;
+}
+
+/*------------------- checkout -------------- */
+form {
+    width: 4rem;
+}
+
+ label{
+      margin-left:0rem;
+    }
+ .form-control{
+      margin-left: 0rem;
+    }
+
+#firstName{
+    width: 10rem;
+}
+
+#lastName{
+    width: 10rem;
+}
+
+#creditNumExpDate{
+    width: 10rem;
+}
+  #shipAddress{
+        width: 10rem;
   }
 
-} */
+  #nameInput {
+    width: 265%;
+}
+
+#addressInput {
+    width: 265%;
+}
+
+#FormTextarea {
+    width: 264%;
+}
+
+.checkoutPrice {
+    margin-top: 7rem;
+    font-size: 24px;
+    margin-left: -4rem;
+}
+
+.checkOutTitle {
+    margin-top: 4rem;
+    font-size: 39px;
+    margin-left: 16%;
+}
+
+.placeOrderButton {
+    margin-left: 1rem;
+    width: 7rem;
+}
+
+/*------------ confirmation -------------*/
+.confirmationTitle {
+    margin-top: 5rem;
+    margin-left: 3%;
+    font-size: 39px;
+}
+
+.thankImg {
+    width: 19%;
+}
+
+.myCartSumTitle {
+    font-size: 50px;
+}
+
+.confirmImg {
+    height: 11rem;
+    width: 10rem;
+    margin-left: -1rem;
+}
+
+.continueShop {
+    margin-left: 2rem;
+}
+
+/*----------- myCart ---------*/
+.emptyCatalogLink {
+    margin-left: 1rem;
+    width: 12rem;
+  }
+
+
+}
+
+
+/* --------- landing page----- the last one ---------------- */
+ @media (min-width: 150px) and (max-width: 219px){
+.landingHeader {
+    font-size: 40px;
+    margin-top: 52%;
+}
+
+.enterSiteText {
+    font-size: 12px;
+}
+
+.enterSiteButton {
+    margin-left: 34%;
+    width: 33%;
+    margin-top: 26%;
+}
+
+
+ .navbar{
+  display:none;
+}
+
+.toggleSpan {
+    display: flex;
+}
+
+.wrapHeader{
+  background-color: white;
+  position: fixed;
+  z-index: 50;
+  width: 100%;
+  box-shadow: 0px 2px 11px #7c7474;
+}
+
+.homeImages {
+  height: 16rem;
+  margin-top: 3rem;
+}
+
+.headerTitle {
+  font-size: 19px;
+  color:black;
+  display: block;
+  margin-bottom: 1%;
+  margin-top: 1%;
+  margin-left: 2.5%;
+}
+
+.cartIcon{
+  font-size: 125%;
+}
+
+.itemText {
+  font-size: 16px;
+  margin-top: 25.5%;
+  margin-left: -7rem;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 50;
+  background-color: #00000038;
+}
+
+.menuLink {
+  padding: 8px 8px 8px 32px;
+  border-top: 2px solid purple;
+  color: white;
+  transition: 0.5s;
+  display:flex;
+  justify-content: space-between;
+
+}
+
+.sidenav {
+  height: 100%;
+  width: 74%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index:10;
+  background-color: rgb(0, 0, 0);
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav div{
+  padding: 10px 5px 10px 4px;
+  text-decoration: none;
+  font-size: 13px;
+  display: flex;
+  transition: 0.3s;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 9px;
+  font-size: 36px;
+  color: white;
+  padding:1%;
+}
+
+.iconTextMobile{
+  text-decoration: none;
+  margin-top: -2%;
+  margin-right: 70%;
+}
+
+.homeIconMobile1{
+  font-size: 22px;
+  margin-left: -1%;
+}
+
+.menuImg{
+  margin-top: 30%;
+  margin-left: 9%;
+  height: 13rem;
+  width: 67%;
+}
+
+.iconTextMobile {
+    margin-right: 75%;
+}
+
+.card-title {
+    font-size: 14px;
+}
+
+.card-textPrice {
+    font-size: 14px;
+}
+
+/* ---------- productDetails ---------- */
+.card-titleDetails {
+    margin-left: 25%;
+    font-size: 14px;
+    margin-top: 0.3rem;
+}
+
+.card-titlePrice {
+    margin-left: 23%;
+    font-size: 14px;
+}
+.card-Icons {
+    margin-left: 2px;
+}
+
+.addToCartButton {
+
+    width: 82%;
+    margin-top: 1rem;
+    font-size: 9px;
+}
+
+.backToCatalogButton {
+    margin-left: 18%;
+    width: 93%;
+    margin-top: 13%;
+    font-size: 9px;
+}
+
+.detailTitle {
+    margin-top: 15%;
+    font-size: 1rem;
+}
+
+.longDes {
+    margin-left: -7%;
+    font-size: 15px;
+    margin-top: 1%;
+}
+
+.minusPlusButton {
+    font-size: 1rem;
+}
+
+.minusPlusButton2 {
+    font-size: 1rem;
+}
+
+.quantityProDect {
+    font-size: 14px;
+}
+
+/*----------- myCart --------------*/
+.myCartTitle {
+    margin-top: 5rem;
+    font-size: 30px;
+}
+
+.itemTotal {
+    margin-top: 10rem;
+    margin-bottom: 59%;
+    font-size: 27px;
+    margin-left: -4rem;
+}
+
+.sumCardBody {
+    width: 131%;
+    margin-left: -15%;
+}
+
+.summaryImg {
+    height: 9rem;
+    width: 7rem;
+    margin-left: -9%;
+}
+
+.card-titleCart {
+    font-size: 30px;
+}
+
+.cartButtonsSpace {
+    margin: -1px -9px;
+}
+
+.delCartSum {
+    margin-left: -0.5rem;
+    width: 9rem;
+}
+
+.quantityCartSum {
+    margin-top: -2rem;
+    margin-left: 3rem;
+}
+
+.minPlusCartSum2 {
+    margin-top: -2.8rem;
+    margin-left: 5rem;
+}
+
+.checkOutButton {
+    width: 85%;
+    margin-left: -2%;
+}
+
+/* ---------- checkout ------------ */
+form {
+    width: 2rem;
+}
+
+ label{
+      margin-left:0rem;
+      font-size: 14px;
+    }
+ .form-control{
+      margin-left: 0rem;
+    }
+
+
+#firstName{
+    width: 10rem;
+}
+
+#lastName{
+    width: 10rem;
+}
+
+#creditNumExpDate{
+    width: 10rem;
+}
+  #shipAddress{
+        width: 10rem;
+  }
+
+  #nameInput {
+    width: 328%;
+}
+
+#addressInput {
+    width: 324%;
+}
+
+#FormTextarea {
+    width: 322%;
+}
+
+.placeOrderButton {
+    margin-left: 0rem;
+    width: 5rem;
+    font-size: 10px;
+}
+
+.checkOutTitle {
+    margin-top: 6rem;
+    font-size: 36px;
+    margin-left: 23%;
+}
+
+.checkoutPrice {
+    margin-top: 9rem;
+    font-size: 28px;
+    margin-left: -2.5rem;
+}
+
+/*------------ Confirmation --------------*/
+.confirmationTitle {
+    margin-top: 8rem;
+    margin-left: 4%;
+    font-size: 26px;
+}
+
+.thankImg {
+    width: 24%;
+    margin-left: 27%;
+    margin-top: 1rem;
+}
+
+.myCartSumTitle {
+    margin-top: 1rem;
+    font-size: 36px;
+    margin-left: 4%;
+}
+
+.addressInfoSummary {
+    font-size: 20px;
+}
+
+.confirmItemTotal {
+    font-size: 26px;
+    margin-left: 0.5rem;
+}
+
+.confirmImg {
+    height: 9rem;
+    width: 6rem;
+    margin-left: -1.5rem;
+}
+
+.marginConfirm{
+	margin-left:-1rem;
+}
+
+.confirmTitle {
+    font-size: 22px;
+}
+
+.confirmPrice {
+    margin-left: 0rem;
+}
+
+.confirmShortDes {
+    font-size: 16px;
+    margin-left: 0rem;
+}
+
+.confirmQuantity {
+    font-size: 20px;
+    margin-left: -1rem;
+}
+
+.continueShop {
+    margin-left: 1rem;
+}
+
+
+
+/*--------- emptyCart ---------*/
+.emptyCatalogLink {
+    margin-left: 1rem;
+    width: 8rem;
+  }
+
+
+}
