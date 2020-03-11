@@ -4,6 +4,8 @@ body{
   max-width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   min-height: 100vh;
   /* position: absolute; */
 }
@@ -342,6 +344,10 @@ img {
 }
 
 .minPlusCartSum:active{
+  transform: translateY(4px);
+}
+
+.minPlusCartSum2:active{
   transform: translateY(4px);
 }
 
