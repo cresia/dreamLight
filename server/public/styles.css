@@ -250,7 +250,8 @@ img {
 .longDes{
   margin-left:8%;
   font-size:20px;
-  font-family: 'Nunito', sans-serif;
+    font-family: 'Calistoga', cursive;
+  /* font-family: 'Gotu', sans-serif; */
   margin-top:1%;
   /* white-space: pre-line; */
 }
@@ -678,7 +679,6 @@ label{
 .longDes {
     margin-left: -112%;
     margin-top: 2%;
-    font-family: 'Nunito', sans-serif;
 }
 
 .minusPlusButton:active{
@@ -1974,7 +1974,6 @@ label {
   margin-left: -108%;
   font-size: 24px;
   margin-top: 2%;
-  font-family: 'Nunito', sans-serif;
 }
 
 .card-Icons{
@@ -3378,7 +3377,6 @@ label {
   margin-left: -108%;
   font-size: 24px;
   margin-top: 2%;
-  font-family: 'Nunito', sans-serif;
 }
 
 .card-Icons{
@@ -3670,7 +3668,6 @@ label {
 .longDes {
     margin-left: -112%;
     margin-top: 2%;
-    font-family: 'Nunito', sans-serif;
 }
 
 .minusPlusButton:active{
@@ -4709,7 +4706,6 @@ label{
 }
 .longDes {
     font-size: 16px;
-    font-family: 'Nunito', sans-serif;
 }
  .card-titleDetails {
     font-size: 27px;
@@ -5065,7 +5061,6 @@ label{
 
 .longDes {
     font-size: 17px;
-    font-family: 'Nunito', sans-serif;
 }
 
 .detailTitle {
@@ -5393,7 +5388,6 @@ form {
     margin-left: -7%;
     font-size: 15px;
     margin-top: 1%;
-    font-family: 'Nunito', sans-serif;
 }
 
 .minusPlusButton {
