@@ -250,8 +250,8 @@ img {
 .longDes{
   margin-left:8%;
   font-size:20px;
-  /* font-family: 'Gotu', sans-serif; */
-  font-family: 'Amatic SC', cursive;
+  /* font-family: 'Amatic SC', cursive; */
+  font-family: 'Roboto', sans-serif;
   margin-top:1%;
   /* white-space: pre-line; */
 }
