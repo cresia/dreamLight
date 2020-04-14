@@ -111,7 +111,7 @@ export default class App extends React.Component {
     this.setState({ cartQuantity });
   }
 
-  getCartItems() { // this is the one that retrieve all the total items after being added from getCat
+  getCartItems() { // this is the one that retrieve all the total items after being added from getCart
     fetch(`/api/cart.php`)
       .then(res => res.json())
       .then(cart => {
