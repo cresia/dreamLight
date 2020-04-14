@@ -234,7 +234,7 @@ img {
 }
 
  .backToCatalogButton{
-  margin-left: 53.1%;
+  margin-left: 53.2%;
   margin-right: 3%;
   width: 46.6%;
   margin-top: 3%;
@@ -2319,6 +2319,17 @@ label {
     width: 22.8rem;
   }
 } */
+
+@media (min-width:1260px) and (max-width: 1270px){
+  .backToCatalogButton {
+       margin-left: 21%;
+  }
+
+  .cartInfo{
+      margin-left: 5rem;
+  }
+
+} 
 
 
 @media (min-width:1180px) and (max-width: 1259px){
