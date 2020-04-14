@@ -15,7 +15,7 @@ DreamLight is a full stack LAMP & React shopping cart app that sells a variety o
 3. Open the `index.html` file
 
 
-**Project Built With:**
+# Project Built With:
   - React.js
   - CSS5
   - Reactstrap
