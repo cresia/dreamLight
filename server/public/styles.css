@@ -2174,7 +2174,7 @@ label {
 
 /*----------------------- Desktops and laptops ----------- */
 
-@media (min-width:1994px) and (max-width: 2000px){
+/* @media (min-width:1994px) and (max-width: 2000px){
   .backToCatalogButton {
     margin-left: 25.35rem;
     width: 22.87rem;
@@ -2309,7 +2309,7 @@ label {
       margin-left: 5rem;
   }
 
-}
+} */
 
 @media (min-width:1180px) and (max-width: 1259px){
   .addToCartButton {
