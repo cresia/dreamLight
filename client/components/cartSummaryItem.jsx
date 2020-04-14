@@ -76,7 +76,11 @@ function CartSummaryItem(props) {
           <ModalHeader toggle={toggle}> Are you sure want to remove this item? </ModalHeader>
 
           <ModalBody>
-             This item will be removed from your cart.
+
+            <div>
+              <strong> {props.name} </strong> will be removed from your cart.
+            </div>
+
           </ModalBody>
 
           <ModalFooter>
