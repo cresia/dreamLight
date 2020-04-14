@@ -2322,6 +2322,13 @@ label {
   }
 } */
 
+@media (min-width:1400px) and (max-width: 1600px){
+  .backToCatalogButton {
+       margin-left: 53%;
+  }
+
+} 
+
 @media (min-width:1260px) and (max-width: 1270px){
   .backToCatalogButton {
        margin-left: 21%;
