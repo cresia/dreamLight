@@ -234,9 +234,11 @@ img {
 }
 
  .backToCatalogButton{
-  margin-left: 53.2%;
+  /* margin-left: 53.2%; */
+  margin-left: 52%;
   margin-right: 3%;
-  width: 46.6%;
+  /* width: 46.6%; */
+  width: 47%;
   margin-top: 3%;
 }
 
