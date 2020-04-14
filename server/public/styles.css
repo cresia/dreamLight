@@ -2329,6 +2329,18 @@ label {
 
 } 
 
+@media (min-width:1271px) and (max-width: 1300px){
+  .backToCatalogButton {
+    margin-left: 54%;
+    width: 46.2%;
+  }
+
+  .cartInfo{
+      margin-left: 4rem;
+  }
+
+} 
+
 @media (min-width:1260px) and (max-width: 1270px){
   .backToCatalogButton {
        margin-left: 21%;
