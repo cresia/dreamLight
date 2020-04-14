@@ -2174,10 +2174,139 @@ label {
 
 /*----------------------- Desktops and laptops ----------- */
 
+@media (min-width:1994px) and (max-width: 2000px){
+  .backToCatalogButton {
+    margin-left: 25.35rem;
+    width: 22.87rem;
+  }
+
+@media (min-width:1991px) and (max-width: 1993px){
+  .backToCatalogButton {
+    margin-left: 25.2rem;
+    width: 22.8rem;
+  }
+
+@media (min-width:1986px) and (max-width: 1990px){
+  .backToCatalogButton {
+    margin-left: 25.2rem;
+    width: 22.8rem;
+  }
+
+@media (min-width:1981px) and (max-width: 1985px){
+  .backToCatalogButton {
+    margin-left: 25rem;
+    width: 22.8rem;
+  }
+
+@media (min-width:1971px) and (max-width: 1980px){
+  .backToCatalogButton {
+    margin-left: 25rem;
+    width: 22.59rem;
+  }
+
+@media (min-width:1961px) and (max-width: 1970px){
+  .backToCatalogButton {
+    margin-left: 24.9rem;
+    width: 22.5rem;
+  }
+
+@media (min-width:1951px) and (max-width: 1960px){
+  .backToCatalogButton {
+    margin-left: 24.7rem;
+    width: 22.5rem;
+  }
+
+@media (min-width:1941px) and (max-width: 1950px){
+  .backToCatalogButton {
+    margin-left: 24.6rem;
+    width: 22.3rem;
+  }
+
+@media (min-width:1931px) and (max-width: 1940px){
+  .backToCatalogButton {
+    margin-left: 24.5rem;
+    width: 22.1rem;
+  }
+
+@media (min-width:1921px) and (max-width: 1930px){
+  .backToCatalogButton {
+    margin-left: 24.3rem;
+    width: 22.1rem;
+  }
+
+@media (min-width:1911px) and (max-width: 1920px){
+  .backToCatalogButton {
+     margin-left: 24.3rem;
+    width: 21.9rem;
+  }
+
+@media (min-width:1901px) and (max-width: 1910px){
+  .backToCatalogButton {
+    margin-left: 24.2rem;
+    width: 21.7rem;
+  }
+
+@media (min-width:1891px) and (max-width: 1900px){
+  .backToCatalogButton {
+    margin-left: 24rem;
+    width: 21.7rem;
+  }
+
+@media (min-width:1881px) and (max-width: 1890px){
+  .backToCatalogButton {
+    margin-left: 23.9rem;
+    width: 21.5rem;
+  }
+
+@media (min-width:1871px) and (max-width: 1880px){
+  .backToCatalogButton {
+    margin-left: 23.65rem;
+    width: 21.5rem;
+  }
+
+@media (min-width:1861px) and (max-width: 1870px){
+  .backToCatalogButton {
+    margin-left: 23.65rem;
+    width: 21.3rem;
+  }
+
+@media (min-width:1851px) and (max-width: 1860px){
+  .backToCatalogButton {
+    margin-left: 23.5rem;
+    width: 21.2rem;
+  }
+
+
+@media (min-width:1841px) and (max-width: 1850px){
+  .backToCatalogButton {
+    margin-left: 23.3rem;
+    width: 21rem;
+  }
+
+
+@media (min-width:1831px) and (max-width: 1840px){
+  .backToCatalogButton {
+        margin-left: 23.15rem;
+  }
+
+@media (min-width:1821px) and (max-width: 1830px){
+  .backToCatalogButton {
+        margin-left: 23.15rem;
+  }
+
+
+@media (min-width:1800px) and (max-width: 1820px){
+  .backToCatalogButton {
+    margin-left: 23rem;
+  }
+
 @media (min-width:1260px) and (max-width: 1270px){
   .backToCatalogButton {
-      margin-left: 6.2rem;
+    margin-left: 6.2rem;
+  }
 
+  .cartInfo{
+      margin-left: 5rem;
   }
 
 }
