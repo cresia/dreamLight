@@ -21,8 +21,10 @@ switch ($method) {
         break;
     case "DELETE":
         require_once('cart_delete.php');
+        break;
     case "PUT":
         require_once('cart_update.php');
+        break;
 
 }
 
