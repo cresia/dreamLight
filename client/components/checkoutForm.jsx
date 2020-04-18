@@ -295,7 +295,7 @@ export default class CheckoutForm extends React.Component {
 
             <div className="col colCheckout">
               <label id="lastName">Zip</label>
-              <input value={this.state.shippingZipCodeInfo} onChange={this.handleZipCodeInfo} className={`form-control ${this.state.validate.zipCodeState === '' ? '' : this.state.validate.zipCodeState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="Zip Code - 5 digits" required></input>
+              <input value={this.state.shippingZipCodeInfo} onChange={this.handleZipCodeInfo} className={`form-control ${this.state.validate.zipCodeState === '' ? '' : this.state.validate.zipCodeState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="Zip Code - 5 digits" required minLength="5" maxLength="5"></input>
             </div>
 
           </div>
@@ -311,12 +311,12 @@ export default class CheckoutForm extends React.Component {
 
             <div className="col colCheckout">
               <label id="creditNumExpDate">Expiration Date</label>
-              <input type="text" value={this.state.creditCardExpInfo} onChange={this.handleCreditCardExpChange} className={`form-control ${this.state.validate.ccExpState === '' ? '' : this.state.validate.ccExpState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="e.g: 12/25" required />
+              <input type="text" value={this.state.creditCardExpInfo} onChange={this.handleCreditCardExpChange} className={`form-control ${this.state.validate.ccExpState === '' ? '' : this.state.validate.ccExpState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="e.g: 12/25" required minLength="7" maxLength="7"/>
             </div>
 
             <div className="col colCheckout">
               <label id="cvvStyle">CVV</label>
-              <input type="text" value={this.state.creditCardCvvInfo} onChange={this.handleCreditCardCvvChange} className={`form-control ${this.state.validate.cvvState === '' ? '' : this.state.validate.cvvState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="e.g: 123" required />
+              <input type="text" value={this.state.creditCardCvvInfo} onChange={this.handleCreditCardCvvChange} className={`form-control ${this.state.validate.cvvState === '' ? '' : this.state.validate.cvvState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="e.g: 123" required minLength="3" maxLength="4"/>
             </div>
 
           </div>
