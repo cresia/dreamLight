@@ -3622,7 +3622,8 @@ label {
 
 .sidenav{
   height: 100%;
-  width: 71%;
+  /* width: 71%; */
+  width: 52%;
   position: fixed;
   top: 0;
   left: 0;
