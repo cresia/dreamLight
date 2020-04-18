@@ -27,7 +27,7 @@ export default class CheckoutForm extends React.Component {
         'stateState': '',
         'zipCodeState': ''
       },
-      letterRegex: /^[A-Za-z]+$/
+      letterRegex: /^[A-Za-z]{2,65}$/
     };
 
     this.handleNameChange = this.handleNameChange.bind(this);
