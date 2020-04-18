@@ -311,7 +311,7 @@ export default class CheckoutForm extends React.Component {
 
             <div className="col colCheckout">
               <label id="creditNumExpDate">Expiration Date</label>
-              <input type="text" value={this.state.creditCardExpInfo} onChange={this.handleCreditCardExpChange} className={`form-control ${this.state.validate.ccExpState === '' ? '' : this.state.validate.ccExpState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="e.g: 12/25" required minLength="7" maxLength="7"/>
+              <input type="text" value={this.state.creditCardExpInfo} onChange={this.handleCreditCardExpChange} className={`form-control ${this.state.validate.ccExpState === '' ? '' : this.state.validate.ccExpState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="e.g: 12/25" required minLength="5" maxLength="7"/>
             </div>
 
             <div className="col colCheckout">
