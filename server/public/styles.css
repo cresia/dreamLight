@@ -186,13 +186,15 @@ img {
 
 .card-titleDetails{
   color:black;
-  margin-left:7.6%;
+  /* margin-left:7.6%; */
+  margin-left:6%;
   font-size:45px;
   font-family: 'Baloo Bhaijaan', cursive;
 }
 
 .card-titlePrice{
-  margin-left:8%;
+  /* margin-left:8%; */
+  margin-left:6%;
   font-size: 22px;
   font-family: 'Calistoga', cursive;
 }
