@@ -3558,7 +3558,7 @@ label {
 
 /* --------------- Danger Zone: conflict with iphone landscape ----------------------*/
 @media (min-width: 576px) and (max-width: 699px){
-      .navbar{
+  .navbar{
   display:none;
 }
 
@@ -3574,7 +3574,6 @@ label {
   box-shadow: 0px 2px 11px #7c7474;
 }
 
-
 .headerTitle {
   font-size: 25px;
   color: black;
@@ -3583,7 +3582,6 @@ label {
   margin-top: 1%;
   margin-left: 2%;
 }
-
 
 .cartIcon{
   font-size: 1.5rem;

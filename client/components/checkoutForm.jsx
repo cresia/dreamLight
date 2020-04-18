@@ -266,7 +266,7 @@ export default class CheckoutForm extends React.Component {
           <div className="form-row">
             <div className="col colCheckout">
               <label id="firstName" >First Name</label>
-              <input type="text" value={this.state.customerName} onChange={this.handleNameChange} className={`form-control ${this.state.validate.nameState === '' ? '' : this.state.validate.nameState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="nameInput" placeholder="Enter first name" required minLength="5" maxLength="65" />
+              <input type="text" value={this.state.customerName} onChange={this.handleNameChange} className={`form-control ${this.state.validate.nameState === '' ? '' : this.state.validate.nameState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="nameInput" placeholder="Enter first name" required />
             </div>
 
             <div className="col colCheckout">
@@ -306,7 +306,7 @@ export default class CheckoutForm extends React.Component {
           <div className="form-row">
             <div className="col colCheckout inputSpaceCard">
               <label id="creditNumExpDate">Credit Card</label>
-              <input type="text" value={this.state.creditCardInfo} onChange={this.handleCreditCardChange} className={`form-control ${this.state.validate.creditCardInfoState === '' ? '' : this.state.validate.creditCardInfoState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="Enter 16 digit numbers" required />
+              <input type="text" value={this.state.creditCardInfo} onChange={this.handleCreditCardChange} className={`form-control ${this.state.validate.creditCardInfoState === '' ? '' : this.state.validate.creditCardInfoState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="Enter 16 digit numbers" required minLength="16" maxLength="16" />
             </div>
 
             <div className="col colCheckout">
