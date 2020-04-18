@@ -266,7 +266,7 @@ export default class CheckoutForm extends React.Component {
           <div className="form-row">
             <div className="col colCheckout">
               <label id="firstName" >First Name</label>
-              <input type="text" value={this.state.customerName} onChange={this.handleNameChange} className={`form-control ${this.state.validate.nameState === '' ? '' : this.state.validate.nameState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="nameInput" placeholder="Enter first name" required />
+              <input type="text" value={this.state.customerName} onChange={this.handleNameChange} className={`form-control ${this.state.validate.nameState === '' ? '' : this.state.validate.nameState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="nameInput" placeholder="Enter first name" required minLength="5" maxLength="65" />
             </div>
 
             <div className="col colCheckout">
