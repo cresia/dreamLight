@@ -411,18 +411,18 @@ label{
   width:90%;
 }
 
-.nameError[data-error] .input{
+/* .nameError[data-error] .input{
   border-color: red;
   color: red;
   background: white;
 
-}
+} */
 
-.nameError[data-error]::after{
+/* .nameError[data-error]::after{
   content:attr(data-error);
   color:red;
   display:block;
-}
+} */
 
 #addressInput{
    width:44.6%;
