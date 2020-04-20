@@ -411,7 +411,7 @@ label{
   width:90%;
 }
 
-#nameInput[data-error]::after{
+.nameError[data-error]::after{
   content:attr(data-error);
 
 }
