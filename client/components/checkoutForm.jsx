@@ -114,7 +114,7 @@ export default class CheckoutForm extends React.Component {
       validate.nameState = 'has-success';
     } else {
       validate.nameState = 'has-danger';
-      return validate.nameState.setCustomValidity('Firstname must contain only letters with 2 or more characters');
+      validate.nameState.setCustomValidity('Firstname must contain only letters with 2 or more characters');
     }
 
     this.setState({ validate });
