@@ -266,9 +266,9 @@ export default class CheckoutForm extends React.Component {
         <div className="form-group">
 
           <div className="form-row">
-            <div className="col colCheckout nameError" data-error="Firstname must contain only letters with 2 or more characters">
+            <div className="col colCheckout nameError">
               <label id="firstName" >First Name</label>
-              <input type="text" value={this.state.customerName} onChange={this.handleNameChange} className={`form-control ${this.state.validate.nameState === '' ? '' : this.state.validate.nameState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="nameInput" placeholder="Enter first name" required />
+              <input type="text" value={this.state.customerName} onChange={this.handleNameChange} className={`form-control ${this.state.validate.nameState === '' ? '' : this.state.validate.nameState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="nameInput" placeholder="Enter first name" required data-error="Firstname must contain only letters with 2 or more characters" />
             </div>
 
             <div className="col colCheckout">

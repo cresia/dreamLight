@@ -411,14 +411,14 @@ label{
   width:90%;
 }
 
-/* .nameError[data-error] .input{
+/* .nameError[data-error] .form-control{
   border-color: red;
   color: red;
   background: white;
 
 } */
 
-.nameError[data-error] .input:is-invalid{
+input:is-invalid{
   content:attr(data-error);
   color:red;
   display:block;
