@@ -411,6 +411,11 @@ label{
   width:90%;
 }
 
+#nameInput[data-error]::after{
+  content:attr(data-error);
+
+}
+
 #addressInput{
    width:44.6%;
 }
@@ -2183,14 +2188,14 @@ label {
        margin-left: 52.3%;
   }
 
-} 
+}
 
 @media (min-width:1400px) and (max-width: 1600px){
   .backToCatalogButton {
        margin-left: 53%;
   }
 
-} 
+}
 
 @media (min-width:1271px) and (max-width: 1300px){
   .backToCatalogButton {
@@ -2202,7 +2207,7 @@ label {
       margin-left: 4rem;
   }
 
-} 
+}
 
 @media (min-width:1260px) and (max-width: 1270px){
   .backToCatalogButton {
@@ -2213,7 +2218,7 @@ label {
       margin-left: 5rem;
   }
 
-} 
+}
 
 
 @media (min-width:1180px) and (max-width: 1259px){
