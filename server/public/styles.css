@@ -411,7 +411,7 @@ label{
   width:90%;
 }
 
-.nameError[data-error]::after{
+.form-control[data-error]::after{
   content:attr(data-error);
 
 }
