@@ -418,13 +418,13 @@ label{
 
 } */
 
-input:is-invalid{
+.nameError[data-error] .form-control:is-invalid{
   content:attr(data-error);
   color:red;
   display:block;
 }
 
-/* .nameError[data-error]:is-invalid::after{
+/* input:is-invalid{
   content:attr(data-error);
   color:red;
   display:block;
