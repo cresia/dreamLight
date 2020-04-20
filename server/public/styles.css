@@ -418,11 +418,17 @@ label{
 
 } */
 
-.nameError[data-error]:is-invalid::after{
+.nameError[data-error] .input:is-invalid{
   content:attr(data-error);
   color:red;
   display:block;
 }
+
+/* .nameError[data-error]:is-invalid::after{
+  content:attr(data-error);
+  color:red;
+  display:block;
+} */
 
 #addressInput{
    width:44.6%;
