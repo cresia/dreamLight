@@ -186,7 +186,7 @@ export default class CheckoutForm extends React.Component {
   }
 
   validateState(e) {
-    const stateRegex = /^[A-Za-z]{2,}$/;
+    const stateRegex = /^[A-Za-z]{2}$/;
     const { validate } = this.state;
     if (stateRegex.test(e.currentTarget.value)) {
       validate.stateState = 'has-success';

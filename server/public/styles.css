@@ -416,9 +416,16 @@ label{
   color: red;
   background: white;
 
-} */
+}
 
-.nameError[data-error] input:is-invalid{
+.nameError[data-error]::after{
+  content:attr(data-error);
+  color:red;
+  display:block;
+}
+*/
+
+.nameError[data-error]{
   content:attr(data-error);
   color:red;
   display:block;
