@@ -411,7 +411,7 @@ label{
   width:90%;
 }
 
- .nameError[data-error] input{
+ /* .nameError[data-error] input{
   border-color: red;
   color: red;
   background: white;
@@ -422,7 +422,7 @@ label{
   content:attr(data-error);
   color:red;
   display:block;
-}
+} */
 
 
 /*
