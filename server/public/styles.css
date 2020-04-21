@@ -418,13 +418,12 @@ label{
 
 }
 
-/*
 .nameError[data-error]::after{
   content:attr(data-error);
   color:red;
   display:block;
 }
-*/
+
 
 /*
 .nameError[data-error]{
