@@ -5011,6 +5011,11 @@ form {
     font-size: 10px;
 }
 
+.stateError {
+    margin-left: 2rem;
+    font-size: 10px;
+}
+
 .zipError {
     margin-left: 2rem;
     font-size: 10px;
@@ -5341,6 +5346,51 @@ form {
 .placeOrderButton {
     margin-left: 2.5rem;
     width: 7rem;
+}
+
+.nameError {
+    margin-left: 0.5rem;
+    font-size: 10px;
+}
+
+.lastNameError {
+    margin-left: 0.5rem;
+    font-size: 10px;
+}
+
+.shipAddressError {
+    margin-left: 0.5rem;
+    font-size: 10px;
+}
+
+.cityError {
+    margin-left: 0.5rem;
+    font-size: 10px;
+}
+
+.stateError {
+    margin-left: 0.5rem;
+    font-size: 10px;
+}
+
+.zipError {
+    margin-left: 0.5rem;
+    font-size: 10px;
+}
+
+.creditCardError {
+    margin-left: 0.5rem;
+    font-size: 10px;
+}
+
+.expNumDateError {
+    margin-left: 0.5rem;
+    font-size: 10px;
+}
+
+.cvvError {
+    margin-left: 0.5rem;
+    font-size: 10px;
 }
 
 /*-------------- confirmation -------------*/
@@ -5676,6 +5726,51 @@ form {
     width: 7rem;
 }
 
+.nameError {
+    margin-left: 0rem;
+    font-size: 10px;
+}
+
+.lastNameError {
+    margin-left: 0rem;
+    font-size: 10px;
+}
+
+.shipAddressError {
+    margin-left: 0rem;
+    font-size: 10px;
+}
+
+.cityError {
+    margin-left: 0rem;
+    font-size: 10px;
+}
+
+.stateError {
+    margin-left: 0rem;
+    font-size: 10px;
+}
+
+.zipError {
+    margin-left: 0rem;
+    font-size: 10px;
+}
+
+.creditCardError {
+    margin-left: 0rem;
+    font-size: 10px;
+}
+
+.expNumDateError {
+    margin-left: 0rem;
+    font-size: 10px;
+}
+
+.cvvError {
+    margin-left: 0rem;
+    font-size: 10px;
+}
+
 /*------------ confirmation -------------*/
 .confirmationTitle {
     margin-top: 5rem;
@@ -5706,7 +5801,6 @@ form {
     margin-left: 1rem;
     width: 12rem;
   }
-
 
 }
 
@@ -5959,23 +6053,23 @@ form {
  label{
       margin-left:0rem;
       font-size: 14px;
-    }
+  }
+
  .form-control{
       margin-left: 0rem;
-    }
+  }
 
+  #firstName{
+      width: 10rem;
+  }
 
-#firstName{
-    width: 10rem;
-}
+  #lastName{
+      width: 10rem;
+  }
 
-#lastName{
-    width: 10rem;
-}
-
-#creditNumExpDate{
-    width: 10rem;
-}
+  #creditNumExpDate{
+      width: 10rem;
+  }
   #shipAddress{
         width: 10rem;
   }
@@ -5984,31 +6078,76 @@ form {
     width: 328%;
 }
 
-#addressInput {
-    width: 324%;
-}
+  #addressInput {
+      width: 324%;
+  }
 
-#FormTextarea {
-    width: 322%;
-}
+  #FormTextarea {
+      width: 322%;
+  }
 
-.placeOrderButton {
-    margin-left: 0rem;
-    width: 5rem;
-    font-size: 10px;
-}
+  .placeOrderButton {
+      margin-left: 0rem;
+      width: 5rem;
+      font-size: 10px;
+  }
 
-.checkOutTitle {
-    margin-top: 6rem;
-    font-size: 36px;
-    margin-left: 23%;
-}
+  .checkOutTitle {
+      margin-top: 6rem;
+      font-size: 36px;
+      margin-left: 23%;
+  }
 
-.checkoutPrice {
-    margin-top: 9rem;
-    font-size: 28px;
-    margin-left: -2.5rem;
-}
+  .checkoutPrice {
+      margin-top: 9rem;
+      font-size: 28px;
+      margin-left: -2.5rem;
+  }
+
+  .nameError {
+      margin-left: 0.5rem;
+      font-size: 7px;
+  }
+
+  .lastNameError {
+      margin-left: 0.5rem;
+      font-size: 7px;
+  }
+
+  .shipAddressError {
+      margin-left: 0.5rem;
+      font-size: 7px;
+  }
+
+  .cityError {
+      margin-left: 0.5rem;
+      font-size: 7px;
+  }
+
+  .stateError {
+      margin-left: 0.5rem;
+      font-size: 7px;
+  }
+
+  .zipError {
+      margin-left: 0.5rem;
+      font-size: 7px;
+  }
+
+  .creditCardError {
+      margin-left: 0.5rem;
+      font-size: 7px;
+  }
+
+  .expNumDateError {
+      margin-left: 0.5rem;
+      font-size: 7px;
+  }
+
+  .cvvError {
+      margin-left: 0.5rem;
+      font-size: 7px;
+  }
 
 /*------------ Confirmation --------------*/
 .confirmationTitle {

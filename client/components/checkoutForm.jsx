@@ -363,7 +363,7 @@ export default class CheckoutForm extends React.Component {
 
             <div className="col colCheckout">
               <label id="cvvStyle">CVV</label>
-              <input type="text" value={this.state.creditCardCvvInfo} onChange={this.handleCreditCardCvvChange} className={`form-control ${this.state.validate.cvvState === '' ? '' : this.state.validate.cvvState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="e.g: 123" required minLength="3" maxLength="4"/>
+              <input type="text" value={this.state.creditCardCvvInfo} onChange={this.handleCreditCardCvvChange} className={`form-control ${this.state.validate.cvvState === '' ? '' : this.state.validate.cvvState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="e.g: 123" required />
               <div className="cvvError">
                 {
                   this.state.validate.cvvState === '' ? '' : this.state.validate.cvvState === 'has-success' ? '' : 'Numbers only with 3 digits'
