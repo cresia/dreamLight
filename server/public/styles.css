@@ -4918,7 +4918,7 @@ label{
 }
 
 #nameInput{
-  width:226%;
+  width:224%;
   margin-bottom: 8%;
 }
 
@@ -4938,7 +4938,7 @@ label{
 }
 
 #FormTextarea{
-  width:226%;
+  width:224%;
   margin-bottom: 10%;
 }
 
@@ -4966,7 +4966,7 @@ label{
 }
 
 #addressInput {
-  width: 226%;
+  width: 224%;
   margin-left: 13%;
   margin-bottom: 10%;
 }
@@ -5040,7 +5040,9 @@ form {
 
 .placeOrderButton{
     display: block;
-    margin: 1rem 7rem;
+    margin: 1rem 6rem;
+    width: 12rem;
+    height: 3rem;
 }
 
 /*----------- confirmation ------------*/
