@@ -297,7 +297,7 @@ export default class CheckoutForm extends React.Component {
           <input value={this.state.shippingAddressInfo} onChange={this.handleShippingAddressInfo} className={`form-control ${this.state.validate.addressState === '' ? '' : this.state.validate.addressState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="addressInput" placeholder="e.g: 1357 Spectrum" required></input>
           <div className="shipAddressError">
             {
-              this.state.validate.addressState === '' ? '' : this.state.validate.addressState === 'has-success' ? '' : 'minimum 6 characters exclude address numbers. e.g 123 Spectrum'
+              this.state.validate.addressState === '' ? '' : this.state.validate.addressState === 'has-success' ? '' : 'Minimum 6 characters exclude address numbers. e.g 123 Spectrum'
             }
 
           </div>
@@ -330,7 +330,7 @@ export default class CheckoutForm extends React.Component {
               <input value={this.state.shippingZipCodeInfo} onChange={this.handleZipCodeInfo} className={`form-control ${this.state.validate.zipCodeState === '' ? '' : this.state.validate.zipCodeState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="Zip Code - 5 digits" required></input>
               <div className="zipError">
                 {
-                  this.state.validate.zipCodeState === '' ? '' : this.state.validate.zipCodeState === 'has-success' ? '' : 'numbers only with 5 digits'
+                  this.state.validate.zipCodeState === '' ? '' : this.state.validate.zipCodeState === 'has-success' ? '' : 'Numbers only with 5 digits'
                 }
               </div>
             </div>
