@@ -411,33 +411,6 @@ label{
   width:90%;
 }
 
- /* .nameError[data-error] input{
-  border-color: red;
-  color: red;
-  background: white;
-
-}
-
-.nameError[data-error]::after{
-  content:attr(data-error);
-  color:red;
-  display:block;
-} */
-
-
-/*
-.nameError[data-error]{
-  content:attr(data-error);
-  color:red;
-  display:block;
-} */
-
-/* input:is-invalid{
-  content:attr(data-error);
-  color:red;
-  display:block;
-} */
-
 #addressInput{
    width:44.6%;
 }
@@ -445,6 +418,43 @@ label{
 #FormTextarea{
   width:85%;
 }
+
+.nameError{
+  margin-left:1rem;
+}
+
+.lastNameError{
+  margin-left:1rem;
+}
+
+.shipAddressError{
+  margin-left:1rem;
+}
+
+.cityError{
+  margin-left:1rem;
+}
+
+.stateError{
+  margin-left:1rem;
+}
+
+.zipError{
+  margin-left:1rem;
+}
+
+.creditCardError{
+  margin-left:1rem;
+}
+
+.expNumDateError{
+  margin-left:1rem;
+}
+
+.cvvError{
+  margin-left:1rem;
+}
+
 
 /* ---------------------- EmptyCart ----------------------- */
 .noItemsText{

@@ -266,21 +266,27 @@ export default class CheckoutForm extends React.Component {
         <div className="form-group">
 
           <div className="form-row">
-            <div className="col colCheckout nameError" data-error="Firstname must contain only letters with 2 or more characters">
+            <div className="col colCheckout">
               <label id="firstName" >First Name</label>
               <input type="text" value={this.state.customerName} onChange={this.handleNameChange} className={`form-control ${this.state.validate.nameState === '' ? '' : this.state.validate.nameState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="nameInput" placeholder="Enter first name" required/>
-              <div>
-
+              <div className="nameError">
                 {
-                  this.state.validate.nameState === '' ? '' : this.state.validate.nameState === 'has-success' ? '' : 'Firstname must contain only letters with 2 or more characters'
+                  this.state.validate.nameState === '' ? '' : this.state.validate.nameState === 'has-success' ? '' : 'Letters only with 2 or more characters'
                 }
-
               </div>
             </div>
 
             <div className="col colCheckout">
               <label id="lastName" >Last Name</label>
-              <input type="text" value={this.state.customerLastName} onChange={this.handleLastNameChange} className={`form-control ${this.state.validate.lastNameState === '' ? '' : this.state.validate.lastNameState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="nameInput" placeholder="Enter last name" required minLength="2" maxLength="32" />
+              <input type="text" value={this.state.customerLastName} onChange={this.handleLastNameChange} className={`form-control ${this.state.validate.lastNameState === '' ? '' : this.state.validate.lastNameState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="nameInput" placeholder="Enter last name" required />
+
+              <div className="lastNameError">
+                {
+                  this.state.validate.lastNameState === '' ? '' : this.state.validate.lastNameState === 'has-success' ? '' : 'Letters only with 2 or more characters'
+                }
+
+              </div>
+
             </div>
           </div>
 
@@ -288,23 +294,45 @@ export default class CheckoutForm extends React.Component {
 
         <div className="form-group">
           <label id="shipAddress">Shipping Address</label>
-          <input value={this.state.shippingAddressInfo} onChange={this.handleShippingAddressInfo} className={`form-control ${this.state.validate.addressState === '' ? '' : this.state.validate.addressState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="addressInput" placeholder="e.g: 1357 Spectrum" required minLength="6" maxLength="42"></input>
+          <input value={this.state.shippingAddressInfo} onChange={this.handleShippingAddressInfo} className={`form-control ${this.state.validate.addressState === '' ? '' : this.state.validate.addressState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="addressInput" placeholder="e.g: 1357 Spectrum" required></input>
+          <div className="shipAddressError">
+            {
+              this.state.validate.addressState === '' ? '' : this.state.validate.addressState === 'has-success' ? '' : 'minimum 6 characters exclude address numbers. e.g 123 Spectrum'
+            }
+
+          </div>
 
           <div className="form-row">
 
             <div className="col colCheckout">
               <label id="lastName">City</label>
-              <input value={this.state.shippingCityInfo} onChange={this.handleCityInfo} className={`form-control ${this.state.validate.cityState === '' ? '' : this.state.validate.cityState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="City" required minLength="3" maxLength="32"></input>
+              <input value={this.state.shippingCityInfo} onChange={this.handleCityInfo} className={`form-control ${this.state.validate.cityState === '' ? '' : this.state.validate.cityState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="City" required></input>
+              <div className="cityError">
+                {
+                  this.state.validate.cityState === '' ? '' : this.state.validate.cityState === 'has-success' ? '' : 'Letters only with 3 or more characters'
+                }
+              </div>
+
             </div>
 
             <div className="col colCheckout">
               <label id="lastName">State</label>
-              <input value={this.state.shippingStateInfo} onChange={this.handleStateInfo} className={`form-control ${this.state.validate.stateState === '' ? '' : this.state.validate.stateState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="State" required minLength="2"></input>
+              <input value={this.state.shippingStateInfo} onChange={this.handleStateInfo} className={`form-control ${this.state.validate.stateState === '' ? '' : this.state.validate.stateState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="State" required></input>
+              <div className="stateError">
+                {
+                  this.state.validate.stateState === '' ? '' : this.state.validate.stateState === 'has-success' ? '' : 'Letters only with 2 characters'
+                }
+              </div>
             </div>
 
             <div className="col colCheckout">
               <label id="lastName">Zip</label>
-              <input value={this.state.shippingZipCodeInfo} onChange={this.handleZipCodeInfo} className={`form-control ${this.state.validate.zipCodeState === '' ? '' : this.state.validate.zipCodeState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="Zip Code - 5 digits" required minLength="5" maxLength="5"></input>
+              <input value={this.state.shippingZipCodeInfo} onChange={this.handleZipCodeInfo} className={`form-control ${this.state.validate.zipCodeState === '' ? '' : this.state.validate.zipCodeState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="Zip Code - 5 digits" required></input>
+              <div className="zipError">
+                {
+                  this.state.validate.zipCodeState === '' ? '' : this.state.validate.zipCodeState === 'has-success' ? '' : 'numbers only with 5 digits'
+                }
+              </div>
             </div>
 
           </div>
@@ -315,17 +343,32 @@ export default class CheckoutForm extends React.Component {
           <div className="form-row">
             <div className="col colCheckout inputSpaceCard">
               <label id="creditNumExpDate">Credit Card</label>
-              <input type="text" value={this.state.creditCardInfo} onChange={this.handleCreditCardChange} className={`form-control ${this.state.validate.creditCardInfoState === '' ? '' : this.state.validate.creditCardInfoState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="Enter 16 digit numbers" required minLength="16" maxLength="16" />
+              <input type="text" value={this.state.creditCardInfo} onChange={this.handleCreditCardChange} className={`form-control ${this.state.validate.creditCardInfoState === '' ? '' : this.state.validate.creditCardInfoState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="Enter 16 digit numbers" required/>
+              <div className="creditCardError">
+                {
+                  this.state.validate.creditCardInfoState === '' ? '' : this.state.validate.creditCardInfoState === 'has-success' ? '' : 'Numbers only with 16 digits'
+                }
+              </div>
             </div>
 
             <div className="col colCheckout">
               <label id="creditNumExpDate">Expiration Date</label>
-              <input type="text" value={this.state.creditCardExpInfo} onChange={this.handleCreditCardExpChange} className={`form-control ${this.state.validate.ccExpState === '' ? '' : this.state.validate.ccExpState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="e.g: 12/25" required minLength="5" maxLength="7"/>
+              <input type="text" value={this.state.creditCardExpInfo} onChange={this.handleCreditCardExpChange} className={`form-control ${this.state.validate.ccExpState === '' ? '' : this.state.validate.ccExpState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="e.g: 12/25" required/>
+              <div className="expNumDateError">
+                {
+                  this.state.validate.ccExpState === '' ? '' : this.state.validate.ccExpState === 'has-success' ? '' : 'Please enter in this form: mm/yy'
+                }
+              </div>
             </div>
 
             <div className="col colCheckout">
               <label id="cvvStyle">CVV</label>
               <input type="text" value={this.state.creditCardCvvInfo} onChange={this.handleCreditCardCvvChange} className={`form-control ${this.state.validate.cvvState === '' ? '' : this.state.validate.cvvState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="FormTextarea" placeholder="e.g: 123" required minLength="3" maxLength="4"/>
+              <div className="cvvError">
+                {
+                  this.state.validate.cvvState === '' ? '' : this.state.validate.cvvState === 'has-success' ? '' : 'Numbers only with 3 digits'
+                }
+              </div>
             </div>
 
           </div>
