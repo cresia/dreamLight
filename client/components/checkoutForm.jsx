@@ -297,7 +297,7 @@ export default class CheckoutForm extends React.Component {
           <input value={this.state.shippingAddressInfo} onChange={this.handleShippingAddressInfo} className={`form-control ${this.state.validate.addressState === '' ? '' : this.state.validate.addressState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="addressInput" placeholder="e.g: 1357 Spectrum" required></input>
           <div className="shipAddressError">
             {
-              this.state.validate.addressState === '' ? '' : this.state.validate.addressState === 'has-success' ? '' : 'Minimum 6 characters exclude address numbers. e.g 123 Spectrum'
+              this.state.validate.addressState === '' ? '' : this.state.validate.addressState === 'has-success' ? '' : 'Minimum 6 characters length'
             }
 
           </div>
