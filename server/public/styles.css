@@ -4981,52 +4981,61 @@ label{
 }
 
 form {
-    height: 80rem;
+    height: 70rem;
 }
 
 .nameError {
     margin-left: 2rem;
-    font-size: 10px;
+    font-size: 12px;
+    width:100vw;
 }
 
 .lastNameError {
     margin-left: 2rem;
-    font-size: 10px;
+    font-size: 12px;
+    width:100vw;
 }
 
 .shipAddressError {
     margin-left: 1.18rem;
-    font-size: 10px;
+    font-size: 12px;
+    width:100vw;
 }
 
 .cityError {
     margin-left: 2.1rem;
-    font-size: 10px;
+    font-size: 12px;
+    width:100vw;
 }
 
 .stateError {
     margin-left: 2rem;
-    font-size: 10px;
+    font-size: 12px;
+    width:100vw;
 }
 
 .zipError {
     margin-left: 2rem;
-    font-size: 10px;
+    font-size: 12px;
+    width:100vw;
 }
 
 .creditCardError {
     margin-left: 2rem;
-    font-size: 10px;
+    font-size: 12px;
+    width:100vw;
 }
 
 .expNumDateError {
     margin-left: 2rem;
-    font-size: 10px;
+    font-size: 12px;
+    width:100vw;
 }
 
 .cvvError {
     margin-left: 2rem;
-    font-size: 10px;
+    font-size: 12px;
+    width:100vw;
 }
 
 .placeOrderButton{
