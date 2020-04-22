@@ -4981,7 +4981,7 @@ label{
 }
 
 form {
-    height: 85rem;
+    height: 80rem;
 }
 
 .nameError {
@@ -5031,7 +5031,7 @@ form {
 
 .placeOrderButton{
     display: block;
-    margin: 3rem 7rem;
+    margin: 1rem 7rem;
 }
 
 /*----------- confirmation ------------*/
