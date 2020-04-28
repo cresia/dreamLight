@@ -5049,22 +5049,35 @@ form {
 
 /*----------- confirmation ------------*/
 .confirmationTitle {
-    margin-top: 5rem;
+    /* margin-top: 5rem;
     margin-left: 2%;
-    font-size: 41px;
-}
+    font-size: 41px; */
 
-.myCartSumTitle {
-    font-size: 50px;
-}
-
-.addressInfoSummary {
+    display: block;
+    margin: 6rem 3rem;
     font-size: 25px;
 }
 
+.myCartSumTitle {
+    /* font-size: 50px; */
+
+    font-size: 30px;
+    display: block;
+    margin: -4rem 5rem;
+}
+
+.addressInfoSummary {
+    /* font-size: 25px; */
+    font-size: 20px;
+    margin-top: 5rem;
+}
+
 .confirmItemTotal {
-    margin-top: 1rem;
-    font-size: 32px;
+    /* margin-top: 1rem;
+    font-size: 32px; */
+    margin-top: 6rem;
+    font-size: 20px;
+    margin-left: 1.5rem;
 }
 
 .continueShop {
