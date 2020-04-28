@@ -271,7 +271,7 @@ export default class CheckoutForm extends React.Component {
               <input type="text" value={this.state.customerName} onChange={this.handleNameChange} className={`form-control ${this.state.validate.nameState === '' ? '' : this.state.validate.nameState === 'has-success' ? 'is-valid' : 'is-invalid'}`} id="nameInput" placeholder="Enter first name" required/>
               <div className="nameError">
                 {
-                  this.state.validate.nameState === '' ? '' : this.state.validate.nameState === 'has-success' ? '' : 'Letters only with 2 or more characters'
+                  this.state.validate.nameState === '' ? '' : this.state.validate.nameState === 'has-success' ? '' : 'Letters only with 2 or more characters; no space'
                 }
               </div>
             </div>
@@ -282,7 +282,7 @@ export default class CheckoutForm extends React.Component {
 
               <div className="lastNameError">
                 {
-                  this.state.validate.lastNameState === '' ? '' : this.state.validate.lastNameState === 'has-success' ? '' : 'Letters only with 2 or more characters'
+                  this.state.validate.lastNameState === '' ? '' : this.state.validate.lastNameState === 'has-success' ? '' : 'Letters only with 2 or more characters; no space'
                 }
 
               </div>
